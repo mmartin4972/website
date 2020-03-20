@@ -1,56 +1,48 @@
 @charset "utf-8";
-nav ul li a:hover {
-	background-image: -webkit-linear-gradient(270deg,rgba(172,166,166,1.00) 44.56%,rgba(0,0,0,1.00) 100%), url(url);
-	background-image: -moz-linear-gradient(270deg,rgba(172,166,166,1.00) 44.56%,rgba(0,0,0,1.00) 100%), url(url);
-	background-image: -o-linear-gradient(270deg,rgba(172,166,166,1.00) 44.56%,rgba(0,0,0,1.00) 100%), url(url);
-	background-image: linear-gradient(180deg,rgba(172,166,166,1.00) 44.56%,rgba(0,0,0,1.00) 100%), url(url);
-}
-
-
-
-
 
 /*Mobile Device*/
 @media (max-width : 399px ){
-
-
-
-
-
-}
-
-/*Desktop View*/
-@media (min-width: 950px){
-
-
 }
 
 /*Tablet View*/
 @media (min-width : 400px ) and (max-width : 949px ){
 }
 
-nav ul li a {
-	text-decoration: none;
-	font-family: noticia-text;
-	font-style: normal;
-	font-weight: 400;
-	color: #D8D8D8;
+/*Desktop View*/
+@media (min-width: 950px){
+
+/* Style the tab buttons */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
 }
 
-nav ul li {
-	width: 20%;
-	display: block;
-	text-align: center;
-	float: left;
-	background-color: #22527F;
-	text-decoration: none;
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
 }
 
-
-nav ul {
-	list-style-type: none;
+/* Set default styles for tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
 }
 
+/* Style each tab content individually */
+#London {background-color:red;}
+#Paris {background-color:green;}
+#Tokyo {background-color:blue;}
+#Oslo {background-color:orange;}
+}
 
 html, body, ul {
 	margin: 0;
