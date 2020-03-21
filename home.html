@@ -29,15 +29,15 @@
   <p>Oslo is the capital of Norway.</p>
 </div>
 
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+<button class="tablink" onmouseover="openTab('London', this, 'red', 'home.html')" id="defaultOpen"><a href="home.html">Welcome</a></button>
+<button class="tablink" onmouseover="openTab('Paris', this, 'green', 'scouts.html')"><a href="scouts.html">Scouts</a></button>
+<button class="tablink" onmouseover="openTab('Tokyo', this, 'blue', 'none.html')">MROVER</button>
+<button class="tablink" onmouseover="openTab('Oslo', this, 'orange', 'none.html')">FIRST</button>
 	
 <!--- Header Functions --->
 <script>
 	
-function openCity(cityName, elmnt, color) {
+function openTab(page, elmnt, color) {
   // Hide all elements with class="tabcontent" by default */
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
@@ -52,14 +52,14 @@ function openCity(cityName, elmnt, color) {
   }
 
   // Show the specific tab content
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(page).style.display = "block";
 
   // Add the specific color to the button used to open the tab content
   elmnt.style.backgroundColor = color;
 }
 
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+// Get the element with id="defaultOpen" and hover over it
+document.getElementById("defaultOpen").hover();
 </script>
 	
 </body>
