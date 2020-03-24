@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+/*--- Import Font ---*/
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+
 /*--- Mobile Device ---*/
 @media (max-width : 399px ){
 }
@@ -27,14 +30,15 @@
 }
 
 /*--- Container for navigation ---*/
-.menu-box {
+.menu-box, .logo {
 	height: 100%;
 	justify-content: center;
 	align-items: center;
 	display: inline-block;
-	width: 200px;
+	padding-left: 40px;
+	padding-right: 40px;
+	min-width: 100px;
 	margin: 0;
-	padding: 0;
 }
 
 /*--- Styling for navigation text ---*/
@@ -48,13 +52,13 @@
 	position: relative;
 	justify-content: center;
 	align-items: center;
-	padding-top: 35px;
+	padding-top: 37px;
 	text-decoration: none;
 	transition: 0.5s;
 }
 
 /*--- Navigation Hover Text Change ---*/
-.menu-box:hover .menu-name {
+.menu-box:hover .menu-name, .logo:hover .menu-name{
 	color: white;
 	transition: .5s;
 }
@@ -65,12 +69,22 @@
 	transition: 0.4s;
 }
 
+/*--- Logo Formatting ---*/
+.logo {
+	font-size: 25px;
+	width: 200px;
+	padding-left: 20px;
+	padding-right: 30px;
+}
+
 }
 
 /*--- Generic Formatting ---*/
 html, body {
 	margin: 0;
 	padding: 0;
+	width: 100%;
+	height: 110%;
 }
 
 /*--- Link Formatting ---*/
