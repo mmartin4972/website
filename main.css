@@ -17,11 +17,6 @@
 	transition: 0.4s;
 }
 
-#header:hover {
-	background: black;
-	transition: 0.4s;
-}
-
 /*--- Constant Navigation Styling Elements ---*/
 .nav{
 	height: 100%;
