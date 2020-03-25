@@ -87,20 +87,19 @@
 	position: fixed;
 	top: -1000px;
 	z-index: 115;
-    /*overflow-y: scroll;*/
 	background-color: rgba(0,0,0,.9);
-	transition-property: all;
-	transition-duration: 0.3s;
-	transition-timing-function: ease-out;
-	transition-delay: 0s;
 	
 }
 
+/*For adding second row double back-container height and
+halve tile height*/
 .back-container {
 	width: 100%;
-	height: 60%;
+	height: 30%;
+	max-height: 250px;
 	background: black;
 }
+
 
 .active {
 	opacity: 1;
@@ -109,6 +108,41 @@
 	transition-duration: 0.25s;
 	transition-timing-function: ease-out;
 	transition-delay: 0s;
+}
+
+.tile {
+	height: 90%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	display: inline-block;
+	width: 24.05%;
+	margin: 0.3%;
+	background-color: blue;
+	text-align:center;
+	vertical-align:middle;
+	min-height: 90px;
+}
+
+.tile-name {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 700;
+	color: #D3D3D3;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	vertical-align: middle;
+	align-items: center;
+	text-decoration: none;
+	top: 37%;
+	min-height: 30px;
+
+	transition: 0.5s;
+	font-size: 20px;
+}
+
 }
 
 /*--- Generic Formatting ---*/
@@ -120,7 +154,7 @@ html, body {
 }
 
 /*--- Link Formatting ---*/
-a:link {
+a, a:link {
 	text-decoration: none;
 	text-decoration-line: none;
 	text-decoration-style: initial;
