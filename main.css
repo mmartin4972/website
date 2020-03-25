@@ -85,16 +85,15 @@
 	align-items: flex-start;
 	opacity: 0;
 	position: fixed;
-	top: -101000px;
+	top: -1000px;
 	z-index: 115;
-	transition: opacity .25s ease-out;
-	transition-property: opacity;
-    transition-duration: 0.25s;
-    transition-timing-function: ease-out;
-    transition-delay: 0s;
-    overflow-y: scroll;
-    background-color: rgba(0,0,0,.9);
-
+    /*overflow-y: scroll;*/
+	background-color: rgba(0,0,0,.9);
+	transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+	transition-delay: 0s;
+	
 }
 
 .back-container {
@@ -102,9 +101,14 @@
 	height: 60%;
 	background: black;
 }
+
 .active {
 	opacity: 1;
 	top: 100px;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-out;
+	transition-delay: 0s;
 }
 
 /*--- Generic Formatting ---*/
