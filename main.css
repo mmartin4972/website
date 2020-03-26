@@ -1,18 +1,11 @@
 @charset "utf-8";
 
-/*--- Import Font ---*/
-@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
-
 /*--- Mobile Device ---*/
-@media (max-width : 399px ){
-}
-
-/*--- Tablet View ---*/
-@media (min-width : 400px ) and (max-width : 949px ){
+@media (max-width : 639px ){
 }
 
 /*--- Desktop View ---*/
-@media (min-width: 950px){
+@media (min-width: 640px){
 
 /*--- Changing Navigation Style Elements ---*/
 #header{
@@ -35,9 +28,9 @@
 	justify-content: center;
 	align-items: center;
 	display: inline-block;
-	padding-left: 40px;
-	padding-right: 40px;
-	min-width: 100px;
+	padding-left: 10px;
+	padding-right: 10px;
+	min-width: 120px;
 	margin: 0;
 }
 
@@ -78,14 +71,14 @@
 }
 
 /*--- Projects Formatting ---*/
-.projects-menu-container {
+.menu-container {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	align-items: flex-start;
 	opacity: 0;
 	position: fixed;
-	top: -1000px;
+	top: -1000100px;
 	z-index: 115;
 	background-color: rgba(0,0,0,.9);
 }
@@ -124,10 +117,16 @@ halve tile height*/
 }
 
 .background-image {
+	overflow: hidden;
 	height: 100%;
 	width: 100%;
-	background-size:100% 100%;
 	transition: 0.25s;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.logo-text {
+	padding-top: 26px;
 }
 
 .tile:hover .background-image{
@@ -149,6 +148,56 @@ halve tile height*/
 	top: 37%;
 	min-height: 30px;
 	opacity: 1;
+}
+
+/* --- Step Down for Nav Spacing ---*/
+@media (min-width : 1050px ) and (max-width : 1114px ){
+	.menu-box {
+		min-width: 110px;
+}
+}
+
+@media (min-width : 980px ) and (max-width : 1049px ){
+	.menu-box {
+		min-width: 100px;
+}
+}
+
+@media (min-width : 920px ) and (max-width : 979px ){
+	.menu-box {
+		min-width: 90px;
+}
+}
+
+@media (min-width : 875px ) and (max-width : 919px ){
+	.menu-box {
+		min-width: 75px;
+}
+}
+
+@media (min-width : 840px ) and (max-width : 874px ){
+	.menu-box {
+		min-width: 50px;
+}
+}
+
+@media (min-width : 640px ) and (max-width : 839px ){
+	.menu-box {
+		min-width: 35px;
+		padding-left: 4px;
+		padding-right: 4px;
+}
+}
+
+@media (min-width : 640px ) and (max-width : 754px ){
+	.logo {
+		width: 100px;
+		padding-left: 10px;
+		padding-right: 10px;
+}
+	.logo-text{
+		padding-top: 10px;
+	}
 }
 
 }
