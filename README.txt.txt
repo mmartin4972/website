@@ -1,3 +1,5 @@
+Hours Invested 3/25/20: 21
+
 Website Vision 3/21/20:
 1. Website will load on to main home page containing various basic statistics about myself including GPA, skills, courses, and other
 generic information
@@ -29,3 +31,11 @@ and click functionalities to make navigation on any device rather nice
 	q. Projects is going to have the drop down for various projects
 	r. FIRST is going to just load the page
 	s. Fun is going to just load the page
+4. Pages
+	a. Have a timline page that is a vertical graphical representation of basically links to all your pages including FIRST stuff, Eagle,
+	   stuff, MROVER stuff, basically everything
+	b. Have a contact page so that people can contact you
+	c. Make sure in projects and MROVER tabs you have dates of all projects and when page loads put dates of stuff in upper right hand corner
+	   so that people know what your most recent projects are
+	d. You may want to consider having people request access to view your website, since you have personal information on there and it would
+	   be cool to set up a security system like that
