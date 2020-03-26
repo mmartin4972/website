@@ -88,7 +88,6 @@
 	top: -1000px;
 	z-index: 115;
 	background-color: rgba(0,0,0,.9);
-	
 }
 
 /*For adding second row double back-container height and
@@ -118,10 +117,21 @@ halve tile height*/
 	display: inline-block;
 	width: 24.05%;
 	margin: 0.3%;
-	background-color: blue;
 	text-align:center;
 	vertical-align:middle;
 	min-height: 90px;
+	transition: 0.25s;
+}
+
+.background-image {
+	height: 100%;
+	width: 100%;
+	background-size:100% 100%;
+	transition: 0.25s;
+}
+
+.tile:hover .background-image{
+	transform: scale(1.05);
 }
 
 .tile-name {
@@ -138,9 +148,7 @@ halve tile height*/
 	text-decoration: none;
 	top: 37%;
 	min-height: 30px;
-
-	transition: 0.5s;
-	font-size: 20px;
+	opacity: 1;
 }
 
 }
