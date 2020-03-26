@@ -65,7 +65,7 @@ function onPageLoadNavigation() {
             mroverDrop[1].addEventListener("mouseleave",turnOffMROVERDropDown);
             logo[0].addEventListener("mouseover", turnOffMROVERDropDown);
             first.addEventListener("mouseover", turnOffMROVERDropDown);
-            /*(document.addEventListener("mouseleave", turnOffMROVERDropDown);*/
+            document.addEventListener("mouseleave", turnOffMROVERDropDown);
         }
     });
 }
