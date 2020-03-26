@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 /*--- Mobile Device ---*/
-@media (max-width : 639px ){
+@media (max-width : 644px ){
 }
 
 /*--- Desktop View ---*/
-@media (min-width: 640px){
+@media (min-width: 645px){
 
 /*--- Changing Navigation Style Elements ---*/
 #header{
@@ -181,7 +181,7 @@ halve tile height*/
 }
 }
 
-@media (min-width : 640px ) and (max-width : 839px ){
+@media (min-width : 645px ) and (max-width : 839px ){
 	.menu-box {
 		min-width: 35px;
 		padding-left: 4px;
@@ -189,7 +189,7 @@ halve tile height*/
 }
 }
 
-@media (min-width : 640px ) and (max-width : 754px ){
+@media (min-width : 645px ) and (max-width : 754px ){
 	.logo {
 		width: 100px;
 		padding-left: 10px;
