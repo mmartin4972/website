@@ -1,4 +1,4 @@
-Hours Invested 3/25/20: 21
+Hours Invested 3/25/20: 22
 
 Website Vision 3/21/20:
 1. Website will load on to main home page containing various basic statistics about myself including GPA, skills, courses, and other
