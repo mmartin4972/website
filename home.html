@@ -12,18 +12,21 @@
 <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 
-<body style="background-image: url('background1.jpg');">
-	<div>
-        <div id="header" class="" style="position: fixed; top: 0px; width: 100%; z-index: 1000; height: 100px;">
+<body>
+    <div id="background" style="background-image: url('background1.jpg');">
+        <div id = "loadScreen" class="">
+            <div id="logoLoad" class="spin">MM</div>
+        </div>
+        <div id="header" class="hide" style="position: fixed; top: 0px; width: 100%; z-index: 1000; height: 100px;">
             <div class="nav">
                 <div class="logo-desktop">
                     <a class="logo" href = 'home.html'>
                         <div class="menu-name logo-text">Matt Martin</div>
                     </a>
                 </div>
-                <div class="logo-mobile">
+                <div class="logo-mobile hide">
                 </div>
-                <div class="mobile-menu-toggle">
+                <div class="mobile-menu-toggle hide">
                 </div>
                 <div class="menu">
                     <a id = "mrover" class="menu-box" href="#">
