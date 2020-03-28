@@ -1,4 +1,4 @@
-Hours Invested 3/26/20: 25
+Hours Invested 3/27/20: 27
 Project Start: 3/21/20
 
 This website was written entirely from scratch using HTML, CSS, and Javascript. Insipration 

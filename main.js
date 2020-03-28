@@ -8,8 +8,11 @@ function loadPage() {
 function killLoadPage() {
     const loadScreen = document.getElementById('loadScreen');
     const header = document.getElementById('header');
-    loadScreen.classList.add('hide');
+    const menu = document.getElementsByClassName('menu');
+    header.classList.add('fadeIn');
     header.classList.remove('hide');
+    loadScreen.classList.add('fadeOut');
+    window.setTimeout(function() {loadScreen.classList.add('hide');},1000);
     navigation();
 }
 
