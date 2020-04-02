@@ -39,7 +39,6 @@ function navigation() {
      {
           viewportwidth = window.innerWidth;
      }
-     console.log(viewportwidth);
 
     //Create Header Styling
     const header = document.getElementById('header');
