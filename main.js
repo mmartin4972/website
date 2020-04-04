@@ -33,6 +33,8 @@ function navigation() {
     const mroverDrop = document.getElementsByClassName('mrover');
     const scouts = document.getElementById('scouts');
     const first = document.getElementById('first');
+    const mobileDropDown = document.getElementsByClassName('mobile-dropdown');
+    const menuToggle = document.getElementsByClassName('menu-toggle');
     
     // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight   
      if (typeof window.innerWidth != 'undefined')
@@ -71,6 +73,25 @@ function navigation() {
         /*--- Show Mobile Menu Items ---*/
         if(logoMobile[0].classList.contains('hide')) {logoMobile[0].classList.remove('hide');}
         if(mobileMenuToggle[0].classList.contains('hide')) {mobileMenuToggle[0].classList.remove('hide');}
+
+        mobileMenuToggle[0].addEventListener('mouseover', function() {
+            if(!menuToggle[0].classList.contains('menu-toggle-white')){
+                menuToggle[0].classList.add('menu-toggle-white');}
+        })
+
+        mobileMenuToggle[0].addEventListener('mouseleave', function() {
+            if(menuToggle[0].classList.contains('menu-toggle-white')) {
+                menuToggle[0].classList.remove('menu-toggle-white');}
+        })
+        mobileMenuToggle[0].addEventListener('click', function(){
+            if(!mobileDropDown[0].classList.contains('active')){
+                mobileDropDown[0].classList.add('active');}
+            else{
+                mobileDropDown[0].classList.remove('active');
+            }
+            
+        })
+       
 
     }
 
