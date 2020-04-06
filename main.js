@@ -169,6 +169,11 @@ function navigation() {
             mobileMenuToggle[0].removeEventListener('mouseover', addWhite, true);
             mobileMenuToggle[0].removeEventListener('mouseleave', removeWhite, true);
             mobileMenuToggle[0].removeEventListener('click', dropShow, true);
+            
+            /*--- Close Mobile Drop Down If Left Open ---*/
+            if(mobileDropDown[0].classList.contains('active'))
+                mobileDropDown[0].classList.remove('active');
+            
             console.log('mobile cleaned');
         }
         
