@@ -22,9 +22,18 @@ const menuToggle = document.getElementsByClassName('menu-toggle');
 var mobileInitialized = false;
 var desktopInitialized = false;
 var headerInitialized = false;
+const videoIntro = document.getElementById('videoIntro');
+const videoLoop = document.getElementById('videoLoop');
 
 function loadPage() {    
     window.setTimeout(killLoadPage, 1000);
+    videoIntro.addEventListener('ended', videoLooper, false);
+}
+
+function videoLooper() {
+    videoLoop.play();
+    videoLoop.classList.remove('hide');
+    videoIntro.classList.add('hide');
 }
 
 function killLoadPage() {

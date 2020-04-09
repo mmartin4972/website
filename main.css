@@ -124,7 +124,7 @@ animation: fadeIn 1s linear;
 }
 
 /*---Background Video Styling---*/
-video#bgvideo {
+video.bgvideo {
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -137,7 +137,7 @@ video#bgvideo {
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
-	background: url(placeholder.jpg) no-repeat;
+	background: url(background1.jpg) no-repeat;
 	background-size: cover;
 }
 
