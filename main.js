@@ -24,6 +24,8 @@ var desktopInitialized = false;
 var headerInitialized = false;
 const videoIntro = document.getElementById('videoIntro');
 const videoLoop = document.getElementById('videoLoop');
+var headerHover = false;
+const resume = document.getElementById('resume');
 
 function loadPage() {    
     window.setTimeout(killLoadPage, 1000);
@@ -44,6 +46,7 @@ function killLoadPage() {
     header.classList.remove('hide');
     loadScreen.classList.add('fadeOut');
     window.setTimeout(function() {loadScreen.classList.add('hide');},1000);
+    resume.classList.remove('hide');
     navigation();
 }
 
@@ -120,10 +123,13 @@ function navigation() {
     if(!headerInitialized) {
     const header = document.getElementById('header');
        
+        //Add black when header is hovered over
         header.addEventListener("mouseover", function(){
             header.classList.add('black');
+            headerHover = true;
         });
-        
+
+        //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
             if(window.pageYOffset > 0){
                 if(header.className != "black") {
@@ -134,6 +140,13 @@ function navigation() {
                 header.classList.remove('black');
             }
         });
+
+        //Deactivate black after header is not used for 2 seconds
+        header.addEventListener("mouseleave", function(){
+            headerHover = false;
+            window.setTimeout(function() {if(!headerHover){header.classList.remove('black');}}, 2000);
+        });
+        
         headerInitialized = true;
         console.log('header initialized');
     }
