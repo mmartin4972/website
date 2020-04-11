@@ -13,13 +13,16 @@
 </head>
 
 <body>
-    <div id="background" >
+    <div id="background">
         <div id = "loadScreen" class="">
             <div id="logoLoad" class="spin" style="font-size: 60px">MM</div>
         </div>
         <div id="hero">
-            <video playsinline autoplay muted loop poster="placeholder.jpg" id="bgvideo" width="x" height="y">
-                <source src="../../After_Effects_Projects/home_background/Logo_Animation_Long.mp4" type="video/mp4">
+            <video playsinline autoplay muted poster="background1.jpg" id="videoIntro" class="bgvideo" width="x" height="y">
+                <source src="images/Logo_Animation_Intro.mp4" type="video/mp4">
+            </video>
+            <video playsinline autoplay muted loop poster="background1.jpg" id="videoLoop" class="bgvideo hide" width="x" height="y">
+                <source src="images/Logo_Animation_Loop.mp4" type="video/mp4">
             </video>
         </div>
         <div id="header" class="hide">
@@ -106,6 +109,11 @@
                     <div class="menu-name">CONTACT</div>
                 </a>
             
+        </div>
+        <div id="resume" class="hide menu-box">
+            <a href="files/Matt_Martin_Resume.pdf">
+                <div class="resume-name menu-name">RESUME</div> 
+            </a>
         </div>
     </div>
     <script type = "text/javascript" src="main.js"></script>
