@@ -140,6 +140,26 @@ video.bgvideo {
 	background-size: cover;
 }
 
+#resume {
+	position: absolute;
+	bottom: 10px; 
+	right: 10px;
+	width: 100px;
+	height: 50px;
+	background: black;
+	padding: 0px;
+	border-radius: 25px;
+	transition: 0.5s;
+	transition-property: all;
+}
+
+.resume-name {
+	padding-top: 0px;
+	transition-property: all;
+	transition: 0.5s;
+	height: 50px;
+}
+
 /*--- Mobile Device ---*/
 @media (max-width : 644px ){
 
@@ -253,6 +273,10 @@ video.bgvideo {
 	transition-property: all;
 }
 
+.resume-name {
+	font-size: 17px;
+	padding-top: 0px;
+}
 }/*--- End of Mobile ---*/
 
 /*--- Desktop View ---*/
@@ -351,25 +375,6 @@ halve tile height*/
 	top: 37%;
 	min-height: 30px;
 	opacity: 1;
-}
-
-#resume {
-	position: absolute;
-	bottom: 10px; 
-	right: 10px;
-	width: 100px;
-	height: 50px;
-	background: black;
-	padding: 0px;
-	border-radius: 25px;
-	transition: 0.5s;
-	transition-property: all;
-}
-
-.resume-name {
-	padding-top: 13px;
-	transition-property: all;
-	transition: .5s;
 }
 
 .hide {

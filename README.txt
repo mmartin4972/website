@@ -1,4 +1,4 @@
-Hours Invested 4/9/20: 43
+Hours Invested 4/13/20: 47
 Project Start: 3/21/20
 
 This website was written entirely from scratch using HTML, CSS, and Javascript. Insipration for this site came from hyperlite.com. 

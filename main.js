@@ -27,9 +27,10 @@ const videoLoop = document.getElementById('videoLoop');
 var headerHover = false;
 const resume = document.getElementById('resume');
 
-function loadPage() {    
+function loadPage() {   
     window.setTimeout(killLoadPage, 1000);
     videoIntro.addEventListener('ended', videoLooper, false);
+    
 }
 
 function videoLooper() {
@@ -46,8 +47,9 @@ function killLoadPage() {
     header.classList.remove('hide');
     loadScreen.classList.add('fadeOut');
     window.setTimeout(function() {loadScreen.classList.add('hide');},1000);
-    resume.classList.remove('hide');
     navigation();
+    resume.classList.remove('hide');
+    
 }
 
 /*--- Mobile Functions ---*/
@@ -144,7 +146,7 @@ function navigation() {
         //Deactivate black after header is not used for 2 seconds
         header.addEventListener("mouseleave", function(){
             headerHover = false;
-            window.setTimeout(function() {if(!headerHover){header.classList.remove('black');}}, 2000);
+            window.setTimeout(function() {if(!headerHover){header.classList.remove('black');}}, 4000);
         });
         
         headerInitialized = true;
@@ -216,5 +218,6 @@ function navigation() {
         desktopInitialized = true;
         console.log('desktop initialized');
     }
+
     return;
 }
