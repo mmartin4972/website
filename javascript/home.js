@@ -7,6 +7,9 @@ const videoLoop = document.getElementById('videoLoop');
 const resume = document.getElementById('resume');
 
 function loadPage() {   
+    jQuery(function(){
+        var player = jQuery("#ytp-properties").YTPlayer();
+    });   
     window.setTimeout(killLoadPage, 1000);
     videoIntro.addEventListener('ended', videoLooper, false);   
 }
