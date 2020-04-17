@@ -10,6 +10,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link href="../css/nav.css" rel="stylesheet" type="text/css">
+{{ page.sections['css'] }}
 </head>
 
 <body>
@@ -27,7 +28,7 @@
                     </a>
                 </div>
                 <div class="mobile-menu-toggle hide">
-                    <div class="menu-toggle background-image"></div>
+                    <div class="menu-toggle background-toggle"></div>
                 </div>
                 <div class="menu">
                     <a id = "mrover" class="menu-box" href="#">
@@ -96,14 +97,13 @@
                 </a>
                 <a class="dropdown-box menu-box" href="#">
                     <div class="menu-name">CONTACT</div>
-                </a>
-            
+                </a>    
         </div>
         
         {{ content }}
         
-    </div>
+    </div> 
     <script type = "text/javascript" src="../javascript/default.js"></script>
+    {{ page.sections['js'] }}
 </body>
-
 </html>

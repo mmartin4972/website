@@ -14,7 +14,7 @@ video.bgvideo {
 	-moz-transform: translateX(-50%) translateY(-50%);
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
-	background: url(background1.jpg) no-repeat;
+	background: url(../images/background1.jpg) no-repeat;
 	background-size: cover;
 }
 
