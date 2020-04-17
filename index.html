@@ -6,18 +6,18 @@ sections:
         <link href="css/home.css" rel="stylesheet" type="text/css">
     js: |
         <script type = "text/javascript" src="javascript/home.js"></script>
+        <script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>
 --- 
 
         <div id = "loadScreen" class="">
             <div id="logoLoad" class="spin" style="font-size: 60px">MM</div>
         </div>
-        <div id="hero">
-            <video playsinline autoplay muted poster="images/background1.jpg" id="videoIntro" class="bgvideo" width="x" height="y">
-                <source src="images/Logo_Animation_Intro.mp4" type="video/mp4">
-            </video>
-            <video playsinline autoplay muted loop poster="images/background1.jpg" id="videoLoop" class="bgvideo hide" width="x" height="y">
-                <source src="images/Logo_Animation_Loop.mp4" type="video/mp4">
-            </video>
+        <div id="videoIntro" class="hero-video videoContainer"></div>
+        <div id="ytp-properties" class="videoContainer" 
+        data-property="{videoURL:'https://youtu.be/KOLd196epSw',
+        containment:'.hero-video', autoPlay:true, mute:true, startAt:0, opacity:1, 
+        useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'auto',
+        showYTLogo:false, optimizeDisplay:true, anchor:'top,center', abundance:0.2}">
         </div>
         <div id="resume" class="hide fadeIn menu-box">
             <a href="files/Matt_Martin_Resume.pdf">
