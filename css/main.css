@@ -1,0 +1,416 @@
+@charset "utf-8";
+
+/*--- All Web Configs ---*/
+
+/*--- Nav Color Change ---*/
+.black {
+	background:black !important;
+	transition: 0.4s;
+	transition: all;
+	width: 100%;
+	height: 100%;	
+}
+
+/*--- Styling for navigation text ---*/
+#logoLoad, .menu-name  {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 700;
+	color: #D3D3D3;
+	display: flex;
+	position: relative;
+	padding-top: 37px;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+/*---Styling for Loading Screen---*/
+#loadScreen {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+#logoLoad {
+	vertical-align: middle;
+	height: 80%;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.spin {
+	animation: spin 1s linear;
+}
+
+@keyframes spin {
+    from {transform:rotatey(0deg);}
+    to {transform:rotatey(360deg);}
+}
+
+.fadeIn {
+opacity: 1;
+animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; visibility: hidden}
+  100% { opacity: 1; visibility: visible};
+}
+
+.fadeOut {
+    opacity: 0;
+	animation: fadeOut 1s linear;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; visibility: visible}
+  100% { opacity: 0; visibility: hidden};
+}
+
+/* --- Styling for Background ---*/
+#background {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	background-color: #2B2B2B;
+}
+
+.background-image {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	transition: 0.25s;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*--- Drop-Down Formatting ---*/
+.menu-container {
+	width: 100%;
+	height: 100%;
+	display: hide;
+	display: flex;
+	align-items: flex-start;
+	opacity: 0;
+	position: fixed;
+	top: -1000100px;
+	z-index: 115;
+	background-color: rgba(0,0,0,.9);
+	min-height: 800px;
+}
+
+.active {
+	opacity: 1;
+	top: 100px;
+	transition-property: opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-out;
+	transition-delay: 0s;
+}
+
+/*--- Navigation Hover Text Change ---*/
+.menu-box:hover .menu-name, .logo:hover .menu-name{
+	color: white;
+	transition: .5s;
+}
+
+
+/*--- Mobile Device ---*/
+@media (max-width : 644px ){
+
+#header{
+	background: transparent;
+	transition: 0.4s;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1000;
+	height: 70px;
+	text-align: center;
+}
+
+.nav{
+	height: 100%;
+	width: 100%;
+	align-items:center;
+	justify-content: center;
+	position: relative;
+	display: flex;
+	
+}
+
+.logo-mobile{
+	width: 80px;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.logo{
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: inline-block;
+	margin: 0;
+	width: 100%;
+	transition: 0.4s;
+	padding-top: 0px;
+}
+
+.menu-name {
+	padding-top: 16px;
+	font-size: 25px;
+}
+
+.mobile-menu-toggle{
+	position: absolute;
+	display: block;
+	width: 70px;
+	height: 70px;
+	align-items: center;
+	justify-content: center;
+	padding-top: 15px;
+	padding-left: 10px;
+	right: 0px;
+}
+
+.menu-toggle{
+	background-image: url("images/mobile_logo_gray.png");
+	width: 40px;
+	height: 40px;
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+	transition-delay: 0s;
+}
+
+.menu-toggle-white{
+	background-image: url("images/mobile_logo_white.png");
+	transition-property: all;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
+	transition-delay: 0s;
+}
+
+.menu-container{
+	background-color: black;
+	justify-content: center;
+	display: inline-block;
+	position: absolute;
+}
+
+.active{
+	top: 70px;
+}
+
+.dropdown-box{
+	width: 100%;
+	height: auto;
+	padding-top: 30px;
+	display: block;
+	text-align: left;
+	padding: 20px;
+}
+
+.back-container{
+	position: absolute;
+	height: 100%;
+	display: inline-block;
+	justify-content:center;
+}
+
+.hide {
+	display:none;
+	transition: 0.5s;
+	transition-property: all;
+}
+
+.resume-name {
+	font-size: 17px;
+	padding-top: 0px;
+}
+}/*--- End of Mobile ---*/
+
+/*--- Desktop View ---*/
+@media (min-width: 645px){
+
+#background {
+	width: 100%;
+	height: 100%;
+}
+	
+/*--- Changing Navigation Style Elements ---*/
+#header{
+	background: transparent;
+	transition: 0.4s;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1000;
+	height: 100px;
+}
+
+/*--- Constant Navigation Styling Elements ---*/
+.nav{
+	height: 100%;
+	width: 100%;
+	position: relative;
+	display: flex;
+	z-index: 120;
+}
+
+/*--- Container for navigation ---*/
+.menu-box, .logo {
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	min-width: 120px;
+	margin: 0;
+}
+
+
+
+/*--- Logo Formatting ---*/
+.logo {
+	font-size: 25px;
+	width: 230px;
+	padding-left: 30px;
+	padding-right: 20px;
+}
+
+/*For adding second row double back-container height and
+halve tile height*/
+.back-container {
+	width: 100%;
+	height: 30%;
+	max-height: 250px;
+	background: black;
+}
+
+.tile {
+	height: 90%;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	display: inline-block;
+	width: 24.05%;
+	margin: 0.3%;
+	text-align:center;
+	vertical-align:middle;
+	min-height: 90px;
+	transition: 0.25s;
+}
+
+.logo-text {
+	padding-top: 26px;
+}
+
+.tile:hover .background-image{
+	transform: scale(1.05);
+}
+
+.tile-name {
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-weight: 700;
+	color: #D3D3D3;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	vertical-align: middle;
+	align-items: center;
+	text-decoration: none;
+	top: 37%;
+	min-height: 30px;
+	opacity: 1;
+}
+
+.hide {
+	display:none;
+	transition: 0.5s;
+	transition-property: all;
+}
+
+/* --- Step Down for Nav Spacing ---*/
+@media (min-width : 1050px ) and (max-width : 1114px ){
+	.menu-box {
+		min-width: 110px;
+}
+}
+
+@media (min-width : 980px ) and (max-width : 1049px ){
+	.menu-box {
+		min-width: 100px;
+}
+}
+
+@media (min-width : 920px ) and (max-width : 979px ){
+	.menu-box {
+		min-width: 90px;
+}
+}
+
+@media (min-width : 875px ) and (max-width : 919px ){
+	.menu-box {
+		min-width: 75px;
+}
+}
+
+@media (min-width : 840px ) and (max-width : 874px ){
+	.menu-box {
+		min-width: 50px;
+}
+}
+
+@media (min-width : 645px ) and (max-width : 839px ){
+	.menu-box {
+		min-width: 35px;
+		padding-left: 4px;
+		padding-right: 4px;
+}
+}
+
+@media (min-width : 645px ) and (max-width : 754px ){
+	.logo {
+		width: 100px;
+		padding-left: 10px;
+		padding-right: 10px;
+}
+	.logo-text{
+		padding-top: 10px;
+	}
+}
+
+}
+
+/*--- Generic Formatting ---*/
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 110%;
+}
+
+/*--- Link Formatting ---*/
+a, a:link {
+	text-decoration: none;
+	text-decoration-line: none;
+	text-decoration-style: initial;
+	text-decoration-color: initial;
+	cursor: pointer;
+}
