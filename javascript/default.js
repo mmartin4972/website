@@ -1,7 +1,5 @@
-window.addEventListener("DOMContentLoaded", loadNav);
-window.addEventListener("resize", navigation);
-
 /* --- Helpful Variables ---*/
+const header = document.getElementById('header');
 const menu = document.getElementsByClassName('menu');
 const projects = document.getElementsByClassName('projects');
 const mrover = document.getElementsByClassName('mrover');
@@ -22,6 +20,9 @@ const menuToggle = document.getElementsByClassName('menu-toggle');
 var mobileInitialized = false;
 var desktopInitialized = false;
 var headerInitialized = false;
+
+window.addEventListener("DOMContentLoaded", loadNav);
+window.addEventListener("resize", navigation);
 
 function loadNav(){
     header.classList.add('fadeIn');

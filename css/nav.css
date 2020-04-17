@@ -73,6 +73,15 @@ body {
 	background-size: cover;
 }
 
+.background-toggle {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	transition: 0.25s;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 /*--- Mobile Device ---*/
 @media (max-width : 644px ){
 
