@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>Matt Martin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link href="css/nav.css" rel="stylesheet" type="text/css">
+<link href="css/home.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="background">
+        <div id = "loadScreen" class="">
+            <div id="logoLoad" class="spin" style="font-size: 60px">MM</div>
+        </div>
+        <div id="hero">
+            <video playsinline autoplay muted poster="images/background1.jpg" id="videoIntro" class="bgvideo" width="x" height="y">
+                <source src="images/Logo_Animation_Intro.mp4" type="video/mp4">
+            </video>
+            <video playsinline autoplay muted loop poster="images/background1.jpg" id="videoLoop" class="bgvideo hide" width="x" height="y">
+                <source src="images/Logo_Animation_Loop.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="header" class="hide">
+            <div class="nav">
+                <div class="logo-desktop">
+                    <a class="logo" href = 'home.html'>
+                        <div class="menu-name logo-text">Matt Martin</div>
+                    </a>
+                </div>
+                <div class="logo-mobile hide">
+                    <a class="logo" href = 'home.html'>
+                        <div class="menu-name logo-text" >MM</div>
+                    </a>
+                </div>
+                <div class="mobile-menu-toggle hide">
+                    <div class="menu-toggle background-image"></div>
+                </div>
+                <div class="menu">
+                    <a id = "mrover" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Mrover</div>
+                    </a>
+                    <a id = "first" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">First</div>
+                    </a>
+                    <a id = "projects" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Projects</div>
+                    </a>
+                    <a id = "scouts" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Scouts</div>
+                    </a>
+                    <a id = "contact" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Fun</div>
+                    </a>
+                    <a id = "contact" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Timeline</div>
+                    </a>
+                    <a id = "contact" class="menu-box" href="#">
+                        <div class="menu-name text-uppercase">Contact</div>
+                    </a>
+                </div>
+            </div>
+            <div class = "projects menu-container">
+                <div class = "projects back-container">
+                    <a class="tile"   href="https://github.com/mmartin4972/website">
+                        <div class="background-image" style="background-image: url('images/websiteTileBackground.png');">
+                            <p class="tile-name text-uppercase" style="opacity: 1;">Website</p>
+                        </div>
+                    </a>
+                   <!--Make sure you add transition delay for other divs. See hyperlite's website for details-->
+                </div>
+            </div>
+            <div class = "mrover menu-container">
+                <div class = "mrover back-container">
+                    <a class="tile"   href="#">
+                        <!--Have been using 40% opacity for background images-->
+                        <div class="background-image" style="background-image: url('images/uvTileBackground.png');">
+                            <p class="tile-name text-uppercase" style="opacity: 1;">UV Obstacle Detection</p>
+                        </div>
+                    </a>
+                </div>
+            </div>     
+        </div>
+        <div class="mobile-dropdown menu-container">
+            
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name" style="padding-top: 10px;">MROVER</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">FIRST</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">PROJECTS</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">SCOUTS</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">FUN</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">TIMELINE</div>
+                </a>
+                <a class="dropdown-box menu-box" href="#">
+                    <div class="menu-name">CONTACT</div>
+                </a>
+            
+        </div>
+        <div id="resume" class="hide fadeIn menu-box">
+            <a href="files/Matt_Martin_Resume.pdf">
+                <div class="resume-name menu-name">RESUME</div> 
+            </a>
+        </div>
+    </div>
+    <script type = "text/javascript" src="javascript/main.js"></script>
+</body>
+
+</html>
