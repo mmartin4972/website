@@ -10,14 +10,21 @@ sections:
 --- 
 
         <div id = "loadScreen" class="">
-            <div id="logoLoad" class="spin" style="font-size: 60px">MM</div>
+            <div id="display">
+                <div id="logoLoad" class="spin" style="font-size: 60px">MM</div>
+                <div class="progress">
+                    <div id="progress" class=""></div>
+                </div>
+            </div>
         </div>
-        <div id="videoIntro" class="hero-video videoContainer"></div>
+        </div>
+        <div id="videoIntro" class="hero-video videoContainer hider"></div>
         <div id="ytp-properties" class="videoContainer" 
-        data-property="{videoURL:'https://youtu.be/KOLd196epSw',
+        data-property="{videoURL:'https://youtu.be/jDFjsKTc5cU',
         containment:'.hero-video', autoPlay:true, mute:true, startAt:0, opacity:1, 
         useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'auto',
-        showYTLogo:false, optimizeDisplay:true, anchor:'top,center', abundance:0.2}">
+        showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+        showAnnotations:false}">
         </div>
         <div id="resume" class="hide fadeIn menu-box">
             <a href="files/Matt_Martin_Resume.pdf">
