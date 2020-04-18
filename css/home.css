@@ -1,23 +1,5 @@
 @charset "utf-8";
 
-/*---Background Video Styling---*/
-.bgvideo {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	min-width: 100%;
-	min-height: 100%;
-	width: auto;
-	height: auto;
-	z-index: -100;
-	-ms-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
-	background: url(../images/background1.jpg) no-repeat;
-	background-size: cover;
-}
-
 /*---Resume Styling---*/
 #resume {
 	position: absolute;
@@ -51,14 +33,16 @@
 }
 
 #logoLoad {
-	vertical-align: middle;
-	height: 80%;
-	width: 100%;
+	display: inline-block;
 	overflow-x: hidden;
+	position: flex;
+	left: 0px;
+	top: 0px;
+	padding-left: 0px;
 }
 
 .spin {
-	animation: spin 1s linear;
+	animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
@@ -119,5 +103,42 @@ body {
 	justify-content: center;
 	align-items: center;
 	}
-	
-	
+
+.hider {
+	opacity:0;
+}
+
+/*---Progress-bar---*/ 
+  .progress {
+	background: rgba(255,255,255,0.1);
+	justify-content: flex-start;
+	border-radius: 100px;
+	align-items: center;
+	position: relative;
+	display: inline-flex;
+	position: relative;
+	height: 20px;
+	width: 130px;
+  }
+  
+  .progress-value {
+	animation: load 3s normal forwards;
+	box-shadow: 0 10px 40px -10px #fff;
+	border-radius: 100px;
+	background: #fff;
+	height: 30px;
+	width: 0;
+  }
+
+  @keyframes load {
+	0% { width: 0; }
+	100% { width: 100%; }
+  }
+
+  #display {
+	justify-content: center;
+	width: 140px;
+	height: 140px;
+	margin: 0 auto;
+	padding-top: 30%;
+}

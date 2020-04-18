@@ -3,28 +3,27 @@ window.addEventListener("DOMContentLoaded", loadPage);
 /* --- Helpful Variables ---*/
 const loadScreen = document.getElementById('loadScreen');
 const videoIntro = document.getElementById('videoIntro');
-const videoLoop = document.getElementById('videoLoop');
 const resume = document.getElementById('resume');
-
-function loadPage() {   
-    jQuery(function(){
-        var player = jQuery("#ytp-properties").YTPlayer();
-    });   
-    window.setTimeout(killLoadPage, 1000);
-    videoIntro.addEventListener('ended', videoLooper, false);   
-}
-
-function videoLooper() {
-    videoLoop.play();
-    videoLoop.classList.remove('hide');
-    videoIntro.classList.add('hide');
-}
+const progressbar = document.getElementById('progress');
 
 function killLoadPage() {
     header.classList.add('fadeIn');
+    videoIntro.classList.add('fadeIn');
     header.classList.remove('hide');
     loadScreen.classList.add('fadeOut');
-    window.setTimeout(function() {loadScreen.classList.add('hide');},1000);
+    loadScreen.classList.add('hide');
+    videoIntro.classList.remove('hider');
     navigation();
     resume.classList.remove('hide');
 }
+
+function loadPage() {  
+    header.classList.add('hide'); 
+    jQuery(function(){
+        var player = jQuery("#ytp-properties").YTPlayer();
+        player.on("YTPStart", function(){progressbar.classList.add('progress-value');})
+        player.on("YTPStart", function(){ window.setTimeout(killLoadPage, 3000);});
+    });
+}
+
+

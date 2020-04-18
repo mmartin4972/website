@@ -83,6 +83,7 @@ function projectDropDown() {
 function mroverDropDown() {
     if(!mroverDrop[0].classList.contains("active")) {
         mroverDrop[0].classList.add('active');
+        mroverId.addEventListener("click", turnOffMROVERDropDown);
         mroverDrop[1].addEventListener("mouseleave",turnOffMROVERDropDown);
         logo[0].addEventListener("mouseover", turnOffMROVERDropDown);
         first.addEventListener("mouseover", turnOffMROVERDropDown);
@@ -131,7 +132,7 @@ function navigation() {
     }
 
     //Mobile JavaScript
-    if(viewportwidth < 645 && !mobileInitialized) {
+    if(viewportwidth < 699 && !mobileInitialized) {
         
         /*--- Clean Desktop Event Listeners ---*/
         if(desktopInitialized) {
@@ -163,7 +164,7 @@ function navigation() {
     }
 
     //Desktop JavaScript
-    if(viewportwidth >= 645 && !desktopInitialized) {
+    if(viewportwidth >= 699 && !desktopInitialized) {
        
         /*--- Kill Mobile Event Listeners ---*/
         if(mobileInitialized){
