@@ -20,6 +20,7 @@ const menuToggle = document.getElementsByClassName('menu-toggle');
 var mobileInitialized = false;
 var desktopInitialized = false;
 var headerInitialized = false;
+var atTop = true;
 
 window.addEventListener("DOMContentLoaded", loadNav);
 window.addEventListener("resize", navigation);
@@ -47,7 +48,9 @@ var dropShow = function(event){
         console.log('clicked')}
     else{
         mobileDropDown[0].classList.remove('active');
-        timer2();
+        if(!mobileDropDown[0].classList.contains('active')){
+            timer2();
+        }
         console.log('clicked');
     }   
 } 
@@ -114,7 +117,11 @@ function mroverDropDown() {
 /*---Black background fade after 2 seconds ---*/
 function timer2() {
     headerHover = false;
-    window.setTimeout(function() {if(!headerHover){header.classList.remove('black');}}, 4000);
+    window.setTimeout(function() {
+        if(!headerHover && !mobileDropDown[0].classList.contains('active')
+        && atTop){
+            header.classList.remove('black');
+        }}, 4000);
 }
 
 function navigation() {
@@ -138,11 +145,13 @@ function navigation() {
         //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
             if(window.pageYOffset > 20){
+                atTop = false;
                     if(header.className != "black") {
                         header.classList.add('black');
                     }
             }
             else {
+                atTop = true;
                 if(viewportwidth > 739 || !mobileDropDown[0].classList.contains('active')) {
                     header.classList.remove('black');
                 }
@@ -151,6 +160,7 @@ function navigation() {
         
         //Deactivate black after header is not used for 2 seconds
         header.addEventListener("mouseleave", timer2);
+        
         
         headerInitialized = true;
         console.log('header initialized');
