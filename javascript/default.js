@@ -137,7 +137,7 @@ function navigation() {
 
         //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
-            if(window.pageYOffset > 4){
+            if(window.pageYOffset > 20){
                     if(header.className != "black") {
                         header.classList.add('black');
                     }
