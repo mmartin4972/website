@@ -613,11 +613,12 @@ function iOSversion() {
 
 				/**
 				 If is on device start playing on first touch
-				 */
+				 
 				if (jQuery.mbBrowser.mobile && YTPlayer.opt.autoPlay && YTPlayer.opt.useOnMobile)
 					jQuery('body').one('touchstart', function () {
 						YTPlayer.player.playVideo()
 					});
+					*/
 
 				jQuery(document).one('YTAPIReady', function () {
 					$YTPlayer.trigger('YTAPIReady_' + YTPlayer.id);
