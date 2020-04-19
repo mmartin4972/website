@@ -41,6 +41,9 @@ var removeWhite = function(event){
 var dropShow = function(event){
     if(!mobileDropDown[0].classList.contains('active')){
         mobileDropDown[0].classList.add('active');
+        if(header.className != "black") {
+            header.classList.add('black');
+        }
         console.log('clicked')}
     else{
         mobileDropDown[0].classList.remove('active');
@@ -118,7 +121,7 @@ function navigation() {
 
         //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
-            if(window.pageYOffset > 0){
+            if(window.pageYOffset > 4){
                     if(header.className != "black") {
                         header.classList.add('black');
                     }
