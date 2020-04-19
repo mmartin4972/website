@@ -44,6 +44,7 @@ var dropShow = function(event){
         console.log('clicked')}
     else{
         mobileDropDown[0].classList.remove('active');
+        timer2();
         console.log('clicked');
     }   
 } 
@@ -118,27 +119,31 @@ function navigation() {
         //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
             if(window.pageYOffset > 0){
-                if(header.className != "black") {
-                    header.classList.add('black');
-                }
+                    if(header.className != "black") {
+                        header.classList.add('black');
+                    }
             }
             else {
-                header.classList.remove('black');
+                if(viewportwidth > 739 || !mobileDropDown[0].classList.contains('active')) {
+                    header.classList.remove('black');
+                }
             }
         });
+        
+        //Deactivate black after header is not used for 2 seconds
+        header.addEventListener("mouseleave", timer2);
         
         headerInitialized = true;
         console.log('header initialized');
     }
 
     //Mobile JavaScript
-    if(viewportwidth < 699 && !mobileInitialized) {
+    if(viewportwidth <= 739 && !mobileInitialized) {
         
         /*--- Clean Desktop Event Listeners ---*/
         if(desktopInitialized) {
             projectsId.removeEventListener("mouseover", projectDropDown);
             mroverId.removeEventListener("mouseover", mroverDropDown);
-            header.removeEventListener("mouseleave", timer2);
             desktopInitialized = false;
             console.log('desktop cleaned');
         }
@@ -164,7 +169,7 @@ function navigation() {
     }
 
     //Desktop JavaScript
-    if(viewportwidth >= 699 && !desktopInitialized) {
+    if(viewportwidth > 739 && !desktopInitialized) {
        
         /*--- Kill Mobile Event Listeners ---*/
         if(mobileInitialized){
@@ -180,8 +185,7 @@ function navigation() {
             console.log('mobile cleaned');
         }
         
-        //Deactivate black after header is not used for 2 seconds
-        header.addEventListener("mouseleave", timer2);
+        
 
         /*--- Show Desktop Menu Items ---*/ 
         if(menu[0].classList.contains('hide')) {menu[0].classList.remove('hide');}
