@@ -5,19 +5,23 @@ const loadScreen = document.getElementById('loadScreen');
 const videoIntro = document.getElementById('videoIntro');
 const resume = document.getElementById('resume');
 const progressbar = document.getElementById('progress');
+var player;
 
 function showVideo() {
     console.log('showVideoRun');
     videoIntro.classList.add('fadeIn');
     videoIntro.classList.remove('hider'); 
+    window.setTimeout(function(){player.YTPRemoveMask();}, 3000);
+ 
 }
 
 function loadPage() {  
     resume.classList.remove('hide');
     resume.classList.add('fadeIn');
     jQuery(function(){
-        var player = jQuery("#ytp-properties").YTPlayer();
-        player.on("YTPStart", function(){window.setTimeout(showVideo, 3000)});
+        player = jQuery("#ytp-properties").YTPlayer();
+        player.YTPAddMask('images/logo_mask.png');
+        player.on("YTPStart", showVideo);
     });
 }
 

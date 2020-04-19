@@ -70,6 +70,21 @@ function turnOffMROVERDropDown(){
     first.removeEventListener("mouseover", turnOffMROVERDropDown);
     logo[0].removeEventListener("mouseover", turnOffMROVERDropDown);
     document.removeEventListener("mouseleave", turnOffMROVERDropDown);
+    console.log('off');
+}
+
+function outsideClick(event) {
+    if(!$(event.target).hasClass('rover')){
+        turnOffMROVERDropDown();
+        document.removeEventListener('click', outsideClick);
+    }
+}
+
+function outsideClickP(event) {
+    if(!$(event.target).hasClass('proj')){
+        turnOffProjectDropDown();
+        document.removeEventListener('click', outsideClickP);
+    }
 }
 
 /*--- Projects Drop Down Function ---*/
@@ -80,6 +95,7 @@ function projectDropDown() {
         first.addEventListener("mouseover", turnOffProjectDropDown);
         scouts.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
+        document.addEventListener('click', outsideClickP);
     }
 }
 
@@ -87,11 +103,11 @@ function projectDropDown() {
 function mroverDropDown() {
     if(!mroverDrop[0].classList.contains("active")) {
         mroverDrop[0].classList.add('active');
-        mroverId.addEventListener("click", turnOffMROVERDropDown);
         mroverDrop[1].addEventListener("mouseleave",turnOffMROVERDropDown);
-        logo[0].addEventListener("mouseover", turnOffMROVERDropDown);
+        logo[0].addEventListener("mouseover", turnOffMROVERDropDown); 
         first.addEventListener("mouseover", turnOffMROVERDropDown);
-        document.addEventListener("mouseleave", turnOffMROVERDropDown);
+        document.addEventListener("mouseleave", turnOffMROVERDropDown); 
+        document.addEventListener("click", outsideClick);      
     }
 }
 
