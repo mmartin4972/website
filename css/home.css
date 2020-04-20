@@ -4,7 +4,7 @@
 #resume-box {
 	position: absolute;
 	bottom: -70px;
-	right: 0px;
+	right: 20px;
 	height: 65px;
 	width: 115px;
 }
@@ -119,6 +119,9 @@ body {
 }
 
 @media (max-width : 739px ){
+#resume-box{
+	right: 0px;
+}
 #resume{
 	margin-bottom: 25px;
 }
