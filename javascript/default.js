@@ -35,12 +35,10 @@ function loadNav(){
     navigation();
 }
 /*--- Mobile Functions ---*/
-var addWhite = function(event) {
+var whiteToggle = function(event) {
     if(!menuToggle[0].classList.contains('menu-toggle-white')){
         menuToggle[0].classList.add('menu-toggle-white');}
-}
-var removeWhite = function(event){
-    if(menuToggle[0].classList.contains('menu-toggle-white')) {
+    else{
         menuToggle[0].classList.remove('menu-toggle-white');}
 }
 var dropShow = function(event){
@@ -208,8 +206,7 @@ function navigation() {
       
         
         /*--- Event Listeners ---*/
-        mobileMenuToggle[0].addEventListener('mouseover', addWhite, true);
-        mobileMenuToggle[0].addEventListener('mouseleave', removeWhite, true);
+        mobileMenuToggle[0].addEventListener('click', whiteToggle, true);
         mobileMenuToggle[0].addEventListener('click', dropShow, true);
         mobileInitialized = true;
         console.log('mobile initialized');
@@ -221,8 +218,7 @@ function navigation() {
         /*--- Kill Mobile Event Listeners ---*/
         if(mobileInitialized){
             mobileInitialized = false;
-            mobileMenuToggle[0].removeEventListener('mouseover', addWhite, true);
-            mobileMenuToggle[0].removeEventListener('mouseleave', removeWhite, true);
+            mobileMenuToggle[0].removeEventListener('click', whiteToggle, true);
             mobileMenuToggle[0].removeEventListener('click', dropShow, true);
             
             /*--- Close Mobile Drop Down If Left Open ---*/
