@@ -14,7 +14,7 @@ const logo = document.getElementsByClassName('logo-desktop');
 const mroverId = document.getElementById('mrover');
 const mroverDrop = document.getElementsByClassName('mrover');
 const scouts = document.getElementById('scouts');
-const first = document.getElementById('first');
+const fun = document.getElementById('Fun');
 const mobileDropDown = document.getElementsByClassName('mobile-dropdown');
 const menuToggle = document.getElementsByClassName('menu-toggle');
 var mobileInitialized = false;
@@ -77,7 +77,7 @@ function turnOffProjectDropDown(){
     projectContainer[0].classList.remove('active');
     projectBack[0].removeEventListener('mouseleave',turnOffProjectDropDown);
     scouts.removeEventListener("mouseover", turnOffProjectDropDown);
-    first.removeEventListener("mouseover", turnOffProjectDropDown);
+    fun.removeEventListener("mouseover", turnOffProjectDropDown);
     document.removeEventListener("mouseleave", turnOffProjectDropDown);
 }
 
@@ -85,7 +85,7 @@ function turnOffProjectDropDown(){
 function turnOffMROVERDropDown(){
     mroverDrop[0].classList.remove('active');
     mroverDrop[1].removeEventListener('mouseleave',turnOffMROVERDropDown);
-    first.removeEventListener("mouseover", turnOffMROVERDropDown);
+    scouts.removeEventListener("mouseover", turnOffMROVERDropDown);
     logo[0].removeEventListener("mouseover", turnOffMROVERDropDown);
     document.removeEventListener("mouseleave", turnOffMROVERDropDown);
     console.log('off');
@@ -110,7 +110,7 @@ function projectDropDown() {
     if(!projectContainer[0].classList.contains("active")) {
         projectContainer[0].classList.add('active');
         projectBack[0].addEventListener("mouseleave",turnOffProjectDropDown);
-        first.addEventListener("mouseover", turnOffProjectDropDown);
+        fun.addEventListener("mouseover", turnOffProjectDropDown);
         scouts.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
@@ -123,7 +123,7 @@ function mroverDropDown() {
         mroverDrop[0].classList.add('active');
         mroverDrop[1].addEventListener("mouseleave",turnOffMROVERDropDown);
         logo[0].addEventListener("mouseover", turnOffMROVERDropDown); 
-        first.addEventListener("mouseover", turnOffMROVERDropDown);
+        scouts.addEventListener("mouseover", turnOffMROVERDropDown);
         document.addEventListener("mouseleave", turnOffMROVERDropDown); 
         document.addEventListener("click", outsideClick);      
     }

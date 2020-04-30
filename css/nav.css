@@ -320,55 +320,7 @@ body {
     }
     
     /* --- Step Down for Nav Spacing ---*/
-    @media (min-width : 1050px ) and (max-width : 1114px ){
-        .menu-box {
-            min-width: 110px;
-    }
-    }
-    
-    @media (min-width : 980px ) and (max-width : 1049px ){
-        .menu-box {
-            min-width: 100px;
-    }
-    }
-    
-    @media (min-width : 920px ) and (max-width : 979px ){
-        .menu-box {
-            min-width: 90px;
-    }
-    }
-    
-    @media (min-width : 875px ) and (max-width : 919px ){
-        .menu-box {
-            min-width: 75px;
-    }
-    }
-    
-    @media (min-width : 840px ) and (max-width : 874px ){
-        .menu-box {
-            min-width: 50px;
-    }
-    }
-    
-    @media (min-width : 799px ) and (max-width : 839px ){
-        .menu-box {
-            min-width: 85px;
-    }
-    }
-
-    @media (min-width : 769px ) and (max-width : 799px ){
-        .menu-box {
-            min-width: 75px;
-    }
-    }
-
-    @media (min-width : 739px ) and (max-width : 769px ){
-        .menu-box {
-            min-width: 60px;
-    }
-    }
-    
-    @media (min-width : 739px ) and (max-width : 839px ){
+    @media (min-width : 739px ) and (max-width : 845px ){
         .logo {
             width: 100px;
             padding-left: 10px;
