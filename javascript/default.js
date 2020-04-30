@@ -21,6 +21,10 @@ var mobileInitialized = false;
 var desktopInitialized = false;
 var headerInitialized = false;
 var atTop = true;
+var projectMobileDrop = document.getElementsByClassName('projects mobile-dropdown menu-container');
+var projectMobile = document.getElementsByClassName('proj dropdown-box menu-box');
+var mroverMobileDrop = document.getElementsByClassName('mrover mobile-dropdown menu-container');
+var mroverMobile = document.getElementsByClassName('mrover dropdown-box menu-box');
 
 window.addEventListener("DOMContentLoaded", loadNav);
 window.addEventListener("resize", navigation);
@@ -40,19 +44,30 @@ var removeWhite = function(event){
         menuToggle[0].classList.remove('menu-toggle-white');}
 }
 var dropShow = function(event){
-    if(!mobileDropDown[0].classList.contains('active')){
+    if(!mobileDropDown[0].classList.contains('active') && 
+        !projectMobileDrop[0].classList.contains('active') &&
+        !mroverMobileDrop[0].classList.contains('active')){
         mobileDropDown[0].classList.add('active');
+        projectMobile[0].addEventListener('click', function(){
+            projectMobileDrop[0].classList.add('active');
+            mobileDropDown[0].classList.remove('active');
+        });
+        mroverMobile[0].addEventListener('click', function(){
+            mroverMobileDrop[0].classList.add('active');
+            mobileDropDown[0].classList.remove('active');
+        });
         if(header.className != "black") {
             header.classList.add('black');
         }
-        console.log('clicked')}
+    }
     else{
         mobileDropDown[0].classList.remove('active');
+        projectMobileDrop[0].classList.remove('active');
+        mroverMobileDrop[0].classList.remove('active');
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
         }
-        console.log('clicked');
-    }   
+    } 
 } 
 
 /*--- Desktop Functions ---*/
@@ -119,7 +134,8 @@ function timer2() {
     headerHover = false;
     window.setTimeout(function() {
         if(!headerHover && !mobileDropDown[0].classList.contains('active')
-        && atTop){
+        && atTop && !projectMobileDrop[0].classList.contains('active') &&
+        !mroverMobileDrop[0].classList.contains('active')){
             header.classList.remove('black');
         }}, 4000);
 }
@@ -152,7 +168,9 @@ function navigation() {
             }
             else {
                 atTop = true;
-                if(viewportwidth > 739 || !mobileDropDown[0].classList.contains('active')) {
+                if(viewportwidth > 739 || (!mobileDropDown[0].classList.contains('active') &&
+                !projectMobileDrop[0].classList.contains('active') && 
+                !mroverMobileDrop[0].classList.contains('active'))) {
                     header.classList.remove('black');
                 }
             }
