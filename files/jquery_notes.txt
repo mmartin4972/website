@@ -1,0 +1,15 @@
+Notes based on book: Beginning jQuery by Jack Franklin and Russ Ferguson
+1. Javascript Review:
+	a. create object with var name = { item1: itemvalue };
+		A. basically a struct
+	b. always use === when testing equality
+2. Basics of jQuery
+	a. child node: node that is direct descendant of another node
+	b. parent node: node that has direct descendants
+	c. siblings: two nodes that share the same parent
+	d. reference elements with $("class or id name")
+	e. $(document) passes document variable
+	f. .fadeOut() fades out an the element it is called on
+	g. fadeToggle() fades something in or out depending on its current state
+	h. 
+ 
