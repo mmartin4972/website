@@ -4,11 +4,10 @@ window.addEventListener("DOMContentLoaded", loadPage);
 const loadScreen = document.getElementById('loadScreen');
 const videoIntro = document.getElementById('videoIntro');
 const resume = document.getElementById('resume');
-const progressbar = document.getElementById('progress');
+const background = document.getElementById('background');
 var player;
 
 function showVideo() {
-    console.log('showVideoRun');
     videoIntro.classList.add('fadeIn');
     videoIntro.classList.remove('hider'); 
     window.setTimeout(function(){player.YTPRemoveMask();}, 3000);
@@ -16,11 +15,12 @@ function showVideo() {
 }
 
 function loadPage() {  
+    background.classList.add('fadeIn');
     resume.classList.remove('hide');
     resume.classList.add('fadeIn');
     jQuery(function(){
         player = jQuery("#ytp-properties").YTPlayer();
-        player.YTPAddMask('images/logo_mask.png');
+        player.YTPAddMask('images/logo_star_mask.png');
         player.on("YTPStart", showVideo);
     });
 }

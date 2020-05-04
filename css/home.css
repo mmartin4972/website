@@ -49,11 +49,13 @@ animation: fadeIn 1s linear;
 #background {
 	width: 100%;
 	height: 100%;
-}
-
-body {
+	position: absolute;
 	overflow-y: scroll;
-	background-color: #2B2B2B;
+	background-image: url("../images/Millions-of-stars-dark.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment:fixed;
+	background-position:center;
 }
 
 .background-image {
@@ -77,40 +79,13 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	}
+}
 
 .hider {
 	opacity:0;
 }
 
-/*---Progress-bar---*/ 
-  .progress {
-	background: rgba(255,255,255,0.1);
-	justify-content: flex-start;
-	border-radius: 100px;
-	align-items: center;
-	position: relative;
-	display: inline-flex;
-	position: relative;
-	height: 20px;
-	width: 130px;
-  }
-  
-  .progress-value {
-	animation: load 3s normal forwards;
-	box-shadow: 0 10px 40px -10px #fff;
-	border-radius: 100px;
-	background: #fff;
-	height: 30px;
-	width: 0;
-  }
-
-  @keyframes load {
-	0% { width: 0; }
-	100% { width: 100%; }
-  }
-
-  #display {
+#display {
 	justify-content: center;
 	width: 140px;
 	height: 140px;
