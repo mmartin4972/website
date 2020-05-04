@@ -97,6 +97,12 @@ function iOSversion() {
 			 */
 			fadeOnStartTime: 1000,
 
+			/*
+			 fadeMask(int)
+			 Added to eliminate fade lag of mask
+			 */
+			fadeMask: 7000,
+
 			/**
 			 startAt (int)
 			 start second
@@ -1957,10 +1963,9 @@ function iOSversion() {
 				  if (!YTPlayer.isReady)
 					return this;
 			*/
-
 			YTPlayer.overlay.CSSAnimate({
 				opacity: 0
-			}, YTPlayer.opt.fadeOnStartTime, function () {
+			}, YTPlayer.opt.fadeMask, function () {
 				YTPlayer.hasMask = false;
 				YTPlayer.overlay.css({
 					backgroundImage   : '',
@@ -1970,7 +1975,7 @@ function iOSversion() {
 				});
 				YTPlayer.overlay.CSSAnimate({
 					opacity: 1
-				}, YTPlayer.opt.fadeOnStartTime)
+				}, YTPlayer.opt.fadeMask)
 			});
 
 			return this
