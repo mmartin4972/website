@@ -1,11 +1,14 @@
-window.addEventListener("DOMContentLoaded", loadPage);
+window.addEventListener("DOMContentLoaded", callLoad);
 
 /* --- Helpful Variables ---*/
 const loadScreen = document.getElementById('loadScreen');
 const videoIntro = document.getElementById('videoIntro');
-const resume = document.getElementById('resume');
 const background = document.getElementById('background');
 var player;
+
+function callLoad() {
+    window.setTimeout(loadPage, 400);
+}
 
 function showVideo() {
     videoIntro.classList.add('fadeIn');
@@ -14,10 +17,11 @@ function showVideo() {
  
 }
 
-function loadPage() {  
+function loadPage() { 
+    header.classList.add('fadeIn');
+    header.classList.remove('hide');
+    loadScreen.classList.add('fadeOut');
     background.classList.add('fadeIn');
-    resume.classList.remove('hide');
-    resume.classList.add('fadeIn');
     jQuery(function(){
         player = jQuery("#ytp-properties").YTPlayer();
         player.YTPAddMask('images/logo_star_mask.png');
