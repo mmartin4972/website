@@ -1,50 +1,5 @@
 @charset "utf-8";
 
-/*---Resume Styling---*/
-#resume-box {
-	position: absolute;
-	bottom: -70px;
-	right: 20px;
-	height: 65px;
-	width: 115px;
-}
-#resume {
-	width: 100px;
-	height: 50px;
-	background: black;
-	margin-bottom: 15px;
-	border-radius: 25px;
-	transition: 0.5s;
-	transition-property: all;
-}
-
-.resume-name {
-	padding-top: 0px;
-	transition-property: all;
-	transition: 0.5s;
-	height: 50px;
-}
-
-.fadeIn {
-opacity: 1;
-animation: fadeIn 1s linear;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; visibility: hidden}
-  100% { opacity: 1; visibility: visible};
-}
-
-.fadeOut {
-    opacity: 0;
-	animation: fadeOut 1s linear;
-}
-
-@keyframes fadeOut {
-    0% { opacity: 1; visibility: visible}
-    100% { opacity: 0; visibility: hidden};
-}
-
 /* --- Styling for Background ---*/
 #background {
 	width: 100%;
@@ -68,7 +23,7 @@ animation: fadeIn 1s linear;
 }
 
 .videoContainer {
-	position: fixed;
+	position: relative;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -93,12 +48,55 @@ animation: fadeIn 1s linear;
 	padding-top: 60px;
 }
 
-@media (max-width : 739px ){
-#resume-box{
-	right: 0px;
-	width: 110px;
+/*---Styling for Loading Screen---*/
+#loadScreen {
+	background-color: black;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	overflow-x: hidden;
+	vertical-align: center;
 }
-#resume{
-	margin-bottom: 25px;
+
+#logoLoad {
+	display: inline-block;
+	overflow-x: hidden;
+	vertical-align: center;
+	position: flex;
+	left: 0px;
+	top: 0px;
+	padding-top: 20%;
+	padding-left: 0px;
+	font-size: 70px;
 }
+
+.spin {
+	animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+    from {transform:rotatey(0deg);}
+    to {transform:rotatey(360deg);}
+}
+
+.fadeIn {
+opacity: 1;
+animation: fadeIn 1s linear;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; visibility: hidden}
+  100% { opacity: 1; visibility: visible};
+}
+
+.fadeOut {
+    opacity: 0;
+	animation: fadeOut 1s linear;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; visibility: visible}
+    100% { opacity: 0; visibility: hidden};
 }

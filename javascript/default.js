@@ -30,8 +30,6 @@ window.addEventListener("DOMContentLoaded", loadNav);
 window.addEventListener("resize", navigation);
 
 function loadNav(){
-    header.classList.add('fadeIn');
-    header.classList.remove('hide');
     navigation();
 }
 /*--- Mobile Functions ---*/
