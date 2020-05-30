@@ -55,11 +55,10 @@
 /* --- Styling for Background ---*/
 #background {
 	width: 100%;
-	height: 100%;
+	height: auto;
 }
 
 body {
-	overflow-y: scroll;
 	background-color: #2B2B2B;
 }
 
@@ -249,7 +248,7 @@ body {
     
     #background {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
         
     /*--- Changing Navigation Style Elements ---*/

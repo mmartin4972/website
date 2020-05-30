@@ -25,7 +25,7 @@ var projectMobileDrop = document.getElementsByClassName('projects mobile-dropdow
 var projectMobile = document.getElementsByClassName('proj dropdown-box menu-box');
 var mroverMobileDrop = document.getElementsByClassName('mrover mobile-dropdown menu-container');
 var mroverMobile = document.getElementsByClassName('mrover dropdown-box menu-box');
-
+var forceBlack = false;
 window.addEventListener("DOMContentLoaded", loadNav);
 window.addEventListener("resize", navigation);
 
@@ -84,7 +84,6 @@ function turnOffMROVERDropDown(){
     scouts.removeEventListener("mouseover", turnOffMROVERDropDown);
     logo[0].removeEventListener("mouseover", turnOffMROVERDropDown);
     document.removeEventListener("mouseleave", turnOffMROVERDropDown);
-    console.log('off');
 }
 
 function outsideClick(event) {
@@ -131,7 +130,7 @@ function timer2() {
     window.setTimeout(function() {
         if(!headerHover && !mobileDropDown[0].classList.contains('active')
         && atTop && !projectMobileDrop[0].classList.contains('active') &&
-        !mroverMobileDrop[0].classList.contains('active')){
+        !mroverMobileDrop[0].classList.contains('active') && !forceBlack){
             header.classList.remove('black');
         }}, 4000);
 }
@@ -164,9 +163,9 @@ function navigation() {
             }
             else {
                 atTop = true;
-                if(viewportwidth > 739 || (!mobileDropDown[0].classList.contains('active') &&
+                if((viewportwidth > 739 && !forceBlack) || (!mobileDropDown[0].classList.contains('active') &&
                 !projectMobileDrop[0].classList.contains('active') && 
-                !mroverMobileDrop[0].classList.contains('active'))) {
+                !mroverMobileDrop[0].classList.contains('active')) && !forceBlack) {
                     header.classList.remove('black');
                 }
             }
