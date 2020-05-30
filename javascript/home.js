@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", callLoad);
+window.addEventListener("load", callLoad);
 
 /* --- Helpful Variables ---*/
 const loadScreen = document.getElementById('loadScreen');
@@ -13,7 +13,10 @@ function callLoad() {
 function showVideo() {
     videoIntro.classList.add('fadeIn');
     videoIntro.classList.remove('hider'); 
-    window.setTimeout(function(){player.YTPRemoveMask();}, 3000);
+    forceBlack = true;
+    header.classList.add('black');
+    window.setTimeout(function(){forceBlack = false;}, 3000);
+
  
 }
 
@@ -22,9 +25,9 @@ function loadPage() {
     header.classList.remove('hide');
     loadScreen.classList.add('fadeOut');
     background.classList.add('fadeIn');
+    window.setTimeout(function(){background.classList.remove('hider');}, 1000 );
     jQuery(function(){
         player = jQuery("#ytp-properties").YTPlayer();
-        player.YTPAddMask('images/logo_star_mask.png');
         player.on("YTPStart", showVideo);
     });
 }
