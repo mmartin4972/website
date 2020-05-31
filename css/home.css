@@ -109,8 +109,52 @@ animation: fadeIn 1s linear;
 .content {
 	position: absolute;
 	left: 0px;
-	top: 100%;
-	height: 100%;
+	top: 120%;
+	height: 80%;
 	width: 100%;
 	background: #2b2b2b;
 }
+
+.text {
+	padding: 7%;
+	padding-top: 9%;
+	font-size: 20px;
+	color: #d3d3d3;
+	text-align: center;
+	font-weight: bold;
+}
+
+#style {
+	width: 100%;
+	height: 4%;
+	background-color: black !important;
+	position: absolute;
+	left: 0px;
+	top: 200%;
+}
+
+#resume {
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	background-color: #1e1e1e;
+	justify-content: center;
+	align-content: center;
+}
+
+#text {
+	font-size: 20px;
+	font-weight: bold;
+	position: relative;
+	display: inline-block;
+}
+
+#button {
+	width: 70px;
+	height: 20px;
+	font-size: 10px;
+	color: green;
+}
+
