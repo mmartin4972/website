@@ -4,7 +4,7 @@
 #loadScreen {
 	background-color:#2b2b2b;
 	width: 100%;
-	height: 100%;
+	height: 200%;
 	justify-content: center;
 	text-align: center;
 	align-items: center;
@@ -43,7 +43,7 @@
 	left: 0;
 	position: absolute;
 	overflow-y: hidden;
-	background-image: url("../images/Millions-of-stars-dark.png");
+	background-image: url("../images/Millions-of-stars-dark-Verdana-Matt.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position:center;
@@ -111,13 +111,12 @@ animation: fadeIn 1s linear;
 	left: 0px;
 	top: 120%;
 	height: 80%;
+	min-height: 580px;
 	width: 100%;
 	background: #2b2b2b;
 }
 
 .text {
-	padding: 7%;
-	padding-top: 9%;
 	font-size: 20px;
 	color: #d3d3d3;
 	text-align: center;
@@ -130,7 +129,7 @@ animation: fadeIn 1s linear;
 	background-color: black !important;
 	position: absolute;
 	left: 0px;
-	top: 200%;
+	bottom: 0px;
 }
 
 #resume {
@@ -142,19 +141,70 @@ animation: fadeIn 1s linear;
 	background-color: #1e1e1e;
 	justify-content: center;
 	align-content: center;
+	min-height: 170px;
 }
 
-#text {
-	font-size: 20px;
+#resumeText {
+	font-size: 30px;
 	font-weight: bold;
 	position: relative;
 	display: inline-block;
+	color: #d3d3d3;
+	width: 100%;
+	height: 50%;
+	text-justify: center;
+	text-align: center;
+	padding-top: 30px;
 }
 
-#button {
-	width: 70px;
-	height: 20px;
+#resumeButton {
+	width: 120px;
+	height: 45px;
 	font-size: 10px;
-	color: green;
+	background-color: green;
+	position: relative;
+	margin-top: 10px;
+	transition-property: all;
+	transition-duration: 0.2s; 
 }
 
+#resumeButton:hover {
+	transform: scale(1.2);
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.twoCol {
+	width: 50%;
+	position: relative;
+	display: inline-block;
+	padding-left: 70px;
+	padding-right: 70px;
+}
+
+.vertical-center {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+  }
+
+
+/* Progress Bar
+.progress-value {
+    animation: load 700ms normal forwards;
+    background-color: red;
+    height: 30px;
+    width: 0px;
+  }
+
+  @keyframes load {
+    0% { width: 0; }
+    100% { width: 90px; }
+  }
+*/  
