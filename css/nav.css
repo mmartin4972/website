@@ -129,9 +129,11 @@ body {
         width: 100%;
         align-items:center;
         justify-content: center;
-        position: relative;
-        display: flex;
-        
+        position: absolute;
+        display: fixed;
+        top: 0;
+        left: 0;
+        overflow: hidden;
     }
     
     .logo-mobile{
@@ -241,10 +243,10 @@ body {
         padding-left: 10%;
     }
 
-    }/*--- End of Mobile ---*/
+}/*--- End of Mobile ---*/
     
     /*--- Desktop View ---*/
-    @media (min-width: 739px){
+    @media (min-width: 740px){
     
     #background {
         width: 100%;
@@ -266,9 +268,12 @@ body {
     .nav{
         height: 100%;
         width: 100%;
-        position: relative;
-        display: flex;
+        left: 0;
+        top: 0;
+        position: absolute;
+        display: fixed;
         z-index: 120;
+        overflow: hidden;
     }
     
     /*--- Container for navigation ---*/
