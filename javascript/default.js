@@ -141,6 +141,7 @@ function navigation() {
      if (typeof window.innerWidth != 'undefined')
      {
           viewportwidth = window.innerWidth;
+          console.log(viewportwidth);
      }
 
     //Create Header Styling
@@ -181,7 +182,7 @@ function navigation() {
 
     //Mobile JavaScript
     if(viewportwidth <= 739 && !mobileInitialized) {
-        
+        console.log(viewportwidth);
         /*--- Clean Desktop Event Listeners ---*/
         if(desktopInitialized) {
             projectsId.removeEventListener("mouseover", projectDropDown);
