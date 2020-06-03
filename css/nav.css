@@ -175,7 +175,7 @@ body {
     }
     
     .menu-toggle{
-        background-image: url("../images/mobile_logo_gray.png");
+        background-image: url("../images/nav/mobile_logo_gray.png");
         width: 40px;
         height: 40px;
         transition-property: all;
@@ -185,7 +185,7 @@ body {
     }
     
     .menu-toggle-white{
-        background-image: url("../images/mobile_logo_white.png");
+        background-image: url("../images/nav/mobile_logo_white.png");
         transition-property: all;
         transition-duration: 0.5s;
         transition-timing-function: ease-out;
