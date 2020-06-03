@@ -43,7 +43,7 @@
 	left: 0;
 	position: absolute;
 	overflow-y: hidden;
-	background-image: url("../images/Millions-of-stars-dark-Verdana-Matt.png");
+	background-image: url("../images/home/Millions-of-stars-dark-Verdana-Matt.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position:center;
@@ -173,7 +173,7 @@ animation: fadeIn 1s linear;
 }
 
 #pic {
-	background-image: url("../images/personal_photo.jpg");
+	background-image: url("../images/home/personal_photo.jpg");
 	width: 80%;
 	height: 80%;
 	max-height: 600px;
