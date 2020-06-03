@@ -263,7 +263,7 @@ animation: fadeIn 1s linear;
 	display: inline-block;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 358px) {
 	#resume {
 		min-height: 215px;
 	}
