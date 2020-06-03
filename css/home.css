@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/*---Styling for Loading Screen---*/
+/*--- Loading Screen---*/
 #loadScreen {
 	background-color:#2b2b2b;
 	width: 100%;
@@ -35,7 +35,7 @@
     to {transform:rotatey(360deg);}
 }
 
-/* --- Styling for Background ---*/
+/* --- Background ---*/
 #background {
 	width: 100%;
 	height: 100%;
@@ -59,6 +59,7 @@
 	background-size: cover;
 }
 
+/* --- Video --- */
 .videoContainer {
 	position: absolute;
 	width: 100%;
@@ -106,7 +107,7 @@ animation: fadeIn 1s linear;
 	opacity:0;
 }
 
-/* --- Styling for Content Container --- */
+/* --- Content Section --- */
 .content {
 	position: absolute;
 	left: 0px;
@@ -133,47 +134,6 @@ animation: fadeIn 1s linear;
 	bottom: -20px;
 }
 
-#resume {
-	width: 100%;
-	height: 20%;
-	position: absolute;
-	top: 100%;
-	left: 0px;
-	background-color: #1e1e1e;
-	justify-content: center;
-	align-content: center;
-	min-height: 180px;
-}
-
-#resumeText {
-	font-size: 30px;
-	font-weight: bold;
-	position: relative;
-	display: inline-block;
-	color: #d3d3d3;
-	width: 100%;
-	height: 50%;
-	text-justify: center;
-	text-align: center;
-	padding-top: 30px;
-}
-
-#resumeButton {
-	width: 120px;
-	height: 45px;
-	font-size: 10px;
-	background-color: green;
-	position: relative;
-	margin-top: 10px;
-	transition-property: all;
-	transition-duration: 0.2s; 
-	margin-bottom: 20px;
-}
-
-#resumeButton:hover {
-	transform: scale(1.15);
-}
-
 .center {
 	margin-left: auto;
 	margin-right: auto;
@@ -198,8 +158,7 @@ animation: fadeIn 1s linear;
 }
 
 .vertical-center {
-	margin: 0;
-	position: absolute;
+	position: relative;
 	top: 50%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
@@ -225,6 +184,12 @@ animation: fadeIn 1s linear;
 	margin-right: 10%;
 }
 
+@media (max-width: 410px) {
+	.text{
+		font-size: 16px;
+	}
+}
+
 @media (max-height: 900px) {
 	.content {
 		top: 100%;
@@ -232,11 +197,6 @@ animation: fadeIn 1s linear;
 	}
 }
 
-@media (min-height: 1100px) {
-	#resumeText{
-		padding-top: 6%;
-	}
-}
 @media (max-width: 739px) {
 	.twoCol{
 		height: 50%;
@@ -256,22 +216,70 @@ animation: fadeIn 1s linear;
 	}
 }
 
+/* --- Resume Section --- */
+#resume {
+	width: 100%;
+	height: 20%;
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	background-color: #1e1e1e;
+	justify-content: center;
+	align-content: center;
+	min-height: 180px;
+}
+
+#resumeText {
+	font-size: 30px;
+	font-weight: bold;
+	position: relative;
+	display: inline-block;
+	color: #d3d3d3;
+	width: 100%;
+	height: 50%;
+	text-justify: center;
+	text-align: center;
+}
+
+#resumeButton {
+	width: 120px;
+	height: 45px;
+	font-size: 10px;
+	background-color: green;
+	transition-property: all;
+	transition-duration: 0.2s; 
+}
+
+#resumeButton:hover {
+	transform: scale(1.15);
+
+}
+
+.doubleStack {
+	width: 100%;
+	height: 50%;
+	position: relative;
+	display: inline-block;
+}
+
 @media (max-width: 375px) {
 	#resume {
 		min-height: 215px;
 	}
 
-	#resumeButton {
-		margin-top: 20px;
+	.vertical {
+		position: relative;
+		top: 50%;
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+
+	#resumeButton:hover {
+		transform: translateY(-50%) scale(1.15); 
 	}
 }
 
-@media (max-width: 410px) {
-	.text{
-		font-size: 16px;
-	}
-}
-/* Progress Bar
+/* --- Progress Bar ---
 .progress-value {
     animation: load 700ms normal forwards;
     background-color: red;
