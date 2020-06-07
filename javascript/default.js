@@ -141,7 +141,6 @@ function navigation() {
      if (typeof window.innerWidth != 'undefined')
      {
           viewportwidth = window.innerWidth;
-          console.log(viewportwidth);
      }
 
     //Create Header Styling
