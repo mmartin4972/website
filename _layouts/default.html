@@ -34,16 +34,16 @@
                 <div class="menu-toggle background-toggle"></div>
             </div>
             <div class="menu">
-                <a id = "mrover" class="menu-box rover" href="#">
-                    <div class="menu-name text-uppercase rover">Mrover</div>
+                <a id = "leadership" class="menu-box edu" style="padding-left: 15px;" href="#">
+                    <div class="menu-name text-uppercase edu">leadership</div>
                 </a>
-                <a id = "scouts" class="menu-box" href="../scouts.html">
-                    <div class="menu-name text-uppercase">Scouts</div>
+                <a id = "education" class="menu-box" href="../education.html">
+                    <div class="menu-name text-uppercase">education</div>
                 </a>
                 <a id = "projects" class="menu-box proj" href="#">
                     <div class="menu-name text-uppercase proj">Projects</div>
                 </a>
-                <a id = "Fun" class="menu-box" style = "min-width:100px;" href="#">
+                <a id = "Fun" class="menu-box" style = "min-width:60px;" href="#">
                     <div class="menu-name text-uppercase">Fun</div>
                 </a>
                 <a id = "contact" class="menu-box" href="../contact.html">
@@ -53,7 +53,7 @@
         </div>
         <div class = "projects menu-container">
             <div class = "projects back-container proj">
-                <a class="tile proj"   href="https://github.com/mmartin4972/website">
+                <a id="wdrop" class="tile proj"   href="https://github.com/mmartin4972/website">
                     <div class="background-image proj" style="background-image: url('../images/nav/websiteTileBackground.png');">
                         <p class="tile-name text-uppercase proj" style="opacity: 1;">Website</p>
                     </div>
@@ -61,23 +61,33 @@
                 <!--Make sure you add transition delay for other divs. See hyperlite's website for details-->
             </div>
         </div>
-        <div class = "mrover menu-container">
-            <div class = "mrover back-container rover">
-                <a class="tile rover"   href="#">
+        <div class = "leadership menu-container">
+            <div class = "leadership back-container edu">
+                <a id="mdrop" class="tile edu"  href="#">
                     <!--Have been using 40% opacity for background images-->
-                    <div class="background-image rover" style="background-image: url('../images/nav/uvTileBackground.png');">
-                        <p class="tile-name text-uppercase rover" style="opacity: 1;">UV Obstacle Detection</p>
+                    <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">MROVER</p>
+                    </div>
+                </a>
+                <a id="sdrop" class="tile edu"   href="#">
+                    <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">SCOUTS</p>
+                    </div>
+                </a>
+                <a id="fdrop" class="tile edu"   href="#">
+                    <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">FIRST</p>
                     </div>
                 </a>
             </div>
         </div>     
     </div>
     <div class="mobile-dropdown menu-container">
-            <div class="mrover dropdown-box menu-box" href="#">
-                <div class="menu-name" style="padding-top: 10px;">MROVER</div>
+            <div class="leadership dropdown-box menu-box" href="#">
+                <div class="menu-name" style="padding-top: 10px;">LEADERSHIP</div>
             </div>
-            <a class="dropdown-box menu-box" href="../scouts.html">
-                <div class="menu-name">SCOUTS</div>
+            <a class="dropdown-box menu-box" href="../education.html">
+                <div class="menu-name">EDUCATION</div>
             </a>
             <div class="proj dropdown-box menu-box">
                 <div class="menu-name">PROJECTS</div>
@@ -90,16 +100,26 @@
             </a>    
     </div>
     <div class="projects mobile-dropdown menu-container" style="transition-duration: 0s;">
-        <a class="tile proj"   href="https://github.com/mmartin4972/website">
+        <a id="mwdrop" class="tile proj"   href="https://github.com/mmartin4972/website">
             <div class="background-image proj" style="background-image: url('../images/nav/websiteTileBackground.png');">
                 <p class="tile-name text-uppercase proj" style="opacity: 1;">Website</p>
             </div>
         </a>
     </div>
-    <div class="mrover mobile-dropdown menu-container" style="transition-duration: 0s;">
-        <a class="tile rover"   href="#">
-            <div class="background-image rover" style="background-image: url('../images/nav/uvTileBackground.png');">
-                <p class="tile-name text-uppercase rover" style="opacity: 1;">UV Obstacle Detection</p>
+    <div class="leadership mobile-dropdown menu-container" style="transition-duration: 0s;">
+        <a id="mmdrop" class="tile edu"   href="#">
+            <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">MROVER</p>
+            </div>
+        </a>
+        <a id="msdrop" class="tile edu"   href="#">
+            <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">SCOUTS</p>
+            </div>
+        </a>
+        <a id="mfdrop" class="tile edu"   href="#">
+            <div class="background-image edu" style="background-image: url('../images/nav/uvTileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">FIRST</p>
             </div>
         </a>
     </div>       
