@@ -68,9 +68,9 @@ var dropShow = function(event){
         mobileDropDown[0].classList.remove('active');
         projectMobileDrop[0].classList.remove('active');
         leadershipMobileDrop[0].classList.remove('active');
-        resetFades();
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
+            resetFades();
         }
     } 
 } 
