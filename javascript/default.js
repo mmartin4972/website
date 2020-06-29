@@ -70,7 +70,6 @@ var dropShow = function(event){
         leadershipMobileDrop[0].classList.remove('active');
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
-            resetFades();
         }
     } 
 } 
