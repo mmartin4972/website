@@ -326,17 +326,6 @@ body {
         transition-property: all;
     }
     
-    @keyframes fadeIn {
-        0% {opacity: 0;}
-        100% {opacity: 1;}
-     }
-     
-     .fadeIn {
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
-        animation-duration: 0.15s;
-     }
-    
     /* --- Step Down for Nav Spacing ---*/
     @media (min-width : 739px ) and (max-width : 845px ){
         .logo {
@@ -351,6 +340,17 @@ body {
     }
 } 
 
+    @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+    
+    .fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+        animation-duration: 0.15s;
+    }
+    
     /*--- Generic Formatting ---*/
     html, body {
         margin: 0;
