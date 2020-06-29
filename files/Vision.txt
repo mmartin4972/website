@@ -1,3 +1,26 @@
+Website Vision 6/29/20:
+Purpose: Continuation of resume
+The previous vision posed too much work, so I have adjusted my strategy based on the establishment of the purpose of the site.
+1. Since the purpose of this website it to be a continuation of my resume it should be structured in a similar manner so that:
+	a. It is easy to understand 
+	b. If a recruiter is looking for more information on a topic it is very intuitive on where they can find it
+	c. It will provide good structure for my site
+	d. Eliminate all unnecessary pages
+2. The New structure:
+	a. Matt Martin (home page)
+	b. Leadership (one page)
+		i. MROVER 
+		ii. Scouts 
+		iii. FIRST? 
+	c. Education (one page)
+	d. Projects (one page)
+		i. Website
+	e. Fun (one page)
+	f. Contact (one page)
+	Total Page Count: 6
+3. Future:
+	a. Plan on adding a work section once I gain work experience and I add work to my resume 
+	b. This would be one page
 Website Vision 3/21/20:
 1. Website will load on to main home page containing various basic statistics about myself including GPA, skills, courses, and other
 generic information

@@ -2,7 +2,7 @@
 const header = document.getElementById('header');
 const menu = document.getElementsByClassName('menu');
 const projects = document.getElementsByClassName('projects');
-const mrover = document.getElementsByClassName('mrover');
+const leadership = document.getElementsByClassName('leadership');
 const logoDesktop = document.getElementsByClassName('logo-desktop');
 const logoMobile = document.getElementsByClassName('logo-mobile');
 const mobileMenuToggle = document.getElementsByClassName('mobile-menu-toggle');
@@ -11,9 +11,9 @@ const projectsId = document.getElementById('projects');
 const projectContainer = document.getElementsByClassName("projects menu-container");
 const projectBack = document.getElementsByClassName('projects back-container');
 const logo = document.getElementsByClassName('logo-desktop');
-const mroverId = document.getElementById('mrover');
-const mroverDrop = document.getElementsByClassName('mrover');
-const scouts = document.getElementById('scouts');
+const leadershipId = document.getElementById('leadership');
+const leadershipDrop = document.getElementsByClassName('leadership');
+const education = document.getElementById('education');
 const fun = document.getElementById('Fun');
 const mobileDropDown = document.getElementsByClassName('mobile-dropdown');
 const menuToggle = document.getElementsByClassName('menu-toggle');
@@ -23,8 +23,8 @@ var headerInitialized = false;
 var atTop = true;
 var projectMobileDrop = document.getElementsByClassName('projects mobile-dropdown menu-container');
 var projectMobile = document.getElementsByClassName('proj dropdown-box menu-box');
-var mroverMobileDrop = document.getElementsByClassName('mrover mobile-dropdown menu-container');
-var mroverMobile = document.getElementsByClassName('mrover dropdown-box menu-box');
+var leadershipMobileDrop = document.getElementsByClassName('leadership mobile-dropdown menu-container');
+var leadershipMobile = document.getElementsByClassName('leadership dropdown-box menu-box');
 var forceBlack = false;
 window.addEventListener("DOMContentLoaded", loadNav);
 window.addEventListener("resize", navigation);
@@ -42,15 +42,23 @@ var whiteToggle = function(event) {
 var dropShow = function(event){
     if(!mobileDropDown[0].classList.contains('active') && 
         !projectMobileDrop[0].classList.contains('active') &&
-        !mroverMobileDrop[0].classList.contains('active')){
+        !leadershipMobileDrop[0].classList.contains('active')){
         mobileDropDown[0].classList.add('active');
         projectMobile[0].addEventListener('click', function(){
             projectMobileDrop[0].classList.add('active');
             mobileDropDown[0].classList.remove('active');
+            $("#mwdrop").addClass("fadeIn");
         });
-        mroverMobile[0].addEventListener('click', function(){
-            mroverMobileDrop[0].classList.add('active');
+        leadershipMobile[0].addEventListener('click', function(){
+            leadershipMobileDrop[0].classList.add('active');
             mobileDropDown[0].classList.remove('active');
+            $("#mmdrop").addClass("fadeIn");
+            window.setTimeout(function(){
+                $("#msdrop").addClass("fadeIn");
+            } , 100);
+            window.setTimeout(function(){
+                $("#mfdrop").addClass("fadeIn");
+                }, 200);
         });
         if(header.className != "black") {
             header.classList.add('black');
@@ -59,7 +67,8 @@ var dropShow = function(event){
     else{
         mobileDropDown[0].classList.remove('active');
         projectMobileDrop[0].classList.remove('active');
-        mroverMobileDrop[0].classList.remove('active');
+        leadershipMobileDrop[0].classList.remove('active');
+        resetFades();
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
         }
@@ -72,23 +81,23 @@ var dropShow = function(event){
 function turnOffProjectDropDown(){
     projectContainer[0].classList.remove('active');
     projectBack[0].removeEventListener('mouseleave',turnOffProjectDropDown);
-    scouts.removeEventListener("mouseover", turnOffProjectDropDown);
+    education.removeEventListener("mouseover", turnOffProjectDropDown);
     fun.removeEventListener("mouseover", turnOffProjectDropDown);
     document.removeEventListener("mouseleave", turnOffProjectDropDown);
 }
 
-/*--- Turns off MROVER Drop Down ---*/
-function turnOffMROVERDropDown(){
-    mroverDrop[0].classList.remove('active');
-    mroverDrop[1].removeEventListener('mouseleave',turnOffMROVERDropDown);
-    scouts.removeEventListener("mouseover", turnOffMROVERDropDown);
-    logo[0].removeEventListener("mouseover", turnOffMROVERDropDown);
-    document.removeEventListener("mouseleave", turnOffMROVERDropDown);
+/*--- Turns off leadership Drop Down ---*/
+function turnOffleadershipDropDown(){
+    leadershipDrop[0].classList.remove('active');
+    leadershipDrop[1].removeEventListener('mouseleave',turnOffleadershipDropDown);
+    education.removeEventListener("mouseover", turnOffleadershipDropDown);
+    logo[0].removeEventListener("mouseover", turnOffleadershipDropDown);
+    document.removeEventListener("mouseleave", turnOffleadershipDropDown);
 }
 
 function outsideClick(event) {
-    if(!$(event.target).hasClass('rover')){
-        turnOffMROVERDropDown();
+    if(!$(event.target).hasClass('edu')){
+        turnOffleadershipDropDown();
         document.removeEventListener('click', outsideClick);
     }
 }
@@ -106,20 +115,31 @@ function projectDropDown() {
         projectContainer[0].classList.add('active');
         projectBack[0].addEventListener("mouseleave",turnOffProjectDropDown);
         fun.addEventListener("mouseover", turnOffProjectDropDown);
-        scouts.addEventListener("mouseover", turnOffProjectDropDown);
+        education.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
+        $("#wdrop").addClass("fadeIn");
     }
 }
 
-/*--- MROVER Drop Down Function ---*/
-function mroverDropDown() {
-    if(!mroverDrop[0].classList.contains("active")) {
-        mroverDrop[0].classList.add('active');
-        mroverDrop[1].addEventListener("mouseleave",turnOffMROVERDropDown);
-        logo[0].addEventListener("mouseover", turnOffMROVERDropDown); 
-        scouts.addEventListener("mouseover", turnOffMROVERDropDown);
-        document.addEventListener("mouseleave", turnOffMROVERDropDown); 
+/*--- leadership Drop Down Function ---*/
+function leadershipDropDown() {
+    if(!leadershipDrop[0].classList.contains("active")) {
+        leadershipDrop[0].classList.add('active');
+        $("#mdrop").addClass("fadeIn");
+        window.setTimeout(function(){
+            if(!$("#sdrop").hasClass("fadeIn")){
+                $("#sdrop").addClass("fadeIn");
+            }
+                
+             }, 100);
+        window.setTimeout(function(){
+            $("#fdrop").addClass("fadeIn");
+            }, 200);
+        leadershipDrop[1].addEventListener("mouseleave",turnOffleadershipDropDown);
+        logo[0].addEventListener("mouseover", turnOffleadershipDropDown); 
+        education.addEventListener("mouseover", turnOffleadershipDropDown);
+        document.addEventListener("mouseleave", turnOffleadershipDropDown); 
         document.addEventListener("click", outsideClick);      
     }
 }
@@ -130,11 +150,23 @@ function timer2() {
     window.setTimeout(function() {
         if(!headerHover && !mobileDropDown[0].classList.contains('active')
         && atTop && !projectMobileDrop[0].classList.contains('active') &&
-        !mroverMobileDrop[0].classList.contains('active') && !forceBlack){
+        !leadershipMobileDrop[0].classList.contains('active') && !forceBlack){
             header.classList.remove('black');
+            resetFades();
         }}, 4000);
 }
 
+function resetFades() {
+    $("#mdrop").removeClass("fadeIn");
+    $("#sdrop").removeClass("fadeIn");
+    $("#fdrop").removeClass("fadeIn");
+    $("#wdrop").removeClass("fadeIn");
+    
+    $("#mmdrop").removeClass("fadeIn");
+    $("#msdrop").removeClass("fadeIn");
+    $("#mfdrop").removeClass("fadeIn");
+    $("#mwdrop").removeClass("fadeIn");
+}
 function navigation() {
     
     // the more standards compliant browsers (mozilla/netscape/opera/IE7) use window.innerWidth and window.innerHeight   
@@ -165,7 +197,7 @@ function navigation() {
                 atTop = true;
                 if((viewportwidth > 739 && !forceBlack) || (!mobileDropDown[0].classList.contains('active') &&
                 !projectMobileDrop[0].classList.contains('active') && 
-                !mroverMobileDrop[0].classList.contains('active')) && !forceBlack) {
+                !leadershipMobileDrop[0].classList.contains('active')) && !forceBlack) {
                     header.classList.remove('black');
                 }
             }
@@ -185,7 +217,7 @@ function navigation() {
         /*--- Clean Desktop Event Listeners ---*/
         if(desktopInitialized) {
             projectsId.removeEventListener("mouseover", projectDropDown);
-            mroverId.removeEventListener("mouseover", mroverDropDown);
+            leadershipId.removeEventListener("mouseover", leadershipDropDown);
             desktopInitialized = false;
             console.log('desktop cleaned');
         }
@@ -193,7 +225,7 @@ function navigation() {
         /* --- Hide Desktop Menu Items ---*/
         if(!menu[0].classList.contains('hide')) {menu[0].classList.add('hide');}
         if(!projects[0].classList.contains('hide')) {projects[0].classList.add('hide');}
-        if(!mrover[0].classList.contains('hide')) {mrover[0].classList.add('hide');}
+        if(!leadership[0].classList.contains('hide')) {leadership[0].classList.add('hide');}
         if(!logoDesktop[0].classList.contains('hide')) {logoDesktop[0].classList.add('hide');}
 
         /*--- Show Mobile Menu Items ---*/
@@ -230,7 +262,7 @@ function navigation() {
         /*--- Show Desktop Menu Items ---*/ 
         if(menu[0].classList.contains('hide')) {menu[0].classList.remove('hide');}
         if(projects[0].classList.contains('hide')) {projects[0].classList.remove('hide');}
-        if(mrover[0].classList.contains('hide')) {mrover[0].classList.remove('hide');}
+        if(leadership[0].classList.contains('hide')) {leadership[0].classList.remove('hide');}
         if(logoDesktop[0].classList.contains('hide')) {logoDesktop[0].classList.remove('hide');}
         
         /* --- Hide Mobile Menu Items ---*/
@@ -240,7 +272,7 @@ function navigation() {
         
         /*--- Add Event Listeners ---*/
         projectsId.addEventListener("mouseover", projectDropDown);
-        mroverId.addEventListener("mouseover", mroverDropDown);
+        leadershipId.addEventListener("mouseover", leadershipDropDown);
         desktopInitialized = true;
         console.log('desktop initialized');
     }
