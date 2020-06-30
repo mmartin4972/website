@@ -47,18 +47,10 @@ var dropShow = function(event){
         projectMobile[0].addEventListener('click', function(){
             projectMobileDrop[0].classList.add('active');
             mobileDropDown[0].classList.remove('active');
-            $("#mwdrop").addClass("fadeIn");
         });
         leadershipMobile[0].addEventListener('click', function(){
             leadershipMobileDrop[0].classList.add('active');
             mobileDropDown[0].classList.remove('active');
-            $("#mmdrop").addClass("fadeIn");
-            window.setTimeout(function(){
-                $("#msdrop").addClass("fadeIn");
-            } , 100);
-            window.setTimeout(function(){
-                $("#mfdrop").addClass("fadeIn");
-                }, 200);
         });
         if(header.className != "black") {
             header.classList.add('black');
@@ -127,14 +119,11 @@ function leadershipDropDown() {
         leadershipDrop[0].classList.add('active');
         $("#mdrop").addClass("fadeIn");
         window.setTimeout(function(){
-            if(!$("#sdrop").hasClass("fadeIn")){
-                $("#sdrop").addClass("fadeIn");
-            }
-                
-             }, 100);
+                $("#sdrop").addClass("fadeIn");   
+             }, 150);
         window.setTimeout(function(){
             $("#fdrop").addClass("fadeIn");
-            }, 200);
+            }, 300);
         leadershipDrop[1].addEventListener("mouseleave",turnOffleadershipDropDown);
         logo[0].addEventListener("mouseover", turnOffleadershipDropDown); 
         education.addEventListener("mouseover", turnOffleadershipDropDown);
@@ -160,11 +149,6 @@ function resetFades() {
     $("#sdrop").removeClass("fadeIn");
     $("#fdrop").removeClass("fadeIn");
     $("#wdrop").removeClass("fadeIn");
-    
-    $("#mmdrop").removeClass("fadeIn");
-    $("#msdrop").removeClass("fadeIn");
-    $("#mfdrop").removeClass("fadeIn");
-    $("#mwdrop").removeClass("fadeIn");
 }
 function navigation() {
     
