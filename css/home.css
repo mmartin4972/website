@@ -125,15 +125,51 @@ animation: fadeIn 1s linear;
 	font-weight: bold;
 }
 
-#style {
+#bottomBar {
 	width: 100%;
-	height: 20px;;
+	height: 80px;
 	background-color: black !important;
 	position: absolute;
 	left: 0px;
-	bottom: -20px;
+	bottom: -80px;
 }
 
+#container {
+	width: 42%;
+	height: 100%;
+	min-width: 235px;
+}
+
+.socialMedia {
+	position: relative;
+	display: inline-block;
+	width: 32%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-width: 75px;
+}
+
+.button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 50%;
+	text-align: center;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: auto;
+	border-radius: 50%;
+	transition-property: all;
+	transition-duration: 0.2s;
+  }
+
+  .button:hover {
+	  transform: scale(1.2);
+  }
 .center {
 	margin-left: auto;
 	margin-right: auto;
