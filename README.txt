@@ -1,6 +1,5 @@
 Project Start: 3/21/20
 
-This website was written entirely from scratch using HTML, CSS, Javascript, and jQuery. Insipration for this site came from hyperlite.com. 
-Much of the coding structure and effects are modeled off of their site; however, the implementation of all website functionality is 
-completely original. Being able to model off of this site proved very helful for me in making this, my first, website. Default.js was
-written using just Javascript. Other javascript files use jQuery.
+This website was written entirely from scratch using HTML, CSS, Javascript, and jQuery. The YouTube Video player is a plugin created by pupunzi,
+who did an incredible job creating it. The contact form was based on code written by "freecontactform.com". Insipration for the effects of this 
+site came from hyperlite.com.  Implementation of these effects and all other aspects of the website is completely original.
