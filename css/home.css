@@ -39,15 +39,22 @@
 #background {
 	width: 100%;
 	height: 100%;
+	position: absolute;
 	top: 0;
 	left: 0;
-	position: absolute;
-	overflow-y: hidden;
-	background-image: url("../images/home/Millions-of-stars-dark-Verdana-Matt.png");
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+#backgroundChild {
+	height: 100%;
+	background-image: url("../images/home/Millions-of-starts-Matt-Cool.png");
+	overflow: hidden;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position:center;
-	/*background-attachment: fixed; will be helpful for parralax*/
+	background-position-x: center;
 }
 
 .background-image {
