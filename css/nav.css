@@ -346,9 +346,8 @@ body {
     }
     
     .fadeIn {
-        -webkit-animation-name: fadeIn;
-        animation-name: fadeIn;
-        animation-duration: 0.25s;
+        -webkit-animation: fadeIn 1s forwards;
+        animation: fadeIn 1s forwards;
     }
     
     /*--- Generic Formatting ---*/

@@ -119,7 +119,7 @@ function leadershipDropDown() {
         leadershipDrop[0].classList.add('active');
         $("#mdrop").addClass("fadeIn");
         window.setTimeout(function(){
-                $("#sdrop").addClass("fadeIn");   
+            $("#sdrop").addClass("fadeIn");   
              }, 150);
         window.setTimeout(function(){
             $("#fdrop").addClass("fadeIn");
