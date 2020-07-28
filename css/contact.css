@@ -92,12 +92,6 @@ textarea.fcf-form-control {
     height: auto;
 }
 
-label.fcf-label {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    text: white;
-}
-
 .fcf-btn {
     display: inline-block;
     font-weight: 400;
