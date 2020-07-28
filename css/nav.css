@@ -203,6 +203,7 @@ body {
     
     .active{
         top: 70px;
+        left: 0px;
     }
     
     .dropdown-box{
@@ -235,7 +236,7 @@ body {
     .mobile-dropdown {
         overflow-y: auto;
         height: auto;
-        min-height: 110%;
+        min-height: 120%;
     }
 
     .tile {
