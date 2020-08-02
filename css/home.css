@@ -81,14 +81,6 @@
 	align-items: center;
 }
 
-#display {
-	justify-content: center;
-	width: 140px;
-	height: 140px;
-	margin: 0 auto;
-	padding-top: 60px;
-}
-
 .fadeIn {
 opacity: 1;
 animation: fadeIn 1s linear;
