@@ -19,6 +19,8 @@
     height: 100%;
     position: relative;
     float: left;
+    text-align: unset;
+    padding: 0;
 }
 
 .text {
