@@ -189,7 +189,6 @@ function navigation() {
         //Deactivate black after header is not used for 2 seconds
         header.addEventListener("mouseleave", timer2);
         
-        
         headerInitialized = true;
         console.log('header initialized');
     }
@@ -201,6 +200,7 @@ function navigation() {
         if(desktopInitialized) {
             projectsId.removeEventListener("mouseover", projectDropDown);
             leadershipId.removeEventListener("mouseover", leadershipDropDown);
+            $(".tile").off("click");
             desktopInitialized = false;
             console.log('desktop cleaned');
         }
@@ -220,6 +220,11 @@ function navigation() {
         /*--- Event Listeners ---*/
         mobileMenuToggle[0].addEventListener('click', whiteToggle, true);
         mobileMenuToggle[0].addEventListener('click', dropShow, true);
+        //Close drop down when push on tile
+        $(".tile").click(function(){
+            projectMobileDrop[0].classList.remove('active');
+            leadershipMobileDrop[0].classList.remove('active');
+        });
         mobileInitialized = true;
         console.log('mobile initialized');
     }
@@ -232,7 +237,8 @@ function navigation() {
             mobileInitialized = false;
             mobileMenuToggle[0].removeEventListener('click', whiteToggle, true);
             mobileMenuToggle[0].removeEventListener('click', dropShow, true);
-            
+            $(".tile").off("click");
+
             /*--- Close Mobile Drop Down If Left Open ---*/
             if(mobileDropDown[0].classList.contains('active'))
                 mobileDropDown[0].classList.remove('active');
@@ -256,6 +262,11 @@ function navigation() {
         /*--- Add Event Listeners ---*/
         projectsId.addEventListener("mouseover", projectDropDown);
         leadershipId.addEventListener("mouseover", leadershipDropDown);
+        //Close drop down when push on link
+        $(".tile").click(function(){
+            turnOffProjectDropDown();
+            turnOffleadershipDropDown();
+        });
         desktopInitialized = true;
         console.log('desktop initialized');
     }
