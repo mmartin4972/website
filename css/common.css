@@ -64,6 +64,15 @@
     z-index: -20;
 }
 
+.bgFixed{
+	position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	height: 100%;
+	background-attachment: unset;
+}
+
 #mainContainer{
     position: absolute;
     width: 100%;
