@@ -50,10 +50,9 @@
 	background-image: url(../images/leadership/FIRST/comp_winners_mobile.png);
 }
 
-#img7
 }
 
-/*--- Social Media ---*/
+/* --- Social Media --- */
 #bottomBar {
 	width: 100%;
 	height: 80px;;
@@ -66,16 +65,16 @@
 .socialMedia {
 	position: relative;
 	display: inline-block;
-	width: 32%;
+	width: 23.5%;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	min-width: 75px;
+	min-width: 50px;
 }
 
 .button {
-	background-color: #4CAF50;
+	background-color: #171516;
 	border: none;
 	color: white;
 	padding: 50%;
@@ -91,8 +90,8 @@
   }
 
   .button:hover {
-	  transform: scale(1.2);
-  }
+	transform: scale(1.2);
+}
 
   .background-image {
 	overflow: hidden;
