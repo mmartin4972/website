@@ -17,8 +17,21 @@ $(document).ready(function() {
     window.addEventListener("resize", adaptMobile);
 })
 
+function iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    // iPad on iOS 13 detection
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+  }
+
 function adaptMobile(){
-    if(viewportwidth <= 739){
+    if(viewportwidth <= 739 || iOS()){
         $(".bg").addClass("bgFixed");
     }
         
