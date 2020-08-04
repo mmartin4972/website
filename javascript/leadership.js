@@ -13,4 +13,16 @@ $(document).ready(function() {
     })
     jQuery("#ytp-properties").YTPlayer();
     jQuery("#ytp-properties2").YTPlayer();
+    adaptMobile();
+    window.addEventListener("resize", adaptMobile);
 })
+
+function adaptMobile(){
+    if(viewportwidth <= 739){
+        $(".bg").addClass("bgFixed");
+    }
+        
+    else{
+        $(".bg").removeClass("bgFixed");
+    }
+}

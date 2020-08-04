@@ -39,12 +39,18 @@
     height: 50%;
 }
 
-.bgFixed{
-	position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
+/* --- Adjustments for mobile images ---*/
+@media (max-width: 739px) {
+
+#img5{
+	background-image: url(../images/leadership/SCOUTS/scouts_mobile.png);
+}
+
+#img7{
+	background-image: url(../images/leadership/FIRST/comp_winners_mobile.png);
+}
+
+#img7
 }
 
 /*--- Social Media ---*/

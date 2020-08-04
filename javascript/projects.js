@@ -1,17 +1,3 @@
-var isiOS = false;
-window.addEventListener("resize", adaptMobile);
-
-function adaptMobile(){
-    console.log("adaptMobile Test");
-    isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if(isiOS){
-        $(".bg").add("bgFixed");
-    }
-    else{
-        $(".bg").remove("bgFixed");
-    }
-}
-
 $(document).ready(function() {
     $("#header").removeClass("hide");
     $("#mainContainer").scroll(function(){
@@ -24,4 +10,16 @@ $(document).ready(function() {
             header.classList.remove('black');
         }
     })
+    adaptMobile();
+    window.addEventListener("resize", adaptMobile);
 });
+
+function adaptMobile(){
+    if(viewportwidth <= 739){
+        $(".bg").addClass("bgFixed");
+    }
+        
+    else{
+        $(".bg").removeClass("bgFixed");
+    }
+}
