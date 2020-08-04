@@ -238,11 +238,12 @@ function navigation() {
             mobileMenuToggle[0].removeEventListener('click', whiteToggle, true);
             mobileMenuToggle[0].removeEventListener('click', dropShow, true);
             $(".tile").off("click");
-
-            /*--- Close Mobile Drop Down If Left Open ---*/
+            
+            /*--- Close Drop Downs If Left Open ---*/
             if(mobileDropDown[0].classList.contains('active'))
                 mobileDropDown[0].classList.remove('active');
-            
+            projectMobileDrop[0].classList.remove('active');
+            leadershipMobileDrop[0].classList.remove('active');
             console.log('mobile cleaned');
         }
         
