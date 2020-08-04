@@ -124,6 +124,7 @@ animation: fadeIn 1s linear;
 	font-weight: bold;
 }
 
+/* --- Social Media --- */
 #bottomBar {
 	width: 100%;
 	height: 80px;
@@ -134,24 +135,24 @@ animation: fadeIn 1s linear;
 }
 
 #container {
-	width: 42%;
+	width: 50%;
 	height: 100%;
-	min-width: 235px;
+	min-width: 260px;
 }
 
 .socialMedia {
 	position: relative;
 	display: inline-block;
-	width: 32%;
+	width: 23.5%;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
 	align-content: center;
-	min-width: 75px;
+	min-width: 50px;
 }
 
 .button {
-	background-color: #4CAF50;
+	background-color: ;
 	border: none;
 	color: white;
 	padding: 50%;
@@ -169,6 +170,7 @@ animation: fadeIn 1s linear;
   .button:hover {
 	  transform: scale(1.2);
   }
+
 .center {
 	margin-left: auto;
 	margin-right: auto;
