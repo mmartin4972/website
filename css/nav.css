@@ -198,7 +198,7 @@ body {
         background-color: black;
         justify-content: center;
         display: inline-block;
-        position: absolute;
+        position: fixed;
     }
     
     .active{
