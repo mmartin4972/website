@@ -15,6 +15,9 @@ $(document).ready(function() {
     jQuery("#ytp-properties2").YTPlayer();
     adaptMobile();
     window.addEventListener("resize", adaptMobile);
+    
+    adjustWidth();
+    window.addEventListener("resize", adjustWidth);
 })
 
 function iOS() {
@@ -37,5 +40,17 @@ function adaptMobile(){
         
     else{
         $(".bg").removeClass("bgFixed");
+    }
+}
+
+/* --- Fixes scroll bar overlap problem --- */
+var container = document.getElementById("mainContainer");
+
+function adjustWidth(){
+    if(viewportwidth > 739 || !iOS())
+        $("#header").width(viewportwidth-(container.offsetWidth 
+        - container.clientWidth));
+    else{
+        $("#header").width(viewportwidth);
     }
 }

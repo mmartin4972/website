@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#header").removeClass("hide");
+    adjustWidth();
     $("#mainContainer").scroll(function(){
         if($("#mainContainer").scrollTop() > 20){
             forceBlack = true;
@@ -10,12 +11,15 @@ $(document).ready(function() {
             header.classList.remove('black');
         }
     })
-    adaptMobile();
-    window.addEventListener("resize", adaptMobile);
-
-    adjustWidth();
     window.addEventListener("resize", adjustWidth);
+    player=jQuery("#ytp-properties").YTPlayer();
+    player.on("YTPStart", countDown);
 });
+
+function countDown(){
+    console.log("Execution begins");
+    window.setTimeout($(".larger").removeClass("video"), 20000);
+}
 
 function iOS() {
     return [
@@ -29,17 +33,6 @@ function iOS() {
     // iPad on iOS 13 detection
     || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
-
-
-function adaptMobile(){
-    if(viewportwidth <= 739 || iOS()){
-        $(".bg").addClass("bgFixed");
-    }
-        
-    else{
-        $(".bg").removeClass("bgFixed");
-    }
-}
 
 /* --- Fixes scroll bar overlap problem --- */
 var container = document.getElementById("mainContainer");
