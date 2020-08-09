@@ -1,40 +1,40 @@
 #img1{
-    background-image: url(../images/leadership/MROVER/rover_bkgnd1_dark.png);
+    background-image: url(../images/leadership/MROVER/rover_bkgnd1.png);
     min-height: 100%;
 }
 
 #img2{
-    background-image: url(../images/leadership/MROVER/mrover_bkgnd.png);
+    background-image: url(../images/leadership/MROVER/pcl_demo_background.png);
     min-height: 400px;
     height: 50%;
 }
 
 #img3{
-    background-image: url(../images/leadership/SCOUTS/scouts_dark_resize.png);
+    background-image: url(../images/leadership/SCOUTS/scouts_resize.png);
     min-height: 400px;
     height: 100%;
 }
 
 #img4{
-    background-image: url(../images/leadership/SCOUTS/scouts_bkgnd4.png);
+    background-image: url(../images/leadership/SCOUTS/eagle_demo_pic.png);
     min-height: 400px;
     height: 60%;
 }
 
 #img5{
-    background-image: url(../images/leadership/SCOUTS/scouts5.png);
+    background-image: url(../images/leadership/SCOUTS/20190727_140303640_iOS.jpg);
     min-height: 400px;
     height: 50%;
 }
 
 #img6{
-    background-image: url(../images/leadership/FIRST/roboPhoto_dark.png);
+    background-image: url(../images/leadership/FIRST/roboPhoto.jpg);
     min-height: 400px;
     height: 100%;
 }
 
 #img7{
-    background-image: url(../images/leadership/FIRST/comp_winners_dark.png);
+    background-image: url(../images/leadership/FIRST/20190406_215123103_iOS.jpg);
     min-height: 400px;
     height: 50%;
 }
@@ -43,11 +43,11 @@
 @media (max-width: 739px) {
 
 #img5{
-	background-image: url(../images/leadership/SCOUTS/scouts_mobile.png);
+	background-image: url(../images/leadership/SCOUTS/scouts_mobile_light.png);
 }
 
 #img7{
-	background-image: url(../images/leadership/FIRST/comp_winners_mobile.png);
+	background-image: url(../images/leadership/FIRST/com_winners_mobile_light.png);
 }
 
 }
