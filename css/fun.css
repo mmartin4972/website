@@ -7,7 +7,7 @@
 }
 
 .bg1{
-    background-image: url("../images/fun/jiu_jitsu_back.png") !important;
+    background-image: url("../images/fun/jiu_jitsu_back_light.png") !important;
     background-attachment: local !important;
 }
 
@@ -64,7 +64,7 @@
 
 @media (max-width: 739px){
     .bg1{
-        background-image: url("../images/fun/jiu_jitsu_mobile.png") !important;
+        background-image: url("../images/fun/jiu_jitsu_mobile_light.png") !important;
         background-position: center !important;
     }
 
