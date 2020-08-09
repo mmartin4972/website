@@ -143,7 +143,7 @@ animation: fadeIn 1s linear;
 .socialMedia {
 	position: relative;
 	display: inline-block;
-	width: 23.5%;
+	width: 31%;
 	height: 100%;
 	justify-content: center;
 	align-items: center;
@@ -152,7 +152,7 @@ animation: fadeIn 1s linear;
 }
 
 .button {
-	background-color: ;
+	background-color: #171516;
 	border: none;
 	color: white;
 	padding: 50%;
