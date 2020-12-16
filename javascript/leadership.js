@@ -11,7 +11,6 @@ $(document).ready(function() {
             header.classList.remove('black');
         }
     })
-    jQuery("#ytp-properties").YTPlayer();
     jQuery("#ytp-properties2").YTPlayer();
     adaptMobile();
     window.addEventListener("resize", adaptMobile);
