@@ -7,7 +7,8 @@ const background = document.getElementById('background');
 var player;
 
 function callLoad() {
-    window.setTimeout(loadPage, 400);
+    jQuery(function(){player = jQuery("#ytp-properties").YTPlayer();});
+    setTimeout(loadPage, 1700);
 }
 
 function showVideo() {
@@ -16,8 +17,6 @@ function showVideo() {
     forceBlack = true;
     header.classList.add('black');
     window.setTimeout(function(){forceBlack = false;}, 3000);
-
- 
 }
 
 function loadPage() { 
@@ -25,9 +24,8 @@ function loadPage() {
     header.classList.remove('hide');
     loadScreen.classList.add('fadeOut');
     background.classList.add('fadeIn');
-    window.setTimeout(function(){background.classList.remove('hider');}, 1000 );
+    window.setTimeout(function(){background.classList.remove('hider');}, 200 );
     jQuery(function(){
-        player = jQuery("#ytp-properties").YTPlayer();
         player.on("YTPStart", showVideo);
     });
 }
