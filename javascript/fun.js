@@ -38,10 +38,17 @@ function iOS() {
 var container = document.getElementById("mainContainer");
 
 function adjustWidth(){
-    if(viewportwidth > 739 || !iOS())
+    if(viewportwidth > 739 || !iOS()){
         $("#header").width(viewportwidth-(container.offsetWidth 
         - container.clientWidth));
+        $(".menu-container").width(viewportwidth-(container.offsetWidth 
+            - container.clientWidth));
+        $(".back-container").width(viewportwidth-(container.offsetWidth 
+            - container.clientWidth));
+    }
     else{
         $("#header").width(viewportwidth);
+        $(".back-container").width(viewportwidth);
+        $(".menu-container").width(viewportwidth);
     }
 }
