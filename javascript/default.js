@@ -109,7 +109,16 @@ function projectDropDown() {
         education.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
-        $("#wdrop").addClass("fadeIn");
+        $("#pcldrop").addClass("fadeIn");
+        window.setTimeout(function(){
+            $("#devdrop").addClass("fadeIn");   
+             }, 150);
+        window.setTimeout(function(){
+        $("#wdrop").addClass("fadeIn");   
+            }, 300);
+        window.setTimeout(function(){
+            $("#uvdrop").addClass("fadeIn");   
+                }, 450);
     }
 }
 
@@ -149,6 +158,9 @@ function resetFades() {
     $("#sdrop").removeClass("fadeIn");
     $("#fdrop").removeClass("fadeIn");
     $("#wdrop").removeClass("fadeIn");
+    $("#pcldrop").removeClass("fadeIn");
+    $("#devdrop").removeClass("fadeIn");
+    $("#uvdrop").removeClass("fadeIn");
 }
 function navigation() {
     
