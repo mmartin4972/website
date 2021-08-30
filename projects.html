@@ -10,6 +10,26 @@ sections:
         <script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>
 ---
         <div id="mainContainer">
+            <div id="img5" class="bg" style="background-position: center;">
+                <div class="caption">
+                    <span class="titleStyle">CUSTOM GPU OBSTACLE DETECTION</span>
+                </div>
+            </div>
+            <div class="contentBg">
+                <div class="content text">
+                    During the winter of 2021, I worked in collaboration with Ashwin Gupta, a fellow member of the Michigan Mars Rover Perception Team, to develop a proof of concept 
+                    for a GPU accelerated version of our current obstacle detection pipeline. We researched and used CUDA to create custom GPU implementations of our current obstacle 
+                    processing algorithms: Pass Through Point Filtering, RANSAC Plane Segmentation, Euclidean Cluster Extraction, and Path Planning. After our proof of concept was 
+                    completed and tested, we put together a <a href="files/CUDA_GPU_Accelerated_Obstacle_Detection_Proposal.pdf" target="_blank">proposal</a> documenting the enhancements we made and the results that we found. Our conclusion was that our GPU proof of concept 
+                    was 25% faster than our current CPU based detection algorithm. We proceeded to work on the project throughout the spring and summer of 2021, making optimizations 
+                    and implementing an additional algorithm, Voxel Grid Point Sorting, to further boost our pipeline’s performance. We performed several tests at the end of the summer 
+                    and found that our optimized GPU pipeline was able to achieve speeds 3x faster than the current CPU implementation. Though it was a tremendous amount of work to 
+                    develop, our custom system proved to have significantly boosted the performance of our sub-team and was an incredible learning experience for myself. The 
+                    <a href="https://github.com/mmartin4972/mrover-workspace/tree/GPU_Obstacle/jetson/percep_obs_detect" target="_blank">code</a> for the project, 
+                    a <a href="https://youtu.be/Kwt1jsJKW_0" target="_blank">demo</a> of our pipeline without voxel grid processing, a <a href="https://youtu.be/gSJjAKyBIWY" target="_blank">demo</a> of our pipeline with voxel grid processing, 
+                    and a <a href="https://www.youtube.com/playlist?list=PLj5rOuXit19mCtakn21m11At3zjgEycnO" target="_blank">playlist</a> of videos we made walking through how the code works. 
+                </div>
+            </div>
             <div id="img4" class="bg video2" style="background-position: center;">
                 <div class="caption">
                     <span class="titleStyle">POINT CLOUD BASED OBSTACLE DETECTION</span>

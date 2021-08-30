@@ -109,16 +109,20 @@ function projectDropDown() {
         education.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
-        $("#pcldrop").addClass("fadeIn");
+        $("#gpudrop").addClass("fadeIn");
+        var time = 0;
+        window.setTimeout(function(){
+            $("#pcldrop").addClass("fadeIn");   
+             }, time+=150);
         window.setTimeout(function(){
             $("#devdrop").addClass("fadeIn");   
-             }, 150);
+             }, time+=150);
         window.setTimeout(function(){
         $("#wdrop").addClass("fadeIn");   
-            }, 300);
+            }, time+=150);
         window.setTimeout(function(){
             $("#uvdrop").addClass("fadeIn");   
-                }, 450);
+                }, time+=150);
     }
 }
 

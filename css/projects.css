@@ -17,6 +17,12 @@
 	background-image: url(../images/project/pcl_proof_trial2_still.png);
 	min-height: 100%;
 }
+
+#img5{
+	background-image: url(../images/project/gpu_pic3.png);
+	min-height: 100%;
+}
+
 /*--- Social Media ---*/
 #bottomBar {
 	width: 100%;
