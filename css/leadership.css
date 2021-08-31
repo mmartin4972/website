@@ -45,6 +45,18 @@
 	background-image: url(../images/leadership/MROVER/auton_lead.png);
 }
 
+#img9 {
+	min-height: 400px;
+    height: 100%;
+	background-image: url(../images/leadership/JITSU/jisuBack.png);
+}
+
+#img10 {
+	min-height: 400px;
+    height: 50%;
+	background-image: url(../images/leadership/JITSU/finalRound_modified.png);
+}
+
 /* --- Adjustments for mobile images ---*/
 @media (max-width: 739px) {
 

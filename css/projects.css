@@ -19,7 +19,12 @@
 }
 
 #img5{
-	background-image: url(../images/project/gpu_pic3.png);
+	background-image: url(../images/project/gpu_pic2.jpg);
+	min-height: 100%;
+}
+
+#img6 {
+	background-image: url(../images/project/invia.jfif);
 	min-height: 100%;
 }
 

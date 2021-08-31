@@ -109,8 +109,11 @@ function projectDropDown() {
         education.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
-        $("#gpudrop").addClass("fadeIn");
+        $("#idrop").addClass("fadeIn");
         var time = 0;
+        window.setTimeout(function(){
+            $("#gpudrop").addClass("fadeIn");   
+             }, time+=150);
         window.setTimeout(function(){
             $("#pcldrop").addClass("fadeIn");   
              }, time+=150);
@@ -131,12 +134,16 @@ function leadershipDropDown() {
     if(!leadershipDrop[0].classList.contains("active")) {
         leadershipDrop[0].classList.add('active');
         $("#mdrop").addClass("fadeIn");
+        var time = 0;
+        window.setTimeout(function(){
+            $("#jdrop").addClass("fadeIn");   
+             }, time += 150);
         window.setTimeout(function(){
             $("#sdrop").addClass("fadeIn");   
-             }, 150);
+             }, time += 150);
         window.setTimeout(function(){
             $("#fdrop").addClass("fadeIn");
-            }, 300);
+            }, time += 150);
         leadershipDrop[1].addEventListener("mouseleave",turnOffleadershipDropDown);
         logo[0].addEventListener("mouseover", turnOffleadershipDropDown); 
         education.addEventListener("mouseover", turnOffleadershipDropDown);

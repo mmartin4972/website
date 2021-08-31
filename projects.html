@@ -10,6 +10,30 @@ sections:
         <script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>
 ---
         <div id="mainContainer">
+            <div id="img6" class="bg" style="background-position: center;">
+                <div class="caption">
+                    <span class="titleStyle">INVIA MEDICAL IMAGING SOLUTIONS</span>
+                </div>
+            </div>
+            <div class="contentBg">
+                <div class="content text">
+                    During the summer of 2021 I worked as a Software Developer Intern for Invia Medical Imaging Solutions. Invia’s main product is an application which reads in heart scans stored in large databases 
+                    and performs processing on the images to reconstruct a 3D representation of the heart. Once the images are processed the product then allows doctors to easily disect and 
+                    view slices of the heart, and will highlight key information about the slices that makes them easier to interpret. 
+                    <br><br>
+                    Over the course of the summer I used C++/CLI, C#, SQLite, and the .NET Framework to solve the issue of high latency when copying a database across a network. There are 
+                    particular types of scans, which generate a large amount of very small image files, which are difficult to transfer across a network since for each image transferred 
+                    there is overhead when connecting to the destination computer, and incurring this overhead for each image transferred led to immense latency. I worked with the 
+                    excellent Invia engineers to solve this problem, by creating a service, which could identify these particular images and package them into a zip archive. As a result of this, 
+                    I had to add functionality to the product to process a database that has zip archives in it, and also process the images within the zip archive. By the end of 
+                    the summer, the product was capable of reading in database files which were zipped, and transferring a database across a network became 10x faster. 
+                    <br><br>
+                    This experience taught me a lot about what it is like to work on a professional software development team, developing windows services and applications, 
+                    multi-threading, and several programming languages I was unfamiliar with. The project manager gave me a lot of freedom to employ my own problem-solving and creative abilities 
+                    in solving the many challenges I encountered, which allowed me to take ownership and pride in what I did. This internship was an incredible learning experience for me and 
+                    it was a lot of fun to work with the Invia staff and contribute a product feature that will actually be shipped. 
+                </div>
+            </div>
             <div id="img5" class="bg" style="background-position: center;">
                 <div class="caption">
                     <span class="titleStyle">CUSTOM GPU OBSTACLE DETECTION</span>
