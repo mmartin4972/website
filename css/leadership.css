@@ -39,6 +39,12 @@
     height: 50%;
 }
 
+#img8 {
+	min-height: 400px;
+    height: 50%;
+	background-image: url(../images/leadership/MROVER/auton_lead.png);
+}
+
 /* --- Adjustments for mobile images ---*/
 @media (max-width: 739px) {
 
