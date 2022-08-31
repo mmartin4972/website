@@ -1,0 +1,71 @@
+---
+layout: default
+title: Matt Martin
+sections:
+    css: |
+        <link href="css/home.css" rel="stylesheet" type="text/css">
+    js: |
+        <script type = "text/javascript" src="javascript/home.js"></script>
+        <script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>
+--- 
+        <div id="background" class = "hider">
+            <div id="backgroundChild" class="center"></div>
+        </div>
+        <div id="videoIntro" class="hero-video videoContainer hider"></div>
+        <div id="ytp-properties"
+        data-property="{videoURL:'https://youtu.be/K22ug8cexpI',
+        containment:'.hero-video', autoPlay:true, mute:true, startAt:3, opacity:1, 
+        useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'16/9',
+        showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+        showAnnotations:false, quality:'hd1080', loop:100000}">
+        </div>
+        <div id="welcome" class="content">
+            <div id="content" class="twoCol leftCol shortenMobile">
+                <div id="introInfo" class="vertical-center">
+                    <div id="intro" class="title">Introduction</div>
+                    <div class="text">
+                        Welcome to my site! My name is Matthew Martin. On this site I have content of my major 
+                        life experiences as well as my personal projects. I hope you find them as interesting as I did.
+                    </div>
+                </div>
+            </div>
+            <div id="image" class="twoCol rightCol">
+                <div id="pic" class="vertical-center center"></div>
+            </div>
+            <div id="bottomBar">
+                <div id="container" class="center">
+                    <div class="socialMedia">
+                        <div class="center" style="width: 50px;"> 
+                            <button class="button background-image" onclick="window.open('https://www.linkedin.com/in/matt-m-965157127')" style="background-image: url('images/nav/linkedin.png');"></button>    
+                        </div>
+                    </div>
+                    <div class="socialMedia">
+                        <div class="center" style="width: 50px;"> 
+                            <button class="button background-image" onclick="window.open('https://github.com/mmartin4972')" style="background-image: url('images/nav/github-edit.png');"></button>    
+                        </div>
+                    </div>
+                    <div class="socialMedia">
+                        <div class="center " style="width: 50px;"> 
+                            <button class="button background-image" onclick="window.window.open('mailto:mmartin4972@gmail.com')" style="background-image: url('images/nav/email.png');"></button>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="resume">
+            <div id="textbox" class="doubleStack">
+                <div id="resumeText" class="center vertical-center">CHECK OUT MY RESUME!</div>
+            </div>
+            <div class="doubleStack" style="vertical-align: center;">
+                <div id="resumeButton" class="vertical center">
+                    <a href="files/Matt_Martin_Resume_8-31-2021.pdf">
+                        <div class="text center" style="font-size: 20px; padding-top: 6px; text-align: center; padding-bottom: 12px;">RESUME</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="loadScreen">
+            <div id="logoLoad" class="spin">MM</div>
+        </div>
+        

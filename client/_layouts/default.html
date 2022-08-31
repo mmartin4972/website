@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="icon" href="images/nav/favicon.png"> <!---Favicon 196x196-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link href="../css/nav.css" rel="stylesheet" type="text/css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174264300-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-174264300-1');
+</script>
+{{ page.sections['css'] }}
+</head>
+
+<body>
+        {{ content }}  
+    <div id="header" class="hide">
+        <div class="nav">
+            <div class="logo-desktop">
+                <a class="logo" href = '../index.html'>
+                    <div class="menu-name logo-text">Matt Martin</div>
+                </a>
+            </div>
+            <div class="logo-mobile hide">
+                <a class="logo" href = '../index.html'>
+                    <div class="menu-name logo-text" >MM</div>
+                </a>
+            </div>
+            <div class="mobile-menu-toggle hide">
+                <div class="menu-toggle background-toggle"></div>
+            </div>
+            <div class="menu">
+                <a id = "leadership" class="menu-box edu" style="padding-left: 15px;">
+                    <div class="menu-name text-uppercase edu">leadership</div>
+                </a>
+                <a id = "education" class="menu-box" href="../education.html">
+                    <div class="menu-name text-uppercase">education</div>
+                </a>
+                <a id = "projects" class="menu-box proj">
+                    <div class="menu-name text-uppercase proj">Experience</div>
+                </a>
+                <a id = "Fun" class="menu-box" style = "min-width:60px;" href="../fun.html">
+                    <div class="menu-name text-uppercase">Fun</div>
+                </a>
+                <a id = "contact" class="menu-box" href="../contact.html">
+                    <div class="menu-name text-uppercase">Contact</div>
+                </a>
+            </div>
+        </div>
+        <div class = "projects menu-container">
+            <div class = "projects back-container proj">
+                <a id="idrop" class="tile proj"   href="../projects.html#img6">
+                    <div class="background-image proj" style="background-image: url(../images/nav/inviaDark.png);">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">Invia</p>
+                    </div>
+                </a>
+                <a id="gpudrop" class="tile proj"   href="../projects.html#img5">
+                    <div class="background-image proj" style="background-image: url(../images/project/gpu_pic_icon.png);">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">Custom GPU Obstacle Detection</p>
+                    </div>
+                </a>
+                <a id="pcldrop" class="tile proj"   href="../projects.html#img4">
+                    <div class="background-image proj" style="background-image: url(../images/project/pcl_proof_trial2_still.png);">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">PCL Obstacle Detection</p>
+                    </div>
+                </a>
+                <a id="devdrop" class="tile proj"   href="../projects.html#img2">
+                    <div class="background-image proj" style="background-image: url(../images/nav/dev_env_back.png);">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">Development Environment</p>
+                    </div>
+                </a>
+                <a id="wdrop" class="tile proj"   href="../projects.html#img1">
+                    <div class="background-image proj" style="background-image: url('../images/nav/websiteTileBackground.png');">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">Website</p>
+                    </div>
+                </a>
+                <a id="uvdrop" class="tile proj"   href="../projects.html#img3">
+                    <div class="background-image proj" style="background-image: url(../images/nav/uvTileBackground.png);">
+                        <p class="tile-name text-uppercase proj" style="opacity: 1;">U-V Disparity Detection</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class = "leadership menu-container"">
+            <div class = "leadership back-container edu">
+                <a id="mdrop" class="tile edu"  href="../leadership.html#img1">
+                    <div class="background-image edu" style="background-image: url('../images/nav/mroverTileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">MROVER</p>
+                    </div>
+                </a>
+                <a id="jdrop" class="tile edu"   href="../leadership.html#img9">
+                    <div class="background-image edu" style="background-position: bottom; background-image: url('../images/leadership/JITSU/bjjIcon.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">JIU JITSU</p>
+                    </div>
+                </a>
+                <a id="sdrop" class="tile edu"   href="../leadership.html#img3">
+                    <div class="background-image edu" style="background-position: bottom; background-image: url('../images/nav/scoutTileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">SCOUTS</p>
+                    </div>
+                </a>
+                <a id="fdrop" class="tile edu"   href="../leadership.html#img6">
+                    <div class="background-image edu" style="background-position: bottom; background-image: url('../images/nav/first2TileBackground.png');">
+                        <p class="tile-name text-uppercase edu" style="opacity: 1;">FIRST</p>
+                    </div>
+                </a>
+            </div>
+        </div>     
+    </div>
+    <div class="mobile-dropdown menu-container">
+            <div class="leadership dropdown-box menu-box">
+                <div class="menu-name" style="padding-top: 10px;">LEADERSHIP</div>
+            </div>
+            <a class="dropdown-box menu-box" href="../education.html">
+                <div class="menu-name">EDUCATION</div>
+            </a>
+            <div class="proj dropdown-box menu-box">
+                <div class="menu-name">EXPERIENCE</div>
+            </div>
+            <a class="dropdown-box menu-box" href="../fun.html">
+                <div class="menu-name">FUN</div>
+            </a>
+            <a class="dropdown-box menu-box" href="../contact.html">
+                <div class="menu-name">CONTACT</div>
+            </a>    
+    </div>
+    <div class="projects mobile-dropdown menu-container" style="transition-duration: 0s;">
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img6">
+            <div class="background-image proj" style="background-image: url(../images/nav/inviaDark.png);">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">Invia</p>
+            </div>
+        </a>
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img5">
+            <div class="background-image proj" style="background-image: url(../images/project/gpu_pic_icon.png);">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">Custom GPU Obstacle Detection</p>
+            </div>
+        </a>
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img4">
+            <div class="background-image proj" style="background-image: url(../images/project/pcl_proof_trial2_still.png);">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">PCL Obstacle Detection</p>
+            </div>
+        </a>
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img2">
+            <div class="background-image proj" style="background-image: url(../images/nav/dev_env_back.png);">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">Development Environment</p>
+            </div>
+        </a>
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img1">
+            <div class="background-image proj" style="background-image: url('../images/nav/websiteTileBackground.png');">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">Website</p>
+            </div>
+        </a>
+        <a class="tile proj" style="opacity: 1;"  href="../projects.html#img3">
+            <div class="background-image proj" style="background-image: url(../images/nav/uvTileBackground.png);">
+                <p class="tile-name text-uppercase proj" style="opacity: 1;">U-V Disparity Detection</p>
+            </div>
+        </a>
+    </div>
+    <div class="leadership mobile-dropdown menu-container" style="transition-duration: 0s;">
+        <a class="tile edu"  style="opacity: 1;" href="../leadership.html#img1">
+            <div class="background-image edu" style="background-image: url('../images/nav/mroverTileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">MROVER</p>
+            </div>
+        </a>
+        <a class="tile edu"  style="opacity: 1;" href="../leadership.html#img9">
+            <div class="background-image edu" style="background-position: bottom; background-image: url('../images/leadership/JITSU/bjjIcon.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">JIU JITSU</p>
+            </div>
+        </a>
+        <a class="tile edu"  style="opacity: 1;" href="../leadership.html#img3">
+            <div class="background-image edu" style="background-position: bottom; background-image: url('../images/nav/scoutTileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">SCOUTS</p>
+            </div>
+        </a>
+        <a class="tile edu" style="opacity: 1;"  href="../leadership.html#img6">
+            <div class="background-image edu" style="background-position: bottom; background-image: url('../images/nav/first2TileBackground.png');">
+                <p class="tile-name text-uppercase edu" style="opacity: 1;">FIRST</p>
+            </div>
+        </a>
+    </div>       
+    <script type = "text/javascript" src="../javascript/default.js"></script>
+    {{ page.sections['js'] }}
+</body>
+</html>

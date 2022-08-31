@@ -1,0 +1,127 @@
+#img1{
+    background-image: url(../images/leadership/MROVER/rover_bkgnd1.png);
+    min-height: 100%;
+}
+
+#img2{
+    background-image: url(../images/leadership/MROVER/mrover_bkgnd2.png);
+    min-height: 400px;
+    height: 50%;
+}
+
+#img3{
+    background-image: url(../images/leadership/SCOUTS/scouts_resize.png);
+    min-height: 400px;
+    height: 100%;
+}
+
+#img4{
+    background-image: url(../images/leadership/SCOUTS/eagle_demo_pic.png);
+    min-height: 400px;
+    height: 60%;
+}
+
+#img5{
+    background-image: url(../images/leadership/SCOUTS/20190727_140303640_iOS.jpg);
+    min-height: 400px;
+    height: 50%;
+}
+
+#img6{
+    background-image: url(../images/leadership/FIRST/roboPhoto.jpg);
+    min-height: 400px;
+    height: 100%;
+}
+
+#img7{
+    background-image: url(../images/leadership/FIRST/20190406_215123103_iOS.jpg);
+    min-height: 400px;
+    height: 50%;
+}
+
+#img8 {
+	min-height: 400px;
+    height: 50%;
+	background-image: url(../images/leadership/MROVER/auton_lead.png);
+}
+
+#img9 {
+	min-height: 400px;
+    height: 100%;
+	background-image: url(../images/leadership/JITSU/jisuBack.png);
+}
+
+#img10 {
+	min-height: 400px;
+    height: 50%;
+	background-image: url(../images/leadership/JITSU/finalRound_modified.png);
+}
+
+/* --- Adjustments for mobile images ---*/
+@media (max-width: 739px) {
+
+#img5{
+	background-image: url(../images/leadership/SCOUTS/scouts_mobile_light.png);
+}
+
+#img7{
+	background-image: url(../images/leadership/FIRST/com_winners_mobile_light.png);
+}
+
+}
+
+/* --- Social Media --- */
+#bottomBar {
+	width: 100%;
+	height: 80px;;
+	background-color: black !important;
+	position: relative;
+    margin-top: 0px;
+	
+}
+
+.socialMedia {
+	position: relative;
+	display: inline-block;
+	width: 31%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-width: 50px;
+}
+
+.button {
+	background-color: #171516;
+	border: none;
+	color: white;
+	padding: 50%;
+	text-align: center;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: auto;
+	border-radius: 50%;
+	transition-property: all;
+	transition-duration: 0.2s;
+  }
+
+  .button:hover {
+	transform: scale(1.2);
+}
+
+  .background-image {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	transition: 0.25s;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container {
+	width: 42%;
+	height: 100%;
+	min-width: 235px;
+}

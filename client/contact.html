@@ -1,0 +1,59 @@
+---
+layout: default
+title: Matt Martin
+sections:
+    css: |
+        <link href="css/contact.css" rel="stylesheet" type="text/css">
+        <link href="css/common.css" rel="stylesheet" type="text/css">
+    js: |
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script type = "text/javascript" src="javascript/contact.js"></script>
+        <script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>
+--- 
+    <div id="email" class="bacgkround hide"> 
+    </div>
+    <div id="containerForm">
+        <div class=" text form-group" style="font-size: 27px; padding-left: 0px;">CONTACT FORM</div>
+        <form id="fcf-form-id" class="fcf-form-class" method="post" action="https://formsubmit.co/mmartin4972@gmail.com">
+            <div class="form-group">
+                <label for="Name" class="text">Name</label>
+                <div class="input center">
+                    <input type="text" id="Name" name="Name" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Email" class="text">Email Address</label>
+                <div class="input center">
+                    <input type="email" id="Email" name="Email" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Message" class="text">Message</label>
+                <div class="input center">
+                    <textarea id="Message" name="Message" class="form-control" rows="6" maxlength="3000" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" id="fcf-button" class=" center btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            </div>
+        </form>
+        <div id="bottomBar">
+            <div id="container" class="center">
+                <div class="socialMedia">
+                    <div class="center" style="width: 50px;"> 
+                        <button class="button background-image" onclick="window.open('https://www.linkedin.com/in/matt-m-965157127')" style="background-image: url('images/nav/linkedin.png');"></button>    
+                    </div>
+                </div>
+                <div class="socialMedia">
+                    <div class="center" style="width: 50px;"> 
+                        <button class="button background-image" onclick="window.open('https://github.com/mmartin4972')" style="background-image: url('images/nav/github-edit.png');"></button>    
+                    </div>
+                </div>
+                <div class="socialMedia">
+                    <div class="center " style="width: 50px;"> 
+                        <button class="button background-image" onclick="window.open('mailto:mmartin4972@gmail.com')" style="background-image: url('images/nav/email.png');"></button>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

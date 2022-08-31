@@ -1,0 +1,295 @@
+#background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("../images/education/background_wood_medium.png");
+}
+
+.container1 {
+    width: 900px;
+    height:200px;
+    position: relative;
+    margin-top: 60px;
+} 
+   
+.content {
+    width: 650px;
+    height: 100%;
+    position: relative;
+    float: left;
+    text-align: unset;
+    padding: 0;
+}
+
+.text {
+    color: #d3d3d3;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+}
+
+.info {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    padding-top: 43px;
+    padding-left: 10px;
+}
+.year {
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 200px;
+    width: 15%;
+    text-align: right;
+    padding-top: 80px;
+    margin-top: 60px;
+    margin-right:30px;
+}
+
+#mi {
+    background-image: url("../images/education/university-of-michigan-small.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+#cc {
+    background-image: url("../images/education/CC-Crest-Small.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    float: left;
+    margin-left: 30px;
+}
+
+.anchor2 {
+    top: 370px;
+}
+.top-margin {
+    margin-top: 150px;
+}
+
+/*--- Social Media ---*/
+#bottomBar {
+	width: 100%;
+	height: 80px;;
+	background-color: black !important;
+	position: absolute;
+    left: 0px;
+    bottom: 0px;
+    margin-top: 45px;
+	
+}
+
+@media (max-height: 672px) and (min-width: 740px) {
+    #bottomBar {
+        position: relative;
+    }
+}
+
+.socialMedia {
+	position: relative;
+	display: inline-block;
+	width: 31%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-width: 50px;
+}
+
+.button {
+	background-color: #171516;
+	border: none;
+	color: white;
+	padding: 50%;
+	text-align: center;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: auto;
+	border-radius: 50%;
+	transition-property: all;
+	transition-duration: 0.2s;
+  }
+
+  .button:hover {
+	  transform: scale(1.2);
+  }
+
+  .background-image {
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+	transition: 0.25s;
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#container {
+	width: 42%;
+	height: 100%;
+	min-width: 235px;
+}
+
+/* --- Step Down Stuff --- */
+@media(max-width: 1070px) {
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+    .text {
+        font-size: 20px;
+    }
+    .content {
+        width: 600px;
+    }
+    .year {
+        padding-top: 60px;
+    }
+    .one {
+        padding-top: 20px;
+    }
+    .two {
+        padding-top:35px;
+    }
+    .container1{
+        margin-top: 40px;
+    }
+    .top-margin{
+        margin-top: 150px;
+    }
+   
+}
+
+@media (max-width: 901px) {
+    .image {
+        width: 130px;
+        height: 130px;
+    }
+    .text {
+        font-size: 16px;
+    }
+    .content {
+        width: 550px;
+    }
+    .year {
+        width: 150px;
+    }
+    .container1{
+        margin-top: 0px;
+    }
+    .anchor2 {
+        top: 290px;
+    }
+    .container1{
+        width:738px;
+    }
+    .top-margin{
+        margin-top: 150px;
+    }
+
+}
+
+/* --- Mobile View --- */
+@media(max-width: 739px) {
+    .image {
+        width: 175px;
+        height: 175px;
+        margin: auto;
+        display: inline-block;
+        float: none;
+        margin-left: 1.5%;
+    }
+    .container1{
+        width: 98%;
+        padding-left: 0.5%;
+        float:left;
+        position: relative;
+        height: 350px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .year {
+        width: 100%;
+        float: right;
+        text-align: center;
+        top: 233px;
+        margin-right: 0px;
+        height: 30px;
+    }
+    .top-margin {
+        margin-top: 100px;
+    }
+    .content {
+        height: 180px;
+        margin: auto;
+        width: 100%;
+    }
+    .info{
+        padding-top: 15px;
+    }
+    .two{
+        padding-top: 5px;
+    }
+    .anchor2{
+        top: 587px;
+    }
+    @media(max-height: 833px){
+        #bottomBar{
+            top: 712px;
+        }
+    }
+}
+
+@media(max-width: 475px) {
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.anchor2 {
+    top: 565px;
+} 
+}
+
+@media(max-width: 433px) {
+.year{
+    top: 270px;
+}
+.anchor2 {
+    top: 600px;
+}
+}
+
+@media(max-width: 290px) {
+.year{
+    top: 290px;
+}  
+.anchor2{
+    top: 620px;
+}
+}
+
+
