@@ -23,17 +23,23 @@ fn main() {
     let mut tp = thread_pool::ThreadPool::new(1, 200);
     
     // Read environment variables
+    let port: String;
     let is_debug: bool;
+    match std::env::var("PORT") { // Bind to heroku port environment variable
+        Ok(p) => port = p,
+        Err(_) => port = "8080".to_string(),
+    }
     match std::env::var("DEBUG") {
-        Ok(val) => is_debug = val == "1",
+        Ok(v) => is_debug = v == "1".to_string(),
         Err(_) => is_debug = false,
     }
     
     // Start listenging for connections
-    let address = if is_debug {"0.0.0.0:8080"} else {"0.0.0.0:80"};
-    print!("Debug: {} and address: {}\n", is_debug, address);
+    let address = "0.0.0.0:".to_string() + &port;
     let listener = TcpListener::bind(address).unwrap();
+    print!("Listening on port: {}\n", port);
     
+    // Spawn a thread for each established connection
     for stream in listener.incoming() {
         match stream {
             Ok(succ_stream) => tp.execute(|| {handle_connection(succ_stream)}),
@@ -47,14 +53,13 @@ fn handle_connection(mut stream: TcpStream) {
     // Error handling might be an issue here
     let mut buffer = [0; 1024]; // Provided information shouldn't be over 1024 bytes long, since don't support file uploads, but could change in future
     let size_read = stream.read(&mut buffer);
-    match size_read {
-        Ok(size) => print!("{}\n", size),
-        Err(_) => print!("Issue parsing request\n")
-    }
+    // match size_read {
+    //     Ok(size) => print!("{}\n", size),
+    //     Err(_) => print!("Issue parsing request\n")
+    // }
     let mut headers = [httparse::EMPTY_HEADER; 100]; // request can have at most 100 headers
     let mut req = httparse::Request::new(&mut headers);
     let res = req.parse(&buffer).unwrap();
-    print!("{}\n", res.unwrap());
     // let req = parse_request(&buffer, &headers);
     let mut p = req.path.unwrap();
     print!("P : {}\n", p);
