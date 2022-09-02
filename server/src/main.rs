@@ -22,11 +22,16 @@ pub mod thread_pool;
 fn main() {
     let mut tp = thread_pool::ThreadPool::new(1, 200);
     
-    let is_debug: bool = std::env::var("DEBUG").unwrap() == "1";
+    // Read environment variables
+    let is_debug: bool;
+    match std::env::var("DEBUG") {
+        Ok(val) => is_debug = val == "1",
+        Err(_) => is_debug = false,
+    }
+    
+    // Start listenging for connections
     let address = if is_debug {"0.0.0.0:8080"} else {"0.0.0.0:80"};
-
     print!("Debug: {} and address: {}\n", is_debug, address);
-
     let listener = TcpListener::bind(address).unwrap();
     
     for stream in listener.incoming() {
