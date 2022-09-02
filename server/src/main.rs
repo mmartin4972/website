@@ -10,6 +10,7 @@ use std::fs;
 pub mod thread_pool;
 
 /// TODO:
+/// * Add better error handling for the different routes
 /// * Add a system that is going to construct html from default and specific static pages
 /// * Add reading environment variables for debug configuration, so can monitor local host or the actual host port
 /// * MUST create a memory caching system that threads are able to access so they don't constantly have to open and read files
@@ -92,9 +93,9 @@ fn gen_response(path: &str) -> Vec<u8> {
         return error.to_string().into_bytes();
     }
     
-    let mut content_bytes: Vec<u8> = Vec::new();
-    
-    let mut headers: &str = "";
+    let mut content_bytes: Vec<u8>;
+    let content_type: &str;
+    let content_length: usize;
 
     if path.ends_with(FILE_TYPES::HTML) {
         let mut default_file_path = std::env::current_dir().unwrap();
@@ -116,33 +117,35 @@ fn gen_response(path: &str) -> Vec<u8> {
         content += &default_file_parts[default_file_parts.len()-1].to_string();
 
         content_bytes = content.into_bytes();
+        content_type = "text/html";
+        content_length = content_bytes.len();
 
-        headers = 
-        "HTTP/1.1 200 OK
-        Content-type: text/html
-        \r\n\r\n";
-
-    } else if path.ends_with(FILE_TYPES::JS) || path.ends_with(FILE_TYPES::CSS){
+    } else {
         content_bytes = fs::read(file_path).unwrap();
-        
-        headers = 
-        "HTTP/1.1 200 OK
-        Content-type: text/html
-        \r\n\r\n";
-    } else if path.ends_with(FILE_TYPES::PNG) || path.ends_with(FILE_TYPES::JPG) {
-        content_bytes = fs::read(file_path).unwrap();
-        
-        headers = 
-        "HTTP/1.1 200 OK
-        Content-type: image/jpeg
-        \r\n\r\n";
-    }
+        content_length = content_bytes.len();
 
-    let mut response = headers.to_string().into_bytes();
+        if path.ends_with(FILE_TYPES::JS) {
+            content_type = "application/javascript";
+        } else if path.ends_with(FILE_TYPES::CSS) {
+            content_type = "text/css";
+        } else if path.ends_with(FILE_TYPES::PNG) {
+            content_type = "image/png";
+        } else if path.ends_with(FILE_TYPES::JPG) {
+            content_type = "image/jpeg";
+        } else { // TODO: Not sure if this is the proper default value
+            content_type = "";
+        }
+    } 
+    
+    // Build final response as bytes
+    let headers = format!(
+        "HTTP/1.1 200 OK
+        Content-type: {0}
+        Content-length: {1}
+        \r\n\r\n", content_type, content_length);
+
+    let mut response = headers.into_bytes();
     response.append(&mut content_bytes);
-    print!("{}\n",path);
-
-    //print!("Response: {}", response);
     return response;
 }
 
