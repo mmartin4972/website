@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>{{ page.title }}</title>
+<title>---</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <link rel="icon" href="images/nav/favicon.png"> <!---Favicon 196x196-->
@@ -12,19 +12,19 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link href="../css/nav.css" rel="stylesheet" type="text/css">
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174264300-1"></script>
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174264300-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'UA-174264300-1');
-</script>
-{{ page.sections['css'] }}
+</script> -->
+---
 </head>
 
 <body>
-        {{ content }}  
+    ---  
     <div id="header" class="hide">
         <div class="nav">
             <div class="logo-desktop">
@@ -92,7 +92,7 @@
                 </a>
             </div>
         </div>
-        <div class = "leadership menu-container"">
+        <div class = "leadership menu-container">
             <div class = "leadership back-container edu">
                 <a id="mdrop" class="tile edu"  href="../leadership.html#img1">
                     <div class="background-image edu" style="background-image: url('../images/nav/mroverTileBackground.png');">
@@ -189,6 +189,6 @@
         </a>
     </div>       
     <script type = "text/javascript" src="../javascript/default.js"></script>
-    {{ page.sections['js'] }}
+    ---
 </body>
 </html>
