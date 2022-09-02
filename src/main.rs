@@ -90,8 +90,7 @@ fn gen_response(path: &str) -> Vec<u8> {
     
     // Check specified file exists
     let mut file_path = std::env::current_dir().unwrap();
-    file_path.pop();
-    file_path.push("client");
+    file_path.push("static");
     file_path.push(Path::new(&path[1..]));
 
     let file_path2 = file_path.clone();
@@ -111,8 +110,7 @@ fn gen_response(path: &str) -> Vec<u8> {
 
     if path.ends_with(FILE_TYPES::HTML) {
         let mut default_file_path = std::env::current_dir().unwrap();
-        default_file_path.pop();
-        default_file_path.push("client");
+        default_file_path.push("static");
         default_file_path.push("_layouts");
         default_file_path.push("default.html");
 

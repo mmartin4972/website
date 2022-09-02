@@ -1,1 +1,1 @@
-web: cd server; cargo run
+web: cargo run
