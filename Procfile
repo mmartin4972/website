@@ -1,1 +1,1 @@
-web: cargo run
+web: ./target/release/personal-site-server
