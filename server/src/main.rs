@@ -22,11 +22,14 @@ pub mod thread_pool;
 fn main() {
     let mut tp = thread_pool::ThreadPool::new(1, 200);
     
-    // TODO: make environment variable here
-    let listener = TcpListener::bind("0.0.0.0:8080").unwrap();
+    let is_debug: bool = std::env::var("DEBUG").unwrap() == "1";
+    let address = if is_debug {"0.0.0.0:8080"} else {"0.0.0.0:80"};
+
+    print!("Debug: {} and address: {}\n", is_debug, address);
+
+    let listener = TcpListener::bind(address).unwrap();
     
     for stream in listener.incoming() {
-        print!("Waiting\n");
         match stream {
             Ok(succ_stream) => tp.execute(|| {handle_connection(succ_stream)}),
             Err(_) => print!("Connection Error\n")
@@ -48,8 +51,12 @@ fn handle_connection(mut stream: TcpStream) {
     let res = req.parse(&buffer).unwrap();
     print!("{}\n", res.unwrap());
     // let req = parse_request(&buffer, &headers);
-    
-    let response = gen_response(req.path.unwrap());
+    let mut p = req.path.unwrap();
+    print!("P : {}\n", p);
+    if p == "/" { // Check for default page
+        p = "/index.html";
+    }
+    let response = gen_response(p);
 
     let res2 = stream.write(&response);
     match res2 {
@@ -85,7 +92,7 @@ fn gen_response(path: &str) -> Vec<u8> {
     let file_path2 = file_path.clone();
     print!("{}\n", file_path2.to_str().unwrap()); 
     
-    if !file_path.exists() {
+    if !file_path.exists() || file_path.is_dir() {
         let error = 
         "HTTP/1.1 404 Not Found
         \r\n\r\n";
