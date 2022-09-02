@@ -6,7 +6,8 @@ who did an incredible job creating it. The contact form was based on code writte
 webpages was based on a demo by w3schools.com. Insipration for the effects of this site came from hyperlite.com.  Implementation of these effects 
 and all other aspects of the website is completely original.
 
-The Rust server for this site currently runs on Heroku and its implementation is also completely original
+The Rust server for this site currently runs on Heroku and its implementation is based only on the simple multi-threaded server described in the Rust documentation
+This project could become completely trivial if I were to use the Rocket library, Nginx, or Firebase; however, since this is a personal project to enhance my own knowledge I am not going to use the Rocket library
 
 ## Technologies
 
