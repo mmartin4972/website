@@ -1,9 +1,10 @@
 use std::net::{TcpStream, TcpListener};
 use std::io::{Read, Write};
 use std::str::Bytes;
+use std::thread::panicking;
 use http::{Response, StatusCode, Version};
 use std::{env, default};
-use httparse::{Header, Request};
+use httparse::{Header, Request, Error};
 use std::path::Path;
 use std::fs;
 
@@ -49,31 +50,40 @@ fn main() {
 }
 
 fn handle_connection(mut stream: TcpStream) {
-    // TODO: This whole parsing system is a bit questionable and needs to be thoroughly tested
-    // Error handling might be an issue here
-    let mut buffer = [0; 1024]; // Provided information shouldn't be over 1024 bytes long, since don't support file uploads, but could change in future
-    let size_read = stream.read(&mut buffer);
-    // match size_read {
-    //     Ok(size) => print!("{}\n", size),
-    //     Err(_) => print!("Issue parsing request\n")
-    // }
+    // Variables declared outside of function, since returned value contains references to them and 
+    //  is faster if these variables are kept on the stack
     let mut headers = [httparse::EMPTY_HEADER; 100]; // request can have at most 100 headers
-    let mut req = httparse::Request::new(&mut headers);
-    let res = req.parse(&buffer).unwrap();
-    // let req = parse_request(&buffer, &headers);
-    let mut p = req.path.unwrap();
+    let mut buffer = [0; 1024]; // Provided information shouldn't be over 1024 bytes long, since don't support file uploads, but could change in future
+    let req = get_request(&mut stream, &mut headers, &mut buffer);    
+
+    // Get Path
+    let mut p: &str;    
+    match req {
+        Ok(r) => p = r.path.unwrap(),
+        Err(e) => { stream.write(&gen_error()); return () },
+    }
     print!("P : {}\n", p);
-    if p == "/" { // Check for default page
+    
+    // Routing Configuration
+    if p == "/" { 
         p = "/index.html";
     }
-    let response = gen_response(p);
 
-    let res2 = stream.write(&response);
-    match res2 {
-        Ok(_) => print!("Response succeeded\n"),
-        Err(_) => print!("Response failed\n")
+    // Generate and send the response
+    let res = gen_response(p);
+    match res {
+        Ok(r) => {
+            let bytes_written = stream.write(&r);
+            match bytes_written {
+                Ok(_) => print!("Response succeeded\n"),
+                Err(_) => print!("Response failed\n")
+            }
+        },
+        Err(s) => {
+            print!("ERROR: Generating the response failed with {}", s);
+            _ = stream.write(&gen_error());
+        }
     }
-    
 }
 
 // TODO: Implement this when you want to figure out lifetimes
@@ -91,7 +101,57 @@ impl FILE_TYPES {
     const JPG: &'static str = ".jpg";
 }
 
-fn gen_response(path: &str) -> Vec<u8> {
+fn get_request<'s>(stream: &'s mut TcpStream, headers: &'s mut [Header<'s>], buffer: &'s mut [u8]) -> Result<httparse::Request<'s, 's>, Error> {
+    let cur_byte = 0;
+    let mut read_end = false;
+    
+    // Read HTTP Request from TCP Stream
+    loop {
+        let len = buffer.len();
+        let s = stream.read(&mut buffer[cur_byte..len]);
+        let mut size_read = 0;
+        match s {
+            Ok(size) => size_read = size,
+            Err(_) => return Err(Error::NewLine),
+        }
+        
+        if size_read == 0 {break;}
+        if cur_byte + size_read > 1024 {panic!("Reading more than 1024 bytes")}
+        if size_read >= 4 {
+            for i in cur_byte..(cur_byte + size_read - 3) {
+                print!("char: {}\n", buffer[i]);
+                if buffer[i] == '\r' as u8 && buffer[i+1] == '\n' as u8 && buffer[i+2] == '\r' as u8 && buffer[i+3] == '\n' as u8 {
+                    read_end = true;
+                    break;
+                } 
+            }
+            break;
+        }
+    }
+    if read_end {
+        print!("EXPECTING SUCCESS\n");
+    } else {
+        print!("Shit\n");
+    }
+
+    // Parse the info from the read stream
+    let mut req = httparse::Request::new(headers);
+    let res = req.parse(buffer)?;
+    if res.is_partial() {
+        panic!("Header only partially acquired\n");
+    }
+    return Ok(req);
+}
+
+fn gen_error() -> Vec<u8> {
+    let error = 
+    "HTTP/1.1 404 Not Found
+    \r\n\r\n";
+    print!("File Not Found\n");
+    return error.to_string().into_bytes();
+}
+
+fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
     
     // Check specified file exists
     let mut file_path = std::env::current_dir().unwrap();
@@ -102,11 +162,7 @@ fn gen_response(path: &str) -> Vec<u8> {
     print!("{}\n", file_path2.to_str().unwrap()); 
     
     if !file_path.exists() || file_path.is_dir() {
-        let error = 
-        "HTTP/1.1 404 Not Found
-        \r\n\r\n";
-        print!("File Not Found\n");
-        return error.to_string().into_bytes();
+        return Err("File not found");
     }
     
     let mut content_bytes: Vec<u8>;
@@ -161,7 +217,7 @@ fn gen_response(path: &str) -> Vec<u8> {
 
     let mut response = headers.into_bytes();
     response.append(&mut content_bytes);
-    return response;
+    return Ok(response);
 }
 
 // main listens for incoming connections

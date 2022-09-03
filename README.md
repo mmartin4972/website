@@ -15,3 +15,5 @@ This project could become completely trivial if I were to use the Rocket library
 - ```git clone https://github.com/mmartin4972/mmartin4972.github.io.git```
 - ```docker pull mmartin4972/ubuntu20:dev```
 - ```docker container run -p 8080:8080 -v <name of current path e.g. C:\Users\mmart\Programming\website\>:/website -dt mmartin4972/ubuntu20:dev```
+### Push to Heroku
+    git push heroku Development:main
