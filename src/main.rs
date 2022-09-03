@@ -10,16 +10,10 @@ use std::fs;
 
 pub mod thread_pool;
 
-/// TODO:
-/// * Add better error handling for the different routes
-/// * Add a system that is going to construct html from default and specific static pages
-/// * Add reading environment variables for debug configuration, so can monitor local host or the actual host port
-/// * MUST create a memory caching system that threads are able to access so they don't constantly have to open and read files
-/// * Add support for handling TLS requests
-/// * Could add zip decompression on the client side when reading an image or large file
-/// * Add logging to track what the response time is
-/// Notes:
-/// * According to this [site](https://engineering.zalando.com/posts/2019/04/how-to-set-an-ideal-thread-pool-size.html) the optima thread pool size = number of cpus * ((1 + wait time) / service time)
+/// EFFECTS:
+/// * Listens for incoming requests on a port
+/// * Sends incoming requests to a thread in the thread pool to be handled
+/// * Loops forever and never returns
 fn main() {    
     // Read environment variables
     let port: String;
@@ -53,6 +47,10 @@ fn main() {
     }
 }
 
+/// MODIFIES: stream
+/// EFFECTS:
+/// * Reads from stream, writes response to stream, and closes stream
+/// * Contains all error handling logic. All other functions should propogate errors to this function
 fn handle_connection(mut stream: TcpStream) {
     // Variables declared outside of function, since returned value contains references to them and 
     //  is faster if these variables are kept on the stack
@@ -90,6 +88,7 @@ fn handle_connection(mut stream: TcpStream) {
     }
 }
 
+/// Overview: Basic struct defining different file endings
 struct FILE_TYPES {
 }
 impl FILE_TYPES {
@@ -100,6 +99,14 @@ impl FILE_TYPES {
     const JPG: &'static str = ".jpg";
 }
 
+/// MODIFIES: stream, headers, buffer
+/// EFFECTS:
+/// * Reads from the stream and parses the data stream as a new http Request object
+/// * Returns the newly parsed request object
+/// Note:
+/// * headers and buffer are passed as parameters, since we need their lifetime to exceed that of
+///     this function, but declaring them locally, would cause them to be destroyed when the function returns
+///     I wanted to avoid heap allocation, since it seems Rust is optimized to avoid doing so
 fn get_request<'s>(stream: &'s mut TcpStream, headers: &'s mut [Header<'s>], buffer: &'s mut [u8]) -> Result<httparse::Request<'s, 's>, Error> {
     let cur_byte = 0;
     let mut read_end = false;
@@ -142,6 +149,8 @@ fn get_request<'s>(stream: &'s mut TcpStream, headers: &'s mut [Header<'s>], buf
     return Ok(req);
 }
 
+/// EFFECTS: 
+/// Returns a byte array containing an error message
 fn gen_error() -> Vec<u8> {
     let error = 
     "HTTP/1.1 404 Not Found
@@ -150,6 +159,9 @@ fn gen_error() -> Vec<u8> {
     return error.to_string().into_bytes();
 }
 
+/// EFFECTS:
+/// * Returns a vector of bytes containing the information for the 
+///     response to be sent back to the client
 fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
     
     // Check specified file exists
@@ -218,9 +230,3 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
     response.append(&mut content_bytes);
     return Ok(response);
 }
-
-// main listens for incoming connections
-// once a tcp connection is established send it to a function that will handle the connection and spawn this function in a thread pool
-// the handle connection function is simply going to read what information was requested based on the page and return this information
-// it is then the responsibility of the browser to render the static page and make all subsequent requests for other static content
-
