@@ -20,12 +20,11 @@ pub mod thread_pool;
 /// * Add logging to track what the response time is
 /// Notes:
 /// * According to this [site](https://engineering.zalando.com/posts/2019/04/how-to-set-an-ideal-thread-pool-size.html) the optima thread pool size = number of cpus * ((1 + wait time) / service time)
-fn main() {
-    let mut tp = thread_pool::ThreadPool::new(1, 200);
-    
+fn main() {    
     // Read environment variables
     let port: String;
     let is_debug: bool;
+    let pool_size: usize;
     match std::env::var("PORT") { // Bind to heroku port environment variable
         Ok(p) => port = p,
         Err(_) => port = "8080".to_string(),
@@ -34,8 +33,13 @@ fn main() {
         Ok(v) => is_debug = v == "1".to_string(),
         Err(_) => is_debug = false,
     }
-    
+    match std::env::var("POOL_SIZE") {
+        Ok(v) => pool_size = v.parse::<usize>().unwrap(),
+        Err(_) => pool_size = 1,
+    }
+
     // Start listenging for connections
+    let mut tp = thread_pool::ThreadPool::new(pool_size, 200);
     let address = "0.0.0.0:".to_string() + &port;
     let listener = TcpListener::bind(address).unwrap();
     print!("Listening on port: {}\n", port);
@@ -85,11 +89,6 @@ fn handle_connection(mut stream: TcpStream) {
         }
     }
 }
-
-// TODO: Implement this when you want to figure out lifetimes
-// fn parse_request(buffer: &[u8], headers: &mut [Header]) -> Request {
-//     return req;
-// }
 
 struct FILE_TYPES {
 }
