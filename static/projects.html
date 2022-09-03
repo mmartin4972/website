@@ -1,0 +1,172 @@
+Matt Martin
+---
+<link href="css/common.css" rel="stylesheet" type="text/css">
+<link href="css/projects.css" rel="stylesheet" type="text/css">
+---
+<div id="mainContainer">
+    <div id="img6" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">INVIA MEDICAL IMAGING SOLUTIONS</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            During the summer of 2021 I worked as a Software Developer Intern for Invia Medical Imaging Solutions. Invia’s main product is an application which reads in heart scans stored in large databases 
+            and performs processing on the images to reconstruct a 3D representation of the heart. Once the images are processed the product then allows doctors to easily disect and 
+            view slices of the heart, and will highlight key information about the slices that makes them easier to interpret. 
+            <br><br>
+            Over the course of the summer I used C++/CLI, C#, SQLite, and the .NET Framework to solve the issue of high latency when copying a database across a network. There are 
+            particular types of scans, which generate a large amount of very small image files, which are difficult to transfer across a network since for each image transferred 
+            there is overhead when connecting to the destination computer, and incurring this overhead for each image transferred led to immense latency. I worked with the 
+            excellent Invia engineers to solve this problem, by creating a service, which could identify these particular images and package them into a zip archive. As a result of this, 
+            I had to add functionality to the product to process a database that has zip archives in it, and also process the images within the zip archive. By the end of 
+            the summer, the product was capable of reading in database files which were zipped, and transferring a database across a network became 10x faster. 
+            <br><br>
+            This experience taught me a lot about what it is like to work on a professional software development team, developing windows services and applications, 
+            multi-threading, and several programming languages I was unfamiliar with. The project manager gave me a lot of freedom to employ my own problem-solving and creative abilities 
+            in solving the many challenges I encountered, which allowed me to take ownership and pride in what I did. This internship was an incredible learning experience for me and 
+            it was a lot of fun to work with the Invia staff and contribute a product feature that will actually be shipped. 
+        </div>
+    </div>
+    <div id="img5" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">CUSTOM GPU OBSTACLE DETECTION</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            During the winter of 2021, I worked in collaboration with Ashwin Gupta, a fellow member of the Michigan Mars Rover Perception Team, to develop a proof of concept 
+            for a GPU accelerated version of our current obstacle detection pipeline. We researched and used CUDA to create custom GPU implementations of our current obstacle 
+            processing algorithms: Pass Through Point Filtering, RANSAC Plane Segmentation, Euclidean Cluster Extraction, and Path Planning. After our proof of concept was 
+            completed and tested, we put together a <a href="files/CUDA_GPU_Accelerated_Obstacle_Detection_Proposal.pdf" target="_blank">proposal</a> documenting the enhancements we made and the results that we found. Our conclusion was that our GPU proof of concept 
+            was 25% faster than our current CPU based detection algorithm. We proceeded to work on the project throughout the spring and summer of 2021, making optimizations 
+            and implementing an additional algorithm, Voxel Grid Point Sorting, to further boost our pipeline’s performance. We performed several tests at the end of the summer 
+            and found that our optimized GPU pipeline was able to achieve speeds 3x faster than the current CPU implementation. Though it was a tremendous amount of work to 
+            develop, our custom system proved to have significantly boosted the performance of our sub-team and was an incredible learning experience for myself. The 
+            <a href="https://github.com/mmartin4972/mrover-workspace/tree/GPU_Obstacle/jetson/percep_obs_detect" target="_blank">code</a> for the project, 
+            a <a href="https://youtu.be/Kwt1jsJKW_0" target="_blank">demo</a> of our pipeline without voxel grid processing, a <a href="https://youtu.be/gSJjAKyBIWY" target="_blank">demo</a> of our pipeline with voxel grid processing, 
+            and a <a href="https://www.youtube.com/playlist?list=PLj5rOuXit19mCtakn21m11At3zjgEycnO" target="_blank">playlist</a> of videos we made walking through how the code works. 
+        </div>
+    </div>
+    <div id="img4" class="bg video2" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">POINT CLOUD BASED OBSTACLE DETECTION</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            Over the summer of 2020, I was tasked with developing a prototype obstacle detection that utilized the Point Cloud Library (PCL) to detect distinct obstacles 
+            in 3D space. I spent a lot of time researching the capabilities of the library and various possible pipelines, until I settled on the one detailed in this 
+            <a href="images/project/PCL Pipeline.png" target="_blank">diagram</a>. I went to work implementing various filters provided in the library as well as writing 
+            several of my own, for calculating the outline of obstacles and finding a clear path around obstacles. After doing a lot of unit testing for each stage of the 
+            pipeline, I had successfully created a working prototype that was able to find a clear path around obstacles, with considerable accuracy. After reviewing the 
+            <a href="https://github.com/mmartin4972/mrover-workspace/blob/PCL/onboard/cv/pcl.cpp" target="_blank">code</a> and the <a href="https://youtu.be/EA65-chNTAg" target="_blank">demo</a>, 
+            I decided to move forward with the project and have Perception more fully develop the project in the fall of 2020. I created an in-depth <a href="https://youtu.be/ZfznVmGhEDc" target="_blank">code walkthrough</a> 
+            to depict exactly what each element of the pipeline does, so the team could quickly understand how the prototype was structured and what each element of the 
+            pipeline does. Since then, we have been focused on restructuring and refining the prototype, which can now be found in our current code base. 
+        </div>
+    </div>
+    <div id="img2" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">PERCEPTION DEVELOPMENT ENVIRONMENT</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            The development environment for the Mars Rover Perception sub-team has previously been an issue. Our code is designed for an Ubuntu 18 operating system, 
+            so each member that wishes to develop our code needs access to this operating system. The development environment setup process can be tedious and 
+            painful, especially for people who do not have any experience working in a Linux environment, and was a major inhibitor for new members. I made it a 
+            top priority to make the sub-team’s setup process as streamlined as possible, so that new members could get coding as quickly as possible.
+            <br><br> 
+            To achieve my goal, I first made sure that our environment could be setup in a virtual machine on both Windows and Mac computers, since historically 
+            we have only every dual-booted. I experimented with Windows Subsystem for Linux (WSL) and Oracle VirtualBox to make this a reality. I successfully 
+            configured these virtual machines to run the Ubuntu 18 operating system on Windows and Mac. I then created a 
+            <a href="https://github.com/umrover/perception-dev-env" target="_blank">bash script</a> to install all the packages that our code depends on, so that I did not have 
+            to manually go through the installation process.
+            <br><br>
+            Once I documented the setup process for each of the virtual machines, I helped worked with the sub-team to get them setup with the new development environment.  
+            However, Perception’s recent use of the Point Cloud Library has made its coding package much more computationally intensive, and many members who used 
+            VirtualBox or did not have high-performance computers were not able to get useful debugging output from our software, because their code ran incredibly slow. 
+            <br><br>
+            I wanted our sub-team to be accessible to anyone interested in joining and did not want to make owning a high-performance computer a pre-requisite for 
+            my members. To tackle this issue, I started researching cloud computing and Amazon Web Services (AWS). AWS was quite overwhelming, so I reached out to 
+            the University of Michigan IT Department for assistance in understanding Amazon’s platform. The UM IT department understood my predicament and said that 
+            they could accommodate our team on one of their remote computing clusters that runs CentOS 7. They instructed me on how I could create a Singularity 
+            container for Perception’s development environment and run Ubuntu 18 on their cluster. I created the container for our development environment, and now 
+            all of the members of the Perception sub-team are able to develop and debug their code on a powerful remote computing cluster, that takes minimal time 
+            and knowledge of Linux to setup. 
+        </div>
+    </div>
+    <div id="img1" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">WEBSITE</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            Developing a website has always been on my bucket list. I developed this site over the course of the Coronavirus pandemic starting in March 2020 
+            and finally finishing the bulk of the code in August 2020. It was a very large that was definitely slow at times, but in the end it was very 
+            rewarding. Front end development can be very tedious and making a site look stylish and be functional is a difficult and sometimes tedious thing
+            to do. I read a couple books to teach me the basics of HTML and Javascript and figured the rest out by googling and experimenting. It was a fun 
+            project and I am proud of the final result. If you would like to see further details of my website check out my github 
+            <a href="https://github.com/mmartin4972/mmartin4972.github.io" target="_blank">repository.</a>
+        </div>
+    </div>
+    <div id="img3" class="bg video" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">U-V DISPARITY OBSTACLE DETECTION</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            My first project on the Perception sub-team was developing an obstacle detection that could identify distinct obstacles in the environment, 
+            since our current system could only identify blocked regions. In the Spring of 2020, I started researching and prototyping a method called U-V Disparity Obstacle 
+            Detection. The idea was to generate two plots of the collected depth data: the U plot, which had depth values 0-7 meters on the x-axis and the 
+            rows 0-720 (image height) on the y-axis, and the V plot, which had depth values 0-7 meters on the y-axis and columns 0-1280 (image width) on the 
+            x-axis. In the U plot, we can identify the ground as being a slanted linear line, while any obstacles we detect would appear as vertical lines 
+            shooting off the slanted one. OpenCV’s Hough Transform could be used to detect the lines and then identify the corresponding obstacle lines in 
+            the V plot, which appeared as horizontal lines. The topmost and bottommost points for a vertical line in the U plot told us the topmost and 
+            bottommost rows that the obstacle was bounded in and the leftmost and rightmost points for a horizontal line in the U plot indicated the leftmost 
+            and rightmost columns that bounded the obstacle. From this data we could identify specific obstacles in our frame. I developed the 
+            <a href="https://github.com/mmartin4972/mrover-workspace/blob/U-V/onboard/cv/new_obstacle_detector.cpp" target="_blank">code</a> and created a 
+            <a href="https://youtu.be/YX3sPfu0XvE" target="_blank">demo</a> for this prototype. It was decided that this system showed promise; however, I was asked to 
+            prototype a Point Cloud Based Obstacle Detection system before it was decided, which system the team would use in competition. 
+        </div>
+    </div>
+    <div id="bottomBar">
+        <div id="container" class="center">
+            <div class="socialMedia">
+                <div class="center" style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('https://www.linkedin.com/in/matt-m-965157127')" style="background-image: url('images/nav/linkedin.png');"></button>    
+                </div>
+            </div>
+            <div class="socialMedia">
+                <div class="center" style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('https://github.com/mmartin4972')" style="background-image: url('images/nav/github-edit.png');"></button>    
+                </div>
+            </div>
+            <div class="socialMedia">
+                <div class="center " style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('mailto:mmartin4972@gmail.com')" style="background-image: url('images/nav/email.png');"></button>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ytp-properties"
+    data-property="{videoURL:'https://youtu.be/YX3sPfu0XvE',
+    containment:'.video', autoPlay:true, mute:true, startAt:11, stopAt:30, opacity:1, 
+    useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'16/9',
+    showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+    showAnnotations:false, quality:'hd1080', loop:0}">
+    </div>
+    <div id="ytp-properties2"
+    data-property="{videoURL:'https://youtu.be/EA65-chNTAg',
+    containment:'.video2', autoPlay:true, mute:true, startAt:11, stopAt:30, opacity:1, 
+    useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'16/9',
+    showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+    showAnnotations:false, quality:'hd1080', loop:0}">
+    </div>
+</div>
+---
+<script type = "text/javascript" src="javascript/projects.js"></script>
+<script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>

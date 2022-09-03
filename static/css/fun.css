@@ -1,0 +1,139 @@
+.larger {
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    position: relative;
+    display: inline-block;
+}
+
+.bg1{
+    background-image: url("../images/fun/jiu_jitsu_back_light.png") !important;
+    background-attachment: local !important;
+}
+
+.bg2{
+    background-image: url("../images/fun/piano_back_light.png");
+    background-attachment: local !important;
+    background-size: cover !important;
+    margin-top: -5px;
+}
+
+.smaller {
+    width: 400px;
+    z-index: 10;
+    right: 0;
+    margin-right: 50px;
+    background-color: #2b2b2b;
+    position: absolute;
+    top: 30%;
+    padding: 30px 40px;
+}
+
+.caption{
+    text-align: right;
+    top: 20%;
+    padding-right: 50px;
+}
+
+.left{
+    top: 20%;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.leftSmaller{
+    top: 130%;
+    right: unset;
+    left: 0;
+    margin-left: 50px;
+}
+
+.title-style{
+    font-size: 30px;
+}
+
+@media (max-height: 650px){
+    .smaller{
+        top: 170px;
+    }
+
+    .caption{
+        top: 100px;
+    }
+}
+
+@media (max-width: 739px){
+    .bg1{
+        background-image: url("../images/fun/jiu_jitsu_mobile_light.png") !important;
+        background-position: center !important;
+    }
+
+    .bg2{
+        background-position: right !important;
+    }
+
+    .caption{
+        color: #d3d3d3;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .smaller{
+        position: relative;
+        width: 100%;
+        top: unset;
+        right: unset;
+        margin: 0;
+    }
+
+    .left{
+        top: 50%;
+    }
+}
+
+/* --- Social Media --- */
+#bottomBar {
+	width: 100%;
+	height: 80px;;
+	background-color: black !important;
+	position: relative;
+    z-index: 15;
+    margin-top: -5px;
+	
+}
+
+.socialMedia {
+	position: relative;
+	display: inline-block;
+	width: 31%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	min-width: 50px;
+}
+
+.button {
+	background-color: #171516;
+	border: none;
+	color: white;
+	padding: 50%;
+	text-align: center;
+	text-decoration: none;
+	position: relative;
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: auto;
+	border-radius: 50%;
+	transition-property: all;
+	transition-duration: 0.2s;
+  }
+
+  .button:hover {
+	transform: scale(1.2);
+}

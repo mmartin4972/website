@@ -1,6 +1,0 @@
-I used this link to a website that had very helpful information on how to setup a 
-github site. Super cool and helpful
-http://jmcglone.com/guides/github-pages/
-
-run 'bundle exec jekyll serve' to host webpage on local machine after installing 
-ruby on rails and jekyll plug in
