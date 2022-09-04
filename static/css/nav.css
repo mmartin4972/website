@@ -132,7 +132,6 @@ body {
         align-items:center;
         justify-content: center;
         position: absolute;
-        display: fixed;
         top: 0;
         left: 0;
         overflow: hidden;
@@ -276,7 +275,6 @@ body {
         left: 0;
         top: 0;
         position: absolute;
-        display: fixed;
         z-index: 120;
         overflow: hidden;
     }

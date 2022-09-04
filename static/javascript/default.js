@@ -37,6 +37,8 @@ var projectMobileDrop = document.getElementsByClassName('projects mobile-dropdow
 var projectMobile = document.getElementsByClassName('proj dropdown-box menu-box');
 var leadershipMobileDrop = document.getElementsByClassName('leadership mobile-dropdown menu-container');
 var leadershipMobile = document.getElementsByClassName('leadership dropdown-box menu-box');
+var workMobileDrop = document.getElementsByClassName('work mobile-dropdown menu-container');
+var workMobile = document.getElementsByClassName('work dropdown-box menu-box');
 
 function loadNav(){
     navigation();
@@ -51,7 +53,8 @@ var whiteToggle = function(event) {
 var dropShow = function(event){
     if(!mobileDropDown[0].classList.contains('active') && 
         !projectMobileDrop[0].classList.contains('active') &&
-        !leadershipMobileDrop[0].classList.contains('active')){
+        !leadershipMobileDrop[0].classList.contains('active') &&
+        !workMobileDrop[0].classList.contains('active')) {
         mobileDropDown[0].classList.add('active');
         projectMobile[0].addEventListener('click', function(){
             projectMobileDrop[0].classList.add('active');
@@ -59,6 +62,10 @@ var dropShow = function(event){
         });
         leadershipMobile[0].addEventListener('click', function(){
             leadershipMobileDrop[0].classList.add('active');
+            mobileDropDown[0].classList.remove('active');
+        });
+        workMobile[0].addEventListener('click', function(){
+            workMobileDrop[0].classList.add('active');
             mobileDropDown[0].classList.remove('active');
         });
         if(header.className != "black") {
@@ -69,6 +76,7 @@ var dropShow = function(event){
         mobileDropDown[0].classList.remove('active');
         projectMobileDrop[0].classList.remove('active');
         leadershipMobileDrop[0].classList.remove('active');
+        workMobileDrop[0].classList.remove('active');
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
         }
@@ -310,11 +318,10 @@ function navigation() {
                 mobileDropDown[0].classList.remove('active');
             projectMobileDrop[0].classList.remove('active');
             leadershipMobileDrop[0].classList.remove('active');
+            workMobileDrop[0].classList.remove('active');
             console.log('mobile cleaned');
         }
         
-        
-
         /*--- Show Desktop Menu Items ---*/ 
         if(menu[0].classList.contains('hide')) {menu[0].classList.remove('hide');}
         if(projects[0].classList.contains('hide')) {projects[0].classList.remove('hide');}

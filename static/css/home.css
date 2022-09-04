@@ -75,11 +75,19 @@
 	left: 0;
 	bottom: 0;
 	right: 0;
-	display: fixed;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
     min-height:580px;
+}
+
+#mainContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: scroll;
 }
 
 .fadeIn {
@@ -96,6 +104,7 @@ animation: fadeIn 1s linear;
     opacity: 0;
 	animation: fadeOut 1s linear;
 	z-index: -4;
+    height: 0% !important;
 }
 
 @keyframes fadeOut {
