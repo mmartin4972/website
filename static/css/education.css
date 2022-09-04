@@ -99,7 +99,7 @@ ul {
 	
 }
 
-@media (max-height: 672px) and (min-width: 740px) {
+@media (max-height: 672px) and (min-width: 840px) {
     #bottomBar {
         position: relative;
     }
@@ -211,7 +211,7 @@ ul {
 }
 
 /* --- Mobile View --- */
-@media(max-width: 739px) {
+@media(max-width: 839px) {
     .image {
         width: 175px;
         height: 175px;

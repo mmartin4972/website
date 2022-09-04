@@ -58,7 +58,7 @@
 }
 
 /* --- Adjustments for mobile images ---*/
-@media (max-width: 739px) {
+@media (max-width: 839px) {
 
 #img5{
 	background-image: url(../images/leadership/SCOUTS/scouts_mobile_light.png);

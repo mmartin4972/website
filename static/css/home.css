@@ -79,6 +79,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+    min-height:580px;
 }
 
 .fadeIn {
@@ -131,7 +132,7 @@ animation: fadeIn 1s linear;
 	background-color: black !important;
 	position: absolute;
 	left: 0px;
-	bottom: -2%;
+	bottom: -80px;
 }
 
 #container {
@@ -228,14 +229,7 @@ animation: fadeIn 1s linear;
 	}
 }
 
-@media (max-height: 900px) {
-	.content {
-		top: 100%;
-		margin-top: 180px;
-	}
-}
-
-@media (max-width: 739px) {
+@media (max-width: 839px) {
 	.twoCol{
 		height: 40%;
 		width: 90%;

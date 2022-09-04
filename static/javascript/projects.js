@@ -34,7 +34,7 @@ function iOS() {
 
 
 function adaptMobile(){
-    if(viewportwidth <= 739 || iOS()){
+    if(viewportwidth <= 839 || iOS()){
         $(".bg").addClass("bgFixed");
     }
         
@@ -47,7 +47,7 @@ function adaptMobile(){
 var container = document.getElementById("mainContainer");
 
 function adjustWidth(){
-    if(viewportwidth > 739 || !iOS()){
+    if(viewportwidth > 839 || !iOS()){
         $("#header").width(viewportwidth-(container.offsetWidth 
         - container.clientWidth));
         $(".menu-container").width(viewportwidth-(container.offsetWidth 
