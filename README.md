@@ -1,5 +1,7 @@
 # Matt Martin's Personal Site
-Website currently deployed at: https://matt-martin.herokuapp.com/
+Site has [Moved!](https://matt-martin.herokuapp.com/)
+
+New URL: https://matt-martin.herokuapp.com/
 
 Project Start: 3/21/20
 
