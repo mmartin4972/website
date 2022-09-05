@@ -25,16 +25,21 @@ Matt Martin
         <div class="content text">
             For the 2021-2022 school year I was selected to be the autonomy branch lead of the Michigan Mars Rover team. The autonomy branch consists of 4 sub-teams: Perception, 
             Localization, Navigation, and Simulation. As the branch lead it is my responsibility to manage the interactions of the various sub-teams and ensure that they are 
-            keeping up with the goals and objectives they set forth. This year, I am primarily focused on managing the transition of the autonomy system from a Lightweight 
-            Communications and Marshalling (LCM) based system to a Simultaneous Localization And Mapping (SLAM) model, with higher bandwidth inter-process communications. To 
-            prepare myself for this transition I spent a lot of time researching SLAM over the summer, watching lectures by Cyrill Stachniss on path planning, occupancy grids, 
-            Kalman filters, and localization. After watching these lectures, I was able to establish and collaborate with the other sub-team leads to create a conclusive vision 
-            for the system, define the necessary interfaces, and establish a roadmap for completing the system before our competition in the summer of 2022.
+            keeping up with the goals and objectives they set forth. In addition to overseeing the sub-teams I also maintained and developed several integration testing systems which 
+            utilize Docker, Python, and Travis CI. These integration testing systems were designed to minimize the amount of time that we spent physically debugging on the rover, and 
+            the tests and scripts I developed helped reduce the setup time of physical testing on the rover by 75% and nearly eliminated all compilation errors encountered on the rover.
             <br><br>
-            Leading the transition to SLAM taught me the importance of planning and ensuring I got the input of everyone involved in the project. By collaborating closely with 
-            the sub-team leads I was able to use their expertise of their sub-systems to develop a roadmap for accommodating SLAM which requires minimal changes and was able to 
-            ensure that they were onboard with the system and could take ownership of their part of the project. Currently, we are working diligently to transition to this SLAM 
-            based system, so that we can dominate in our competition next summer.
+            The main challenge that I faced this year, came in the spring of 2022, as we neared various system deadlines and realized we may not reach them. The navigation system was 
+            in the process of implementing a completely new navigation algorithm called a behavior tree, which would replace the current state machine implementation. Everyone was optimistic 
+            about the completion of this algorithm; however, its implementation was well behind schedule, and it was not even ready to be integration tested. Hopes were set on the 
+            implementation of this new system, however, since the current navigation system was nearly unmaintainable and contained fatal non-deterministic bugs that we were unable to identify. 
+            It was apparent to me that the new algorithm would not be ready for the competition and that the only way to get the system functional was to revise the old algorithm. 
+            Consequently, I did a deep analysis of the navigation system, understood the current system architecture, and created a new system architecture with far cleaner and simpler interfaces. 
+            When I suggested this redesign my recommendation was met with great opposition as it would require serious changes to a system that was considered to be close to competition ready. 
+            To combat this opposition, I developed an incremental implementation plan, that allowed us to implement parts of the new architecture in various steps, as opposed to changing the entire 
+            system all at once. This way, if one part were to be implemented incorrectly or we ran out of time to implement it, we could abandon that revision and the system would still function. 
+            The architecture revision proved to be a great success. Implementing the changes was fast, it made debugging the system significantly easier, and it resolved the unknown bug that 
+            was causing our system to crash.
             <br><br>
         </div>
     </div>
@@ -79,7 +84,7 @@ Matt Martin
     </div>
     <div class="contentBg">
         <div class="content text">
-            Over the summer of 2021 I was asked to be the Vice President of the Blue Jitsu club at the University of Michigan. As the vice president it is my responsibility to work with 
+            For the 2021 and 2022 school year I was elected to be the Vice President of the Blue Jitsu club at the University of Michigan. As the vice president it is my responsibility to work with 
             the president and the rest of the leadership team to help train new members, host recruiting events, informational events, and manage club logistics. Throughout the semester 
             we will coordinate and host training sessions to teach new individuals the fundamentals of grappling, so that they don’t feel overwhelmed when first going to the club. The 
             members of the club go regularly to the Final Round Training Center where they can get professional Jiu Jitsu instruction from the mentors there. By teaching new members the 
