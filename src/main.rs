@@ -221,7 +221,7 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
     
     // Build final response as bytes
     let headers = format!(
-        "HTTP/1.1 200\nContent-type: {0}\nContent-length: {1}\r\n\r\n", content_type, content_length);
+        "HTTP/1.0 200 OK\nContent-type: {0}\nContent-length: {1}\r\n\r\n", content_type, content_length);
 
     let mut response = headers.into_bytes();
     response.append(&mut content_bytes);
