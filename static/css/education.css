@@ -102,6 +102,7 @@ ul {
 
 /*--- Social Media ---*/
 #bottomBar {
+    overflow-x:hidden;
 	width: 100%;
 	height: 80px;;
 	background-color: black !important;
@@ -110,12 +111,6 @@ ul {
     bottom: 0px;
 	display: inline-block;
 }
-
-/* @media (max-height: 672px) and (min-width: 840px) {
-    #bottomBar {
-        position: relative;
-    }
-} */
 
 .socialMedia {
 	position: relative;
@@ -273,11 +268,6 @@ ul {
     .anchor3 {
         top: 940px;
     }
-    /* @media(max-height: 833px){
-        #bottomBar{
-            top: 712px;
-        }
-    } */
 }
 
 @media(max-width: 475px) {
