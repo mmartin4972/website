@@ -1,9 +1,38 @@
 Matt Martin
 ---
 <link href="css/common.css" rel="stylesheet" type="text/css">
-<link href="css/projects.css" rel="stylesheet" type="text/css">
+<link href="css/work.css" rel="stylesheet" type="text/css">
 ---
 <div id="mainContainer">
+    <div id="img1" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">FACTSET RESEARCH SYSTEMS INC.</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            In the summer of 2022, I worked as a Software Developer Intern for FactSet Research Systems Inc. FactSet aggregates, processes, and serves large amounts of financial data in near real-time, 
+            so that traders and investment professionals have the data they need to make informed decisions. The internship was in-person in Chicago, and I made a habit of going into the office every day, to 
+            maximize my exposure to the company and enhance my learning experience. Additionally, I made it my goal during this internship to gain experience in developing highly performant and concurrent 
+            systems, since these are challenges that I find particularly interesting.
+            <br><br>
+            My intern project was to develop a web application using Typescript and Vue.js, which would make it far easier to configure and debug an internal data processing system. What made the system 
+            difficult to use was that it spanned multiple technologies, running on AWS EC2 instances, getting data and configurations from PostgresSQL databases, and storing files and logs in AWS S3. My web 
+            application would abstract away all these technologies and provide a single uniform interface where the system could be configured and debugged. The primary challenge of developing this application 
+            was devising a system for globally ordering updates to the database. My experience in the Distributed Systems class at Michigan helped me to overcome this challenge by simply versioning all updates 
+            to the database and ensuring strict consistency. The multiple instances of my web application communicated this versioning value by storing it in a central location in the PostgresSQL database. 
+            Additionally, to limit conflicts I added several useful features to the application such as auto refresh and a conflict resolution system.
+            <br><br>
+            I finished the web application a month early and wanted to continue striving towards my initial goal, so I relentlessly asked my manager to find me tasks that would allow me to work with concurrent 
+            and performant code. He delivered and tasked me with refactoring some multi-process Python code, as well as implementing and testing a cross-thread logging feature for a high-performance C++ program 
+            that could not afford milliseconds of latency increase. The Python refactor was challenging, since testing my code changes took around 20 hours, so I made sure to develop an extensive unit 
+            testing system. The unit tests allowed for most of the 20-hour tests I executed to succeed and were essential to my successfully completing the project. The C++ program I worked on was very different 
+            from other systems I worked with and required that I learn how to use Perforce for version control as well as deepen my experience in developing multi-threaded code.
+            <br><br>
+            Overall, this internship at FactSet was a great experience and allowed me to achieve my goal of gaining experience in developing highly performant and concurrent systems. 
+
+        </div>
+    </div>
     <div id="img6" class="bg" style="background-position: center;">
         <div class="caption">
             <span class="titleStyle">INVIA MEDICAL IMAGING SOLUTIONS</span>

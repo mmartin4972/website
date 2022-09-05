@@ -55,6 +55,7 @@ var dropShow = function(event){
         !projectMobileDrop[0].classList.contains('active') &&
         !leadershipMobileDrop[0].classList.contains('active') &&
         !workMobileDrop[0].classList.contains('active')) {
+        forceBlack = true;
         mobileDropDown[0].classList.add('active');
         projectMobile[0].addEventListener('click', function(){
             projectMobileDrop[0].classList.add('active');
@@ -77,6 +78,7 @@ var dropShow = function(event){
         projectMobileDrop[0].classList.remove('active');
         leadershipMobileDrop[0].classList.remove('active');
         workMobileDrop[0].classList.remove('active');
+        forceBlack = false;
         if(!mobileDropDown[0].classList.contains('active')){
             timer2();
         }
@@ -94,6 +96,7 @@ function projectDropDown() {
         workId.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
+        forceBlack = true;
         var time = -150;
         window.setTimeout(function(){
             $("#gpudrop").addClass("fadeIn");   
@@ -114,6 +117,7 @@ function projectDropDown() {
 }
 
 function turnOffProjectDropDown(){
+    forceBlack = false;
     projectContainer[0].classList.remove('active');
     projectBack[0].removeEventListener('mouseleave',turnOffProjectDropDown);
     education.removeEventListener("mouseover", turnOffProjectDropDown);
@@ -143,6 +147,7 @@ function leadershipDropDown() {
         window.setTimeout(function(){
             $("#fdrop").addClass("fadeIn");
             }, time += 150);
+        forceBlack = true;
         leadershipDrop[1].addEventListener("mouseleave",turnOffLeadershipDropDown);
         logo[0].addEventListener("mouseover", turnOffLeadershipDropDown); 
         education.addEventListener("mouseover", turnOffLeadershipDropDown);
@@ -152,6 +157,7 @@ function leadershipDropDown() {
 }
 
 function turnOffLeadershipDropDown(){
+    forceBlack = false;
     leadershipDrop[0].classList.remove('active');
     leadershipDrop[1].removeEventListener('mouseleave',turnOffLeadershipDropDown);
     education.removeEventListener("mouseover", turnOffLeadershipDropDown);
@@ -175,6 +181,7 @@ function workDropDown() {
         window.setTimeout(function(){
             $("#idrop").addClass("fadeIn");   
              }, time += 150);
+        forceBlack = true;
         workBack[0].addEventListener("mouseleave",turnOffWorkDropDown);
         projectsId.addEventListener("mouseover", turnOffWorkDropDown); 
         education.addEventListener("mouseover", turnOffWorkDropDown);
@@ -184,10 +191,11 @@ function workDropDown() {
 }
 
 function turnOffWorkDropDown(){
+    forceBlack = false;
     workContainer[0].classList.remove('active');
-    workBack[1].removeEventListener('mouseleave',turnOffWorkDropDown);
+    workBack[0].removeEventListener('mouseleave',turnOffWorkDropDown);
     education.removeEventListener("mouseover", turnOffWorkDropDown);
-    projectsId[0].removeEventListener("mouseover", turnOffWorkDropDown);
+    projectsId.removeEventListener("mouseover", turnOffWorkDropDown);
     document.removeEventListener("mouseleave", turnOffWorkDropDown);
 }
 
