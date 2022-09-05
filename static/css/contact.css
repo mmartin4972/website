@@ -37,7 +37,7 @@
 }
 
 
-@media (max-width: 739px) {
+@media (max-width: 839px) {
     #containerForm{
         padding-top: 70px;
     }
@@ -179,13 +179,13 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 	
 }
 
-@media (max-height: 740px) and (min-width: 740px) {
+@media (max-height: 840px) and (min-width: 840px) {
     #bottomBar {
         position: relative;
     }
 }
 
-@media (max-height: 680px) and (max-width: 739px) {
+@media (max-height: 680px) and (max-width: 839) {
     #bottomBar {
         position: relative;
     }

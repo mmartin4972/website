@@ -40,7 +40,7 @@
 	display: none;
 }
 
-@media (max-width: 739px) {
+@media (max-width: 839px) {
 	.twoCol{
 		height: 50%;
 		width: 90%;

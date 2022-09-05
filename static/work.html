@@ -1,0 +1,96 @@
+Matt Martin
+---
+<link href="css/common.css" rel="stylesheet" type="text/css">
+<link href="css/work.css" rel="stylesheet" type="text/css">
+---
+<div id="mainContainer">
+    <div id="img1" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">FACTSET RESEARCH SYSTEMS INC.</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            In the summer of 2022, I worked as a Software Developer Intern for FactSet Research Systems Inc. FactSet aggregates, processes, and serves large amounts of financial data in near real-time, 
+            so that traders and investment professionals have the data they need to make informed decisions. The internship was in-person in Chicago, and I made a habit of going into the office every day, to 
+            maximize my exposure to the company and enhance my learning experience. Additionally, I made it my goal during this internship to gain experience in developing highly performant and concurrent 
+            systems, since these are challenges that I find particularly interesting.
+            <br><br>
+            My intern project was to develop a web application using Typescript and Vue.js, which would make it far easier to configure and debug an internal data processing system. What made the system 
+            difficult to use was that it spanned multiple technologies, running on AWS EC2 instances, getting data and configurations from PostgresSQL databases, and storing files and logs in AWS S3. My web 
+            application would abstract away all these technologies and provide a single uniform interface where the system could be configured and debugged. The primary challenge of developing this application 
+            was devising a system for globally ordering updates to the database. My experience in the Distributed Systems class at Michigan helped me to overcome this challenge by simply versioning all updates 
+            to the database and ensuring strict consistency. The multiple instances of my web application communicated this versioning value by storing it in a central location in the PostgresSQL database. 
+            Additionally, to limit conflicts I added several useful features to the application such as auto refresh and a conflict resolution system.
+            <br><br>
+            I finished the web application a month early and wanted to continue striving towards my initial goal, so I relentlessly asked my manager to find me tasks that would allow me to work with concurrent 
+            and performant code. He delivered and tasked me with refactoring some multi-process Python code, as well as implementing and testing a cross-thread logging feature for a high-performance C++ program 
+            that could not afford milliseconds of latency increase. The Python refactor was challenging, since testing my code changes took around 20 hours, so I made sure to develop an extensive unit 
+            testing system. The unit tests allowed for most of the 20-hour tests I executed to succeed and were essential to my successfully completing the project. The C++ program I worked on was very different 
+            from other systems I worked with and required that I learn how to use Perforce for version control as well as deepen my experience in developing multi-threaded code.
+            <br><br>
+            Overall, this internship at FactSet was a great experience and allowed me to achieve my goal of gaining experience in developing highly performant and concurrent systems. 
+
+        </div>
+    </div>
+    <div id="img6" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">INVIA MEDICAL IMAGING SOLUTIONS</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            During the summer of 2021 I worked as a Software Developer Intern for Invia Medical Imaging Solutions. Invia’s main product is an application which reads in heart scans stored in large databases 
+            and performs processing on the images to reconstruct a 3D representation of the heart. Once the images are processed the product then allows doctors to easily disect and 
+            view slices of the heart, and will highlight key information about the slices that makes them easier to interpret. 
+            <br><br>
+            Over the course of the summer I used C++/CLI, C#, SQLite, and the .NET Framework to solve the issue of high latency when copying a database across a network. There are 
+            particular types of scans, which generate a large amount of very small image files, which are difficult to transfer across a network since for each image transferred 
+            there is overhead when connecting to the destination computer, and incurring this overhead for each image transferred led to immense latency. I worked with the 
+            excellent Invia engineers to solve this problem, by creating a service, which could identify these particular images and package them into a zip archive. As a result of this, 
+            I had to add functionality to the product to process a database that has zip archives in it, and also process the images within the zip archive. By the end of 
+            the summer, the product was capable of reading in database files which were zipped, and transferring a database across a network became 10x faster. 
+            <br><br>
+            This experience taught me a lot about what it is like to work on a professional software development team, developing windows services and applications, 
+            multi-threading, and several programming languages I was unfamiliar with. The project manager gave me a lot of freedom to employ my own problem-solving and creative abilities 
+            in solving the many challenges I encountered, which allowed me to take ownership and pride in what I did. This internship was an incredible learning experience for me and 
+            it was a lot of fun to work with the Invia staff and contribute a product feature that will actually be shipped. 
+        </div>
+    </div>
+    <div id="bottomBar">
+        <div id="container" class="center">
+            <div class="socialMedia">
+                <div class="center" style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('https://www.linkedin.com/in/matt-m-965157127')" style="background-image: url('images/nav/linkedin.png');"></button>    
+                </div>
+            </div>
+            <div class="socialMedia">
+                <div class="center" style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('https://github.com/mmartin4972')" style="background-image: url('images/nav/github-edit.png');"></button>    
+                </div>
+            </div>
+            <div class="socialMedia">
+                <div class="center " style="width: 50px;"> 
+                    <button class="button background-image" onclick="window.open('mailto:mmartin4972@gmail.com')" style="background-image: url('images/nav/email.png');"></button>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ytp-properties"
+    data-property="{videoURL:'https://youtu.be/YX3sPfu0XvE',
+    containment:'.video', autoPlay:true, mute:true, startAt:11, stopAt:30, opacity:1, 
+    useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'16/9',
+    showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+    showAnnotations:false, quality:'hd1080', loop:0}">
+    </div>
+    <div id="ytp-properties2"
+    data-property="{videoURL:'https://youtu.be/EA65-chNTAg',
+    containment:'.video2', autoPlay:true, mute:true, startAt:11, stopAt:30, opacity:1, 
+    useOnMobile:true, showControls:false, stopMovieOnBlur:false, ratio:'16/9',
+    showYTLogo:false, optimizeDisplay:true, anchor:'center,center', abundance:0.5, 
+    showAnnotations:false, quality:'hd1080', loop:0}">
+    </div>
+</div>
+---
+<script type = "text/javascript" src="javascript/projects.js"></script>
+<script type="text/javascript" src="javascript/jquery.mb.YTPlayer.js"></script>

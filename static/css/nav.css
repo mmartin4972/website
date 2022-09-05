@@ -113,7 +113,7 @@ body {
     opacity: 1;
 }
 /*--- Mobile Device ---*/
-@media (max-width :739px ){
+@media (max-width :839px ){
 
     #header{
         background: transparent;
@@ -132,7 +132,6 @@ body {
         align-items:center;
         justify-content: center;
         position: absolute;
-        display: fixed;
         top: 0;
         left: 0;
         overflow: hidden;
@@ -251,7 +250,7 @@ body {
 }/*--- End of Mobile ---*/
     
     /*--- Desktop View ---*/
-    @media (min-width: 740px){
+    @media (min-width: 840px){
     
     #background {
         width: 100%;
@@ -276,7 +275,6 @@ body {
         left: 0;
         top: 0;
         position: absolute;
-        display: fixed;
         z-index: 120;
         overflow: hidden;
     }
@@ -320,8 +318,6 @@ body {
         transform: scale(1.05);
     }
     
- 
-    
     .hide {
         display:none;
         transition: 0.5s;
@@ -329,7 +325,7 @@ body {
     }
     
     /* --- Step Down for Nav Spacing ---*/
-    @media (min-width : 739px ) and (max-width : 845px ){
+    @media (min-width : 840px ) and (max-width : 950px ){
         .logo {
             width: 100px;
             padding-left: 10px;
