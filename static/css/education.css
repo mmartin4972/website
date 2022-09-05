@@ -83,6 +83,10 @@ ul {
 .anchor2 {
     top: 370px;
 }
+
+.anchor3 {
+    top: 590px;
+}
 .top-margin {
     margin-top: 150px;
 }
@@ -92,18 +96,17 @@ ul {
 	width: 100%;
 	height: 80px;;
 	background-color: black !important;
-	position: absolute;
-    left: 0px;
+	position: relative;
+    margin-top: 0px;
     bottom: 0px;
-    margin-top: 45px;
-	
+	display: inline-block;
 }
 
-@media (max-height: 672px) and (min-width: 840px) {
+/* @media (max-height: 672px) and (min-width: 840px) {
     #bottomBar {
         position: relative;
     }
-}
+} */
 
 .socialMedia {
 	position: relative;
@@ -201,6 +204,9 @@ ul {
     .anchor2 {
         top: 290px;
     }
+    .anchor3 {
+        top: 490px;
+    }
     .container1{
         width:738px;
     }
@@ -229,7 +235,6 @@ ul {
         justify-content: center;
         align-items: center;
         text-align: center;
-        
     }
     .year {
         width: 100%;
@@ -254,13 +259,16 @@ ul {
         padding-top: 5px;
     }
     .anchor2{
-        top: 587px;
+        top: 645px;
     }
-    @media(max-height: 833px){
+    .anchor3 {
+        top: 940px;
+    }
+    /* @media(max-height: 833px){
         #bottomBar{
             top: 712px;
         }
-    }
+    } */
 }
 
 @media(max-width: 475px) {
@@ -268,27 +276,39 @@ ul {
     width: 150px;
     height: 150px;
 }
-
 .anchor2 {
-    top: 565px;
+    top: 625px;
 } 
+.anchor3 {
+    top: 920px;
+}
 }
 
 @media(max-width: 433px) {
 .year{
-    top: 270px;
+    top: 255px;
 }
 .anchor2 {
-    top: 600px;
+    top: 650px;
+}
+.anchor3 {
+    top: 960px;
 }
 }
 
 @media(max-width: 290px) {
+.image {
+    width: 120px;
+    height: 120px;
+}
 .year{
-    top: 290px;
+    top: 250px;
 }  
 .anchor2{
-    top: 620px;
+    top: 660px;
+}
+.anchor3 {
+    top: 908px;
 }
 }
 
