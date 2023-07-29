@@ -7,6 +7,7 @@ use std::{env, default};
 use httparse::{Header, Request, Error};
 use std::path::Path;
 use std::fs;
+use regex::Regex;
 
 pub mod thread_pool;
 
@@ -125,7 +126,6 @@ fn get_request<'s>(stream: &'s mut TcpStream, headers: &'s mut [Header<'s>], buf
         if cur_byte + size_read > 1024 {panic!("Reading more than 1024 bytes")}
         if size_read >= 4 {
             for i in cur_byte..(cur_byte + size_read - 3) {
-                print!("char: {}\n", buffer[i]);
                 if buffer[i] == '\r' as u8 && buffer[i+1] == '\n' as u8 && buffer[i+2] == '\r' as u8 && buffer[i+3] == '\n' as u8 {
                     read_end = true;
                     break;
@@ -163,7 +163,7 @@ fn gen_error() -> Vec<u8> {
 /// * Returns a vector of bytes containing the information for the 
 ///     response to be sent back to the client
 fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
-    
+    print!("Entered gen response");
     // Check specified file exists
     let mut file_path = std::env::current_dir().unwrap();
     file_path.push("docs");
@@ -186,10 +186,23 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
         default_file_path.push("_layouts");
         default_file_path.push("default.html");
 
+        print!("Enter the code segment that we need to change!");
         let default_file: String = fs::read_to_string(default_file_path).unwrap(); // need this since the file_parts only has references to this object
-        let default_file_parts: Vec<&str> = default_file.split("---").collect();
+        let default_file_parts: Vec<&str> = default_file.split("{{ page.title }}").collect();
         let file: String = fs::read_to_string(file_path).unwrap();
-        let file_parts: Vec<&str>= file.split("---").collect();
+        let tmp_file_parts: Vec<&str>= file.split("---").collect();
+        
+        // Extract the title
+        let mut title: &str = "";
+        let header: String = fs::read_to_string(tmp_file_parts[1]).unwrap();
+        let re = Regex::new(r"^title:\s*(.*)").unwrap();
+        if let Some(captures) = re.captures(header.as_str()) {
+          title = captures.get(1).unwrap().as_str();
+        }
+        let content: &str = tmp_file_parts[2];
+        let mut file_parts: Vec<&str> = Vec::new();
+        file_parts.push(title);
+        file_parts.push(content);
 
         let mut content: String = "".to_string();
         for i in 0..file_parts.len() {
