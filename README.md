@@ -1,7 +1,5 @@
 # Matt Martin's Personal Site
-Site has [Moved!](https://matt-martin.herokuapp.com/)
-
-New URL: https://matt-martin.herokuapp.com/
+Visit the [Site!](https://mmartin4972.github.io/)
 
 Project Start: 3/21/20
 
