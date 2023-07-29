@@ -3,11 +3,11 @@
 
 <head>
 <meta charset="utf-8">
-<title>---</title>
+<title>{{ page.title }}</title>
 <meta property='og:title' content="Matt Martin's Personal Site"/>
-<meta property='og:image' content='https://matt-martin.herokuapp.com/images/project/websiteBack1.jpeg'/>
+<!-- <meta property='og:image' content='https://matt-martin.herokuapp.com/images/project/websiteBack1.jpeg'/> -->
 <meta property='og:description' content="Personal site with Matt's project work and experiences."/>
-<meta property='og:url' content='https://matt-martin.herokuapp.com/'/>
+<!-- <meta property='og:url' content='https://matt-martin.herokuapp.com/'/> -->
 <meta property="og:locale" content="en_US" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -25,11 +25,11 @@
 
   gtag('config', 'UA-174264300-1');
 </script>
----
+{% contentblock header %}
 </head>
 
 <body>
-    ---  
+    {% contentblock content %}
     <div id="header" class="hide">
         <div class="nav">
             <div class="logo-desktop">
@@ -216,6 +216,6 @@
         </a>
     </div>       
     <script type = "text/javascript" src="../javascript/default.js"></script>
-    ---
+    {% contentblock footer %}
 </body>
 </html>
