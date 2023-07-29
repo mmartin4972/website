@@ -4,3 +4,8 @@ http://jmcglone.com/guides/github-pages/
 
 run 'bundle exec jekyll serve' to host webpage on local machine after installing 
 ruby on rails and jekyll plug in
+
+If running in docker may run into a char not recognized error may have to run the below:
+  - apt install locales
+  - export LC_ALL="C.UTF-8"
+  - export LANG="C.UTF-8"
