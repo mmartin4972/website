@@ -187,14 +187,20 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
         default_file_path.push("default.html");
 
         print!("Enter the code segment that we need to change!");
+        // Extract info from the default file
         let default_file: String = fs::read_to_string(default_file_path).unwrap(); // need this since the file_parts only has references to this object
-        let default_file_parts: Vec<&str> = default_file.split("{{ page.title }}").collect();
+        let default_parts  = default_file.split_once("{{ page.title }}").unwrap();
+        let mut default_file_parts: Vec<&str> = Vec::new();
+        default_file_parts.push(default_parts.0);
+        let default_parts_2 = default_parts.1.split_once("{{page.content}}").unwrap();
+        default_file_parts.push(default_parts_2.0);
+        default_file_parts.push(default_parts_2.1);
+
+        // Extract info from the requested file
         let file: String = fs::read_to_string(file_path).unwrap();
         let tmp_file_parts: Vec<&str>= file.split("---").collect();
-        
-        // Extract the title
         let mut title: &str = "";
-        let header: String = fs::read_to_string(tmp_file_parts[1]).unwrap();
+        let header: String = tmp_file_parts[1].to_string();
         let re = Regex::new(r"^title:\s*(.*)").unwrap();
         if let Some(captures) = re.captures(header.as_str()) {
           title = captures.get(1).unwrap().as_str();
@@ -204,13 +210,13 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
         file_parts.push(title);
         file_parts.push(content);
 
+        // Merge default and requested files
         let mut content: String = "".to_string();
         for i in 0..file_parts.len() {
             content += &default_file_parts[i].to_string();
             content += &file_parts[i].to_string();
         }
         content += &default_file_parts[default_file_parts.len()-1].to_string();
-
         content_bytes = content.into_bytes();
         content_type = "text/html";
         content_length = content_bytes.len();
