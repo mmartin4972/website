@@ -92,7 +92,7 @@ function projectDropDown() {
     if(!projectContainer[0].classList.contains("active")) {
         projectContainer[0].classList.add('active');
         projectBack[0].addEventListener("mouseleave",turnOffProjectDropDown);
-        fun.addEventListener("mouseover", turnOffProjectDropDown);
+        // fun.addEventListener("mouseover", turnOffProjectDropDown);
         workId.addEventListener("mouseover", turnOffProjectDropDown);
         document.addEventListener("mouseleave", turnOffProjectDropDown);
         document.addEventListener('click', outsideClickP);
@@ -121,7 +121,7 @@ function turnOffProjectDropDown(){
     projectContainer[0].classList.remove('active');
     projectBack[0].removeEventListener('mouseleave',turnOffProjectDropDown);
     education.removeEventListener("mouseover", turnOffProjectDropDown);
-    fun.removeEventListener("mouseover", turnOffProjectDropDown);
+    // fun.removeEventListener("mouseover", turnOffProjectDropDown);
     document.removeEventListener("mouseleave", turnOffProjectDropDown);
 }
 
@@ -250,7 +250,7 @@ function navigation() {
 
         //Deactivate black when scroll back to the top
         window.addEventListener('scroll', function(){
-            if(window.pageYOffset > 20){
+            if(window.scrollY > 20){
                 atTop = false;
                     if(header.className != "black") {
                         header.classList.add('black');
