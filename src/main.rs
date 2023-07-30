@@ -186,7 +186,6 @@ fn gen_response(path: &str) -> Result<Vec<u8>, &str> {
         default_file_path.push("_layouts");
         default_file_path.push("default.html");
 
-        print!("Enter the code segment that we need to change!");
         // Extract info from the default file
         let default_file: String = fs::read_to_string(default_file_path).unwrap(); // need this since the file_parts only has references to this object
         let default_parts  = default_file.split_once("{{ page.title }}").unwrap();
