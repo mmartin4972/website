@@ -57,6 +57,17 @@
 	background-image: url(../images/leadership/JITSU/finalRound_modified.png);
 }
 
+#img11 {
+    background-image: url(../images/leadership/EECS_471/matt_teaching.png);
+    min-height: 100%;
+}
+
+#img12 {
+    background-image: url(../images/leadership/EECS_471/michigan_datacenter_dark.png);
+	min-height: 400px;
+    height: 50%;
+}
+
 /* --- Adjustments for mobile images ---*/
 @media (max-width: 839px) {
 

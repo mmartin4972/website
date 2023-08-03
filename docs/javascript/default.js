@@ -136,8 +136,11 @@ function outsideClickP(event) {
 function leadershipDropDown() {
     if(!leadershipDrop[0].classList.contains("active")) {
         leadershipDrop[0].classList.add('active');
-        $("#mdrop").addClass("fadeIn");
+        $("#edrop").addClass("fadeIn");
         var time = 0;
+        window.setTimeout(function(){
+            $("#mdrop").addClass("fadeIn");   
+             }, time += 150);
         window.setTimeout(function(){
             $("#jdrop").addClass("fadeIn");   
              }, time += 150);
@@ -219,6 +222,7 @@ function timer2() {
 }
 
 function resetFades() {
+    $("#edrop").removeClass("fadeIn");
     $("#mdrop").removeClass("fadeIn");
     $("#sdrop").removeClass("fadeIn");
     $("#fdrop").removeClass("fadeIn");
