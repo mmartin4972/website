@@ -8,6 +8,11 @@
 	min-height: 100%;
 }
 
+#img7 {
+	background-image: url(../images/work/cboe_pit_dark.png);
+	min-height: 100%;
+}
+
 /*--- Social Media ---*/
 #bottomBar {
 	width: 100%;
