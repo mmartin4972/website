@@ -6,6 +6,40 @@ title: Matt Martin
 <link href="css/work.css" rel="stylesheet" type="text/css">
 
 <div id="mainContainer">
+    <div id="img7" class="bg" style="background-position: center;">
+        <div class="caption">
+            <span class="titleStyle">BACKEDGE CAPITAL</span>
+        </div>
+    </div>
+    <div class="contentBg">
+        <div class="content text">
+            While working on my Master's in Computer Science in 2023, I interned at a small trading firm called BlackEdge Capital. This experience was my first exposure to developing low latency server-side code, 
+            which is an experience I thoroughly enjoyed and plan to pursue. The team had me tackle two projects: developing an application which could take a custom network protocol specification as input 
+            and would generate a Wireshark packet dissector as well as C struct definitions for each packet segment in the protocol; and a low latency application which would listen for incoming packets from 
+            the exchange, tag an interesting subset of these packets, and relay the tagged packets to a client-side application.
+            <br><br>
+            Beyond just enhancing my Python, C, and C++ skills, the packet dissector generator application taught me the importance of rapid iteration. There were 3 languages that the Wireshark dissectors could 
+            be written in. I spent a sizeable amount of time researching each of these languages online to determine which would best suit our needs, however, even after researching I didn't feel confident, I 
+            could draw any firm conclusions. Consequently, I decided to just develop a MVP for a basic dissector using each of the 3 languages. The MVPs proved far more informative than researching each of 
+            the languages online, and it ultimately led us to select C as the language in which the dissectors ought to be written in. Now, I was faced with another daunting challenge of creating an application 
+            to generate Wireshark dissector code and C++ definition code for a wide variety of network protocols. The specification for this application was very vaguely defined, so instead of trying to formulate 
+            and account for all possible edge cases, I assessed what protocols the team was most interested and tailored my application to be able to work for this handful of protocols. As the team requested 
+            additional protocols, I slowly expanded and iterated the application. Developing in this way allowed me to make incremental progress in areas that generated the greatest value for the team. Once again, 
+            iterative design allowed me to take a loosely defined problem, and be able to solve it incrementally, to yield the most value in the shortest amount of time.
+            <br><br>
+            The second and more time-consuming of the projects was the development of a low latency packet tagger. Written in C++, this project proved an incredible learning experience for me and reaffirmed my 
+            desire to work in the development of low latency server-side code. The BlackEdge team showed me coding paradigms, data structures, and methods which allowed for many optimizations to be made at compile 
+            time which resulted in significant boosts in performance. They also taught me the importance of understanding the tradeoffs between developer time and program performance. If an application needs 
+            to be able to process a packet, tag it, and relay it to the client in the order of microseconds, this can be done leveraging optimized C++ code. However, if you need something that needs to be able to 
+            react in nanosecond latencies, you could spend countless developer hours trying to tune your C++ code to perfection, but at the end of the day, you will get a far more significant performance boost 
+            from creating a dedicating piece of hardware, like an FPGA, than you ever could with a C++ program. The time and money spent setting up this hardware solution will have significantly higher returns 
+            than time spent trying to hyper optimize a C++ program. For this reason, it is very important to distinguish the “hot paths”, the functions that if they become more performant directly lead to greater 
+            profits, from less important execution paths, so that developer time can be utilized as efficiently as possible. This project was helpful for me in keeping in mind my own coding efficiency and helped 
+            me to focus more on the balance between coding something to perfection or maximizing my output to yield the most profit as efficiently as possible.
+            <br><br>
+            I had a phenomenal time interning at BlackEdge Capital and am incredibly thankful for all the people there that allowed me to learn alot and have a ton of fun during the summer of 2023.  
+        </div>
+    </div>
     <div id="img1" class="bg" style="background-position: center;">
         <div class="caption">
             <span class="titleStyle">FACTSET RESEARCH SYSTEMS INC.</span>

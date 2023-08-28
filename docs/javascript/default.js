@@ -180,7 +180,10 @@ function workDropDown() {
     if(!workContainer[0].classList.contains("active")) {
         workContainer[0].classList.add('active');
         var time = 0;
-        $("#factdrop").addClass("fadeIn");   
+        $("#blackdrop").addClass("fadeIn");
+        window.setTimeout(function(){
+            $("#factdrop").addClass("fadeIn");   
+             }, time += 150);   
         window.setTimeout(function(){
             $("#idrop").addClass("fadeIn");   
              }, time += 150);
@@ -232,6 +235,7 @@ function resetFades() {
     $("#uvdrop").removeClass("fadeIn");
     $("#factdrop").removeClass("fadeIn");
     $("#idrop").removeClass("fadeIn");
+    $("blackdrop").removeClass("fadeIn");
 }
 
 function navigation() {
